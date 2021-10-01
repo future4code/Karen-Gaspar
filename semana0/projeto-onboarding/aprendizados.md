@@ -1,0 +1,3 @@
+# O que aprendi essa semana?!
+
+Nessa semana inaugural já aprendi muitas coisas. Começando pelas aulas de como o curso vai funcionar, o que esperar da experiência e atitudes para melhorar nossa convivência e ter respeito com a equipe e os colegas. E a parte técnica, onde aprendemos a usar o **Slack**, o **Zoom**, o **Notion**, o **terminal** do pc, o **Git** e **GitHub** e hoje o **VSCode** de forma mais detalhada. E ah, aprendi sobre o mercado de trabalho na área de **tecnologia** também!
