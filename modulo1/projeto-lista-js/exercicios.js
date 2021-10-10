@@ -96,8 +96,10 @@ return array[array.length -1]
 function trocaPrimeiroEUltimo(array) {
   // implemente sua lógica aqui
   const numeroInicial = array[0]
-  const numeroFinal = [array.length -1]
-  return numeroInicial.splice(0,0, numeroFinal)
+  const numeroFinal = array[array.length -1]
+  array[array.length - 1] = numeroInicial
+  array[0] = numeroFinal
+  return array
 }
 
 // EXERCÍCIO 12
@@ -113,24 +115,31 @@ anoCorrente = prompt ("Digite o ano atual")
 anoDeNascim = prompt ("Digite o ano de seu nascimento")
 anoRg = prompt ("Digite o ano de emissão do seu RG")
 
-const renovaEm5 = anoCorrente - anoDeNascim <= 20
-const renovaEm10 = anoCorrente - anoNascimento > 20 <= 50
-const renovaEm15 = anoCorrente - anoNascimento > 50
-console.log()
+const resultado1 = anoCorrente - anoDeNascim <= 20 && anoCorrente - anoRg >= 5
+const resultado2 = anoCorrente - anoDeNascim > 20 <= 50 && anoCorrente - anoRg >= 10
+const resultado3 = anoCorrente - anoDeNascim > 50 && anoCorrente - anoRg >= 15
+
+console.log(resultado1 || resultado2 || resultado3)
 }
 
 // EXERCÍCIO 14
 function checaAnoBissexto(ano) {
   // implemente sua lógica aqui
+anoBisex = ano % 400 === 0 && ano % 4 === 0 && ano % 100 !== 0
 
+return (anoBisex)
 }
 
 // EXERCÍCIO 15
 function checaValidadeInscricaoLabenu() {
   // implemente sua lógica aqui
-idade = prompt("Você tem mais de 18 anos?")
-escolaridade = prompt("Você possui Ensino Médio Completo?")
-disponibilidade = prompt("Você possui disponibilidade exclusiva durante os horários do curso?")
+idade = prompt("Você tem mais de 18 anos? Responda com sim ou não")
+escolaridade = prompt("Você possui Ensino Médio Completo? Responda com sim ou não")
+disponibilidade = prompt("Você possui disponibilidade exclusiva durante os horários do curso? Responda com sim ou não")
+ 
+maiorIdade = idade === "sim"
+ensinoMedio = escolaridade === "sim"
+horarioLivre = disponibilidade === "sim"
 
-console.log()
+console.log(maiorIdade && ensinoMedio && horarioLivre)
 }
