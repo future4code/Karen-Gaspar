@@ -111,7 +111,7 @@ function retornaMaiorNumero(array) {
 //         atores: [],
 //     }
 //     return `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e 
-//     estrelado por ${filme.atores}`
+//     estrelado por ${filme.atores}.`
 // }
 // retornaChamadaDeFilme()
 
