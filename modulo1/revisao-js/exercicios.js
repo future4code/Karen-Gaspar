@@ -15,7 +15,11 @@ function retornaArrayInvertido(array) {
 
 // EXERCÍCIO 03
 function retornaArrayOrdenado(array) {
-
+    const arrayOrdenado = array.sort(function (a, b) {
+        return a - b
+    })
+    return arrayOrdenado
+}
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
