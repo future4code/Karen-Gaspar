@@ -23,25 +23,54 @@ function retornaArrayOrdenado(array) {
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
+    const numerosPares = array.filter((numero) => {
+        return numero % 2 === 0
+    })
+    return numerosPares
+}
 
 
 // EXERCÍCIO 05
-function retornaNumerosParesElevadosADois(array) {
-  
+// function retornaNumerosParesElevadosADois(array) {
+//     const numerosPares = array.filter((numero) => {
+//         return numero % 2 === 0
+//     })
+//     return numerosPares
+// }
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
-    
+    let maior = array[0]
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] > maior) {
+            maior = array[i]
+        }
+    }
+    return maior
+}
+
 
 // EXERCÍCIO 07
-function retornaObjetoEntreDoisNumeros(num1, num2) {
-    
+// function retornaObjetoEntreDoisNumeros(num1, num2) {
+//     const comparacao = {
+//         maiorNumero: ,
+//         maiorDivisivelPorMenor:,
+//         diferenca: 
+//         }
 
+//     return
+// }
 
 // EXERCÍCIO 08
-function retornaNPrimeirosPares(n) {
-
-}
+// function retornaNPrimeirosPares(n) {
+//     let pares = array[0]
+//     for (let i = 0; i < array.length; i+=2) {
+//         if (array[i] > pares) {
+//             pares = array[i]
+//         }
+//     }
+//     return n
+// }
 
 // EXERCÍCIO 09
 function classificaTriangulo(ladoA, ladoB, ladoC) {
