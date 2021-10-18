@@ -54,18 +54,27 @@ function retornaMaiorNumero(array) {
 }
 
 // EXERCÍCIO 07
-function retornaObjetoEntreDoisNumeros(num1, num2) {
-    const valor1 = 0
-    const valor2 = 0
+// function retornaObjetoEntreDoisNumeros(num1, num2) {
     
-    let numero = {
-        maiorNumero: maior,
-        maiorDivisivelPorMenor: maior % menor === 0,
-        diferenca: maior - menor
-    }
+//     const primeiroNumero = num1
+//     const segundoNumero = num2
 
-    return numero
-}
+//     if(primeiroNumero > segundoNumero){
+//         return primeiroNumero = maior
+
+//     } else if (segundoNumero > primeiroNumero) {
+//         return segundoNumero = menor
+//     }else{
+
+//     }
+//     let numero = {
+//         maiorNumero: maior,
+//         maiorDivisivelPorMenor: maior % menor === 0,
+//         diferenca: maior - menor
+//     }
+//     return numero
+// }
+// retornaObjetoEntreDoisNumeros()
 
 // // EXERCÍCIO 08
 // function retornaNPrimeirosPares(n) {
@@ -79,19 +88,19 @@ function retornaObjetoEntreDoisNumeros(num1, num2) {
 // }
 
 // // EXERCÍCIO 09
-// function classificaTriangulo(ladoA, ladoB, ladoC) {
+function classificaTriangulo(ladoA, ladoB, ladoC) {
 
-//     if (ladoA === ladoB && ladoB === ladoC && ladoA === ladoC) {
-//         return "Equilátero"
-//     } else if (ladoA === ladoB && ladoB !== ladoC && ladoA !== ladoC) {
-//         return "Isósceles"
-//     } else if (ladoA !== ladoB && ladoB !== ladoC && ladoA !== ladoC) {
-//         return "Escaleno"
-//     } else {
+    if (ladoA === ladoB && ladoB === ladoC && ladoA === ladoC) {
+        return "Equilátero"
+    } else if (ladoA === ladoB && ladoB !== ladoC && ladoA !== ladoC) {
+        return "Isósceles"
+    } else if (ladoA !== ladoB && ladoB !== ladoC && ladoA !== ladoC) {
+        return "Escaleno"
+    } else {
 
-//     }
-//     return classificaTriangulo()
-// }
+    }
+    return classificaTriangulo()
+}
 
 // // EXERCÍCIO 10
 // function retornaSegundoMaiorESegundoMenor(array) {
@@ -102,6 +111,7 @@ function retornaObjetoEntreDoisNumeros(num1, num2) {
 //     })
 //     return arrayFinal
 // }
+
 
 // // EXERCÍCIO 11
 // function retornaChamadaDeFilme(filme) {
