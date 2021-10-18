@@ -55,18 +55,7 @@ function retornaMaiorNumero(array) {
 
 // EXERCÍCIO 07
 // function retornaObjetoEntreDoisNumeros(num1, num2) {
-    
-//     const primeiroNumero = num1
-//     const segundoNumero = num2
 
-//     if(primeiroNumero > segundoNumero){
-//         return primeiroNumero = maior
-
-//     } else if (segundoNumero > primeiroNumero) {
-//         return segundoNumero = menor
-//     }else{
-
-//     }
 //     let numero = {
 //         maiorNumero: maior,
 //         maiorDivisivelPorMenor: maior % menor === 0,
@@ -88,19 +77,19 @@ function retornaMaiorNumero(array) {
 // }
 
 // // EXERCÍCIO 09
-function classificaTriangulo(ladoA, ladoB, ladoC) {
+// function classificaTriangulo(ladoA, ladoB, ladoC) {
 
-    if (ladoA === ladoB && ladoB === ladoC && ladoA === ladoC) {
-        return "Equilátero"
-    } else if (ladoA === ladoB && ladoB !== ladoC && ladoA !== ladoC) {
-        return "Isósceles"
-    } else if (ladoA !== ladoB && ladoB !== ladoC && ladoA !== ladoC) {
-        return "Escaleno"
-    } else {
+//     if (ladoA === ladoB && ladoB === ladoC && ladoA === ladoC) {
+//         return "Equilátero"
+//     } else if (ladoA === ladoB && ladoB !== ladoC && ladoA !== ladoC) {
+//         return "Isósceles"
+//     } else if (ladoA !== ladoB && ladoB !== ladoC && ladoA !== ladoC) {
+//         return "Escaleno"
+//     } else {
 
-    }
-    return classificaTriangulo()
-}
+//     }
+//     return classificaTriangulo()
+// }
 
 // // EXERCÍCIO 10
 // function retornaSegundoMaiorESegundoMenor(array) {
@@ -115,19 +104,30 @@ function classificaTriangulo(ladoA, ladoB, ladoC) {
 
 // // EXERCÍCIO 11
 // function retornaChamadaDeFilme(filme) {
-//     let filme = {
+//     const filme = {
 //         nome: "",
 //         ano: Number,
 //         diretor: "",
 //         atores: [],
 //     }
-//     return `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.atores}`
+//     return `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e 
+//     estrelado por ${filme.atores}`
 // }
 // retornaChamadaDeFilme()
 
 // // EXERCÍCIO 12
 // function retornaPessoaAnonimizada(pessoa) {
-
+//     const pessoa = {
+//         nome:"",
+//         idade:,
+//         endereco: "",
+//         email: "",
+//     }
+//     const novaPessoa = {
+//         ...pessoa,
+//         nome: "ANÔNIMO"
+//     }
+//     return novaPessoa
 // }
 
 // // EXERCÍCIO 13A
