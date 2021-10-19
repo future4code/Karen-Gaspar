@@ -144,11 +144,23 @@ function retornaMaiorNumero(array) {
 // }
 
 // // EXERCÍCIO 15A
-// function retornaArrayOrdenadoAlfabeticamente(consultas) {
-
-// }
+function retornaArrayOrdenadoAlfabeticamente(consultas) {
+    consultas.sort(function (a, b) {
+        if (a.nome > b.nome) {
+            return 1;
+        }
+        if (a.nome < b.nome) {
+            return -1;
+        }
+        return 0;
+    })
+    return consultas
+}
 
 // // EXERCÍCIO 15B
 // function retornaArrayOrdenadoPorData(consultas) {
-
+//     const dataOrdenada = consultas.sort(function (a,b) {
+//         return b.dataDaConsulta - a.dataDaConsulta
+//     })
+//     return dataOrdenada
 // }
