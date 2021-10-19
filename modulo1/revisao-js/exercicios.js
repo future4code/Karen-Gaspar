@@ -67,14 +67,12 @@ function retornaMaiorNumero(array) {
 
 // // EXERCÍCIO 08
 // function retornaNPrimeirosPares(n) {
-//     let pares = array[0]
-//     for (let i = 0; i < array.length; i += 2) {
-//         if (array[i] > pares) {
-//             pares = array[i]
+//     let pares = [0] 
+//     for (let i = 0; i < n; i += 2) {
+//         return pares
 //         }
 //     }
-//     return
-// }
+//     retornaNPrimeirosPares(3)
 
 // // EXERCÍCIO 09
 // function classificaTriangulo(ladoA, ladoB, ladoC) {
