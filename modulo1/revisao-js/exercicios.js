@@ -54,7 +54,7 @@ function retornaMaiorNumero(array) {
 }
 
 // EXERCÍCIO 07
-// function retornaObjetoEntreDoisNumeros(num1, num2) {
+function retornaObjetoEntreDoisNumeros(num1, num2) {
 
 //     let numero = {
 //         maiorNumero: maior,
@@ -62,20 +62,20 @@ function retornaMaiorNumero(array) {
 //         diferenca: maior - menor
 //     }
 //     return numero
-// }
+}
 // retornaObjetoEntreDoisNumeros()
 
 // // EXERCÍCIO 08
-// function retornaNPrimeirosPares(n) {
+function retornaNPrimeirosPares(n) {
 //     let pares = [0] 
 //     for (let i = 0; i < n; i += 2) {
 //         return pares
 //         }
-//     }
+}
 //     retornaNPrimeirosPares(3)
 
 // // EXERCÍCIO 09
-// function classificaTriangulo(ladoA, ladoB, ladoC) {
+function classificaTriangulo(ladoA, ladoB, ladoC) {
 
 //     if (ladoA === ladoB && ladoB === ladoC && ladoA === ladoC) {
 //         return "Equilátero"
@@ -87,21 +87,21 @@ function retornaMaiorNumero(array) {
 
 //     }
 //     return classificaTriangulo()
-// }
+}
 
 // // EXERCÍCIO 10
-// function retornaSegundoMaiorESegundoMenor(array) {
+function retornaSegundoMaiorESegundoMenor(array) {
 //     const arrayOrdenado = array.sort(function (a, b) {
 //         const segundoMaiorValor = arrayOrdenado[arrayOrdenado.lenght - 2]
 //         const segundoMenorValor = arrayOrdenado[1]
 //         arrayFinal = [segundoMaiorValor, segundoMenorValor]
 //     })
 //     return arrayFinal
-// }
+}
 
 
 // // EXERCÍCIO 11
-// function retornaChamadaDeFilme(filme) {
+function retornaChamadaDeFilme(filme) {
 //     const filme = {
 //         nome: "",
 //         ano: Number,
@@ -110,11 +110,11 @@ function retornaMaiorNumero(array) {
 //     }
 //     return `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e 
 //     estrelado por ${filme.atores}.`
-// }
+}
 // retornaChamadaDeFilme()
 
 // // EXERCÍCIO 12
-// function retornaPessoaAnonimizada(pessoa) {
+function retornaPessoaAnonimizada(pessoa) {
 //     const pessoa = {
 //         nome:"",
 //         idade:,
@@ -126,22 +126,26 @@ function retornaMaiorNumero(array) {
 //         nome: "ANÔNIMO"
 //     }
 //     return novaPessoa
-// }
+}
 
 // // EXERCÍCIO 13A
-// function retornaPessoasAutorizadas(pessoas) {
-
-// }
+function retornaPessoasAutorizadas(pessoas) {
+    const pessoasAutorizadas = pessoas.filter((pessoa) => {
+        if(pessoa.idade > 14 && pessoa.idade < 60 && pessoa.altura >= 1.5)
+        return pessoas
+    })
+    return pessoasAutorizadas
+}
 
 // // EXERCÍCIO 13B
-// function retornaPessoasNaoAutorizadas(pessoas) {
+function retornaPessoasNaoAutorizadas(pessoas) {
 
-// }
+}
 
 // // EXERCÍCIO 14
-// function retornaContasComSaldoAtualizado(contas) {
+function retornaContasComSaldoAtualizado(contas) {
 
-// }
+}
 
 // // EXERCÍCIO 15A
 function retornaArrayOrdenadoAlfabeticamente(consultas) {
@@ -158,9 +162,9 @@ function retornaArrayOrdenadoAlfabeticamente(consultas) {
 }
 
 // // EXERCÍCIO 15B
-// function retornaArrayOrdenadoPorData(consultas) {
+function retornaArrayOrdenadoPorData(consultas) {
 //     const dataOrdenada = consultas.sort(function (a,b) {
 //         return b.dataDaConsulta - a.dataDaConsulta
 //     })
 //     return dataOrdenada
-// }
+}
