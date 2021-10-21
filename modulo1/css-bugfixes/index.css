@@ -152,7 +152,6 @@ td button:hover {
     height: 100px;
 }
 
-
 #back-button {
     background-color: white;
     width: 100px;
@@ -161,7 +160,12 @@ td button:hover {
     border-radius: 5px;
     font-size: 10px;
     color: black;
+    position: relative;
+    top: 200px;
+    left: 600px;
+    
 }
+
 
 #back-button:hover {
     background-color: #635a3d
