@@ -137,6 +137,11 @@ td button {
     color: black;
 }
 
+td img {
+    height: 60px;
+    width: 60px;
+}
+
 .container-do-search {
     margin-top: 20px;
     height: 100px;
