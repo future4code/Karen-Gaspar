@@ -143,6 +143,10 @@ td img {
     width: 60px;
 }
 
+td button:hover {
+    background-color: #c44f00;
+}
+
 .container-do-search {
     margin-top: 20px;
     height: 100px;
@@ -162,3 +166,8 @@ td img {
 #back-button:hover {
     background-color: #635a3d
 }
+
+#back-button:active {
+    color: white;
+}
+
