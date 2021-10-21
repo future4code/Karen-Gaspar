@@ -171,11 +171,7 @@ td button:hover {
     border: 1px solid black;
     border-radius: 5px;
     font-size: 10px;
-    color: black;
-    position: relative;
-    top: 200px;
-    left: 600px;
-    
+    color: black; 
 }
 
 
@@ -185,5 +181,10 @@ td button:hover {
 
 #back-button:active {
     color: white;
+}
+
+#container-button{
+    text-align: center;
+    margin: 100px;
 }
 
