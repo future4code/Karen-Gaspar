@@ -31,7 +31,6 @@ img {
 
 div>p:first-child {
     display: inline;
-    border: 1px solid black;
 }
 
 div img {
@@ -48,8 +47,10 @@ div img {
 }
 
 .botao-local {
+    position: relative;
+    top: 80px;
     display: block;
-    margin: 10px;
+    margin: 80px;
 }
 
 .botao-amarelo:hover {
@@ -78,25 +79,24 @@ div img {
 }
 
 #container-de-descricao>p{
-    max-width: 100px;
-    padding: 15px 0px;
+    max-width: 180px;
+    margin: 0 auto;
+    display: inline-block;
     position:relative;
-    top: 30px;
+    top: 80px;
 }
 
 #container-de-descricao>ol {
     margin: 20px;
     position:relative;
-    top: 30px;
-    border: 1px solid black;
+    top: 80px;
     list-style-position: inside;
 }
 
 h3 {
     margin: 20px;
     position:relative;
-    top: 30px;
-    border: 1px solid black;
+    top: 80px;
 }   
 
 #container-para-comprar {
@@ -104,6 +104,8 @@ h3 {
 }
 
 #container-para-comprar>p {
+    position: relative;
+    top: 80px;
     color: #c44f00;
     padding: 100px 0;
     font-size: 60px;
