@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Página de Vendas</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <div>
+            <img id = "logo" src="img/xícara-chá1.png">
+        </div>
+    </header>
+    <div>
+        <h1 class = "nome-da-loja"><em>Cinco da tarde</em></h1>
+    </div>
+    <div class = "opcoes">
+        <a class = "paginas" href="index.html">Página Inicial</a>
+        <a class = "paginas" href="ctrl-estoque.html">Controle de Estoque</a>
+        <a class = "paginas" href="add-produto.html">Adicionar Produto</a>
+        <a class = "paginas" href="funcionarios.html">Funcionários</a>
+    </div>
+    <h2 class = "descricao-pagina">Venda Efetuada</h2>
+    <form action="historico-vendas.html">
+        <div class = "add-produto">
+            <label for="produto-vendido">Produto: </label>
+            <input type="text" id="produto-vendido" name="produto-vendido">
+        </div>
+        <div class = "add-produto">
+            <label for="quantidade">Unidades: </label>
+            <input type="number" id="quantidade" name="quantidade">
+        </div>
+        <p id ="pagamento">Forma de Pagamento:</p>
+        <div class = "add-produto">
+            <label for="pagamento-cartao">Cartão: </label>
+            <input type="checkbox" id="pagamento-cartao" name="pagamento-cartao">
+        </div>
+        <div class = "add-produto">
+            <label for="pagamento-dinheiro">Dinheiro: </label>
+            <input type="checkbox" id="pagamento-dinheiro" name="pagamento-dinheiro">
+        </div>
+
+        <div class="form-add">
+            <!-- Adicione ao type do botão abaixo o valor para que ele submeta o formulário -->
+            <button type="submit">Finalizar Venda</button>
+        </div>
+
+    </form>
+    
+    <div class = "opcoes">
+        <a class = "paginas" href="historico-vendas.html">Histórico de Vendas</a>
+    </div>
+
+</body>
+
+</html>

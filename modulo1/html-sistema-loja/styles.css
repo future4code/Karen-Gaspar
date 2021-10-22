@@ -1,0 +1,104 @@
+body {
+    background-color: #253329;
+}
+
+header {
+    width: 100%;
+    height: 50px;
+    background-color: #253329;
+}
+#logo{
+    width: 80px;
+    height: 80px;
+}
+
+.nome-da-loja{
+    text-align: center;
+    color: #cf4640;
+    font-style: oblique;
+    font-size: 70px;
+    margin: auto;
+}
+
+.redes{
+    background-color: whitesmoke;
+    color: #376f4f;
+    text-align: center;
+}
+
+.opcoes {
+    text-align: center;
+    margin: 10px;
+}
+
+.paginas {
+    margin: 4px;
+}
+
+.descricao-loja {
+    text-align: center;
+    color: #376f4f;
+    border-style: solid;
+    background-color: whitesmoke;
+}
+
+.proposta {
+    text-align: center;
+    color: #376f4f;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+
+.titulo-tabela {
+    background-color: #376f4f;
+    text-align: center;
+    color: whitesmoke;
+}
+
+td {
+    background-color: #376f4f;
+    text-align: center;
+    color: whitesmoke;
+    margin: 5px;
+}
+
+.descricao-pagina {
+    text-align: center;
+    color: #376f4f;
+    background-color: whitesmoke;
+    padding: 6px;
+}
+
+a {
+    color: #856b59;
+}
+
+.lista {
+    text-align: center;
+    color: #856b59;
+    font-weight: bold;
+    list-style-position: inside;    
+}
+
+.imagem1 {
+    height: 50px;
+    margin: auto;
+}
+
+.add-produto {
+    text-align: center;
+    color:#856b59;
+    margin: 5px;
+}
+
+.form-add {
+    text-align: center;
+    margin: 7px;
+}
+
+#pagamento {
+    text-align: center;
+    color: #856b59;
+    margin: 7px;
+}
