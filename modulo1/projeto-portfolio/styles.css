@@ -39,12 +39,16 @@ div h2 {
     text-align: center;
 }
 
+ul{
+    list-style-position: inside;
+}
+
 footer {
-    margin: 20px auto;
+    margin: 50px auto;
     max-width: 200px;
-    padding: 2px;
+    padding: 10px;
     color: whitesmoke;
-    text-align: center;
+    text-align: center;    
 }
 
 #imagens {
@@ -68,7 +72,7 @@ footer {
 
 
 .container {
-    max-width: 500px;
+    max-width: 600px;
     margin: 20px auto;
     font-size: large;
     color: #e1c295;
@@ -76,14 +80,12 @@ footer {
     padding: 5px;
 }
 
-/* .container li{
-    list-style-position: inside;
-} */
 
 .container h3 {
     color: #964b46;
     padding: 8px;
 }
+
 
 #container-descricao-perfil {
     margin: 0 auto;
@@ -92,6 +94,12 @@ footer {
 
 #container-descricao-perfil img{
     border-radius: 60%;
+}
+
+#container-habilidades{
+    max-width: 800px;
+    padding: 10px;
+    border: 1px solid black;
 }
 
 #projeto-loja {
@@ -152,7 +160,6 @@ footer {
     font-size: large;
     color: #e1c295;
     text-align: center;
-    border: 1px solid black;
 }
 
 
@@ -162,3 +169,6 @@ footer {
     width: 490px;
     height: 100px;
 } 
+#mensagem {
+    max-width: 500px;
+}
