@@ -1,0 +1,152 @@
+/* ESTILIZAÇÃO GERAL */
+* {
+    margin:0;
+    padding: 0;
+}
+
+body {
+    background-color: #243239;
+}
+
+
+header h1 {
+    display: inline-block;
+    margin: 0 auto;
+    color: #964b46;
+    text-align: left;
+    padding: 20px;
+}
+
+.paginas {
+    display: inline-block;
+    text-align: center;
+    margin: 0 8px;
+    position: relative;
+    left: 900px;
+    color: #161220;
+}
+
+.paginas:hover{
+    color: #e6c985;
+}
+
+div h2 {
+    color: #964b46;
+    margin: 50px;
+    text-align: center;
+}
+
+footer {
+    margin: 20px auto;
+    max-width: 200px;
+    padding: 2px;
+    color: whitesmoke;
+    text-align: center;
+}
+
+/* ESTILIZAÇÃO PÁGINA INICIAL */
+
+
+.container {
+    max-width: 500px;
+    margin: 20px auto;
+    font-size: large;
+    color: #e1c295;
+    text-align: center;
+    padding: 5px;
+}
+
+/* .container li{
+    list-style-position: inside;
+} */
+
+.container h3 {
+    color: #964b46;
+    padding: 8px;
+}
+
+#container-descricao-perfil {
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+#container-descricao-perfil img{
+    border-radius: 60%;
+}
+
+#projeto-loja {
+    display: inline-block;
+    margin: 0 auto;
+    position: relative;
+    left: 80px;
+}
+
+#projeto-loja a{
+    color: #161220;
+}
+#projeto-loja a:hover{
+    color:#e6c985;
+}
+
+#projeto-loja img {
+    padding: 2px;
+    width: 300px;
+    height: 120px;
+}
+
+#projeto- {
+    display: inline-block;
+    margin: 0 auto;
+    position: relative;
+    left: 80px;
+}
+
+#projeto- img{
+    margin: 50px;
+    height: 50px;
+}
+
+#projeto- {
+    display: inline-block;
+    margin: 0 auto;
+    position: relative;
+    left: 80px;
+}
+
+#projeto- img{
+    margin: 50px;
+    height: 50px;
+}
+
+/* ESTILIZAÇÃO PÁGINA PROJETO LOJA */
+
+#cinco-da-tarde img{
+    display: block;
+    text-align: center;
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+/* #cinco-da-tarde img{
+    display: inline-block;
+    text-align: center;
+    max-width: 800px;
+    margin: 50px auto;
+    border: 1px solid black;
+} */
+
+#descricao-projeto {
+    max-width: 800px;
+    margin: 20px auto;
+    font-size: large;
+    color: #e1c295;
+    text-align: center;
+    border: 1px solid black;
+}
+
+/* ESTILIZAÇÃO PÁGINA DE CONTATO */
+
+#mensagem input{
+    width: 490px;
+    height: 100px;
+} 
