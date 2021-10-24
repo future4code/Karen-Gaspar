@@ -99,7 +99,10 @@ footer {
 }
 
 #projeto-loja {
+    display: inline-block;
+    text-align: center;
     margin: 0 auto;
+    max-width: 300px;
 }
 
 #projeto-loja a{
@@ -109,12 +112,75 @@ footer {
     color:#e6c985;
 }
 #projeto-loja img {
-    margin: 10px;
+    margin: 10px auto;
+    text-align: center;
+    padding: 5px;
+    width: 300px;
+    height: 150px;
+}
+#projeto-90sflix {
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 300px;
+}
+
+#projeto-90sflix a{
+    color: #161220;
+}
+#projeto-90sflix a:hover{
+    color:#e6c985;
+}
+#projeto-90sflix img {
+    margin: 10px auto;
+    text-align: center;
+    padding: 5px;
+    width: 300px;
+    height: 150px;
+
+}
+
+#projeto-instagram {
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 300px;
+}
+
+#projeto-instagram a{
+    color: #161220;
+}
+#projeto-instagram a:hover{
+    color:#e6c985;
+}
+#projeto-instagram img {
+    margin: 10px auto;
+    text-align: center;
     padding: 5px;
     width: 300px;
     height: 150px;
 }
 
+#projeto-snake-game {
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 300px;
+}
+
+#projeto-snake-game a{
+    color: #161220;
+}
+#projeto-snake-game a:hover{
+    color:#e6c985;
+}
+#projeto-snake-game img {
+    margin: 10px auto;
+    text-align: center;
+    padding: 5px;
+    width: 300px;
+    height: 150px;
+}
 
 /* ESTILIZAÇÃO PÁGINA PROJETO LOJA */
 
@@ -133,6 +199,56 @@ footer {
     text-align: center;
 }
 
+/* ESTILIZAÇÃO PÁGINA NETFLIX */
+
+#netflix img{
+    display: block;
+    text-align: center;
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+#descricao-projeto {
+    max-width: 800px;
+    margin: 20px auto;
+    font-size: large;
+    color: #e1c295;
+    text-align: center;
+}
+
+/* ESTILIZAÇÃO PÁGINA INSTAGRAM */
+
+#instagram img{
+    display: block;
+    text-align: center;
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+#descricao-projeto {
+    max-width: 800px;
+    margin: 20px auto;
+    font-size: large;
+    color: #e1c295;
+    text-align: center;
+}
+
+/* ESTILIZAÇÃO PÁGINA SNAKE GAME */
+
+#snake-game img{
+    display: block;
+    text-align: center;
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+#descricao-projeto {
+    max-width: 800px;
+    margin: 20px auto;
+    font-size: large;
+    color: #e1c295;
+    text-align: center;
+}
 
 /* ESTILIZAÇÃO PÁGINA DE CONTATO */
 
