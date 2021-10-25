@@ -32,7 +32,6 @@ header button{
 main{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border: 1px solid black;
 }
 
 #menu{
@@ -41,7 +40,6 @@ main{
     flex-direction: column;
     width: 250px;
     background-color: #f2d0e0;
-    border: 1px solid black;
 }
 
 #menu img{
@@ -54,17 +52,17 @@ main{
     align-items: center;
     width: 200px;
     padding: 5px 10px;
-    border: 1px solid black;
 
 }
 
 #bolos {
     display: grid;
-    justify-items: stretch;
+    grid-template-rows: repeat(4 1fr);
+    grid-template-columns: repeat(4 1fr);
+    grid-row: 10px;
     text-align: center;
     padding: 10px;
     width: 230px;
-    border: 1px solid black;
 }
 
 #bolos img {
@@ -73,7 +71,6 @@ main{
     align-items: center;
     padding: 10px;  
 }
-
 
 footer {
     display: flex;
