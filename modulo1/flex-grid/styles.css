@@ -12,6 +12,14 @@ header {
     background-color: mediumvioletred;
 }
 
+header div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    width: 200px;
+}
+
 header img {
     width: 35px;
     height: 35px;
@@ -21,45 +29,61 @@ header button{
     padding: 0 10px;
 }
 
-/* #menu{
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid black;
+    justify-content: start;
+    align-items: stretch;
+    height: 100vh;
+}
+
+#menu{
     display: flex;
+    justify-content: flex-start;
     flex-direction: column;
-    height: 400px;
-    width: 210px;
-    background-color: #f2d0e0;  
+    width: 250px;
+    background-color: #f2d0e0;
 }
 
 #menu img{
     width: 30px;
-    height: 30px;
 }
 
 .pages{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     width: 200px;
     padding: 5px 10px;
 }
 
+
 #bolos {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
 }
 
-#bolos img{
-    width: 150px;
-    height: 150px;
+#bolos img {
+    width: 200px;
+    height: 200px;
+    align-items: center;
+    padding: 10px;  
 }
 
 .container-produto {
-    display: grid;
-    grid-template-columns: 200px;
-    box-shadow: 200px darkgray;
-} */
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid black
+}
 
+.container-produto p{
+    text-align: center;
+}
 footer {
     display: flex;
     justify-content: space-around;
