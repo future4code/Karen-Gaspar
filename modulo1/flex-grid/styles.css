@@ -1,4 +1,4 @@
-/* * {
+* {
     margin: 0;
     padding: 0;
 }
@@ -21,11 +21,11 @@ header button{
     padding: 0 10px;
 }
 
-#menu{
+/* #menu{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    width: 300px;
+    height: 400px;
+    width: 210px;
     background-color: #f2d0e0;  
 }
 
@@ -44,10 +44,9 @@ header button{
 
 #bolos {
     display: flex;
-    justify-content: space-between;
-    align-content: center;
-    align-items: center;
-    border: 1px solid black;
+    flex-wrap: wrap;
+    flex-direction: column;
+
 }
 
 #bolos img{
@@ -55,10 +54,16 @@ header button{
     height: 150px;
 }
 
+.container-produto {
+    display: grid;
+    grid-template-columns: 200px;
+    box-shadow: 200px darkgray;
+} */
+
 footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 40px;;
     background-color: mediumvioletred;
-} */
+}
