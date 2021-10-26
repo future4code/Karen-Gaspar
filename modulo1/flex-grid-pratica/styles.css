@@ -1,0 +1,33 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+body{
+    display: grid;
+    grid-template-rows: 60px 1fr 50px;
+    grid-template-columns: 300px 1f;
+    min-height: 100vh;
+
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 20px;
+    background-color: #7e9272;
+}
+input{
+    height: 25px;
+    margin-right: 20px;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 0 20px;
+    background-color: #7e9272;  
+}
