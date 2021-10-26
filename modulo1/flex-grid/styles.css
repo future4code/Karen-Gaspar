@@ -3,32 +3,41 @@
     padding: 0;
 }
 
+body{
+    display: grid;
+    grid-template-rows: 60px 1fr 50px;
+    grid-template-columns: 300px 1fr;
+    min-height: 100vh;
+    
+}
+
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 60px;
     padding: 0 20px;
+    grid-column: 1 / -1;
     background-color: mediumvioletred;
 }
 
 nav{
     background-color: #f2d8e0;
     padding: 10px;
-    width: 200px;
+    width: 250px;
 }
 
 .botao-nav{
     display: flex;
     justify-content: space-between;
     align-items: center; 
-    border: 1px solid black;
+    
 }
 
 .img-e-texto {
     display: flex;
     align-items: center;
-    border: 1px solid black;
+    
 }
 
 .img {
@@ -40,10 +49,11 @@ header button{
     padding: 0 10px;
 }
 
-
 main {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin: 20px;
 }
 
 .bolos {
@@ -62,7 +72,8 @@ footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 50px;;
+    height: 50px;
+    grid-column: 1 / -1;
     background-color: mediumvioletred;
 }
 
