@@ -21,8 +21,10 @@ header {
 }
 
 .redes{
-    background-color: whitesmoke;
-    color: #376f4f;
+    margin: 20px auto;
+    max-width: 200px;
+    padding: 2px;
+    color: whitesmoke;
     text-align: center;
 }
 
@@ -36,6 +38,9 @@ header {
 }
 
 .descricao-loja {
+    margin: 20px auto;
+    max-width: 900px;
+    padding: 20px;
     text-align: center;
     color: #376f4f;
     border-style: solid;
@@ -83,7 +88,9 @@ a {
 
 .imagem1 {
     height: 50px;
-    margin: auto;
+    margin: 0 auto;
+    max-width: 200px;
+    text-align: center;
 }
 
 .add-produto {
@@ -101,4 +108,9 @@ a {
     text-align: center;
     color: #856b59;
     margin: 7px;
+}
+
+#imagens {
+    text-align: center;
+    margin: 20px auto;
 }
