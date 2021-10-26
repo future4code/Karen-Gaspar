@@ -12,64 +12,50 @@ header {
     background-color: mediumvioletred;
 }
 
-header div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10px;
+nav{
+    background-color: #f2d8e0;
+    padding: 10px;
     width: 200px;
 }
 
-header img {
-    width: 35px;
-    height: 35px;
+.botao-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    border: 1px solid black;
+}
+
+.img-e-texto {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.img {
+    width: 30px;
+    margin-right: 10px;
 }
 
 header button{
     padding: 0 10px;
 }
 
-main{
+
+main {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
 }
 
-#menu{
+.bolos {
     display: flex;
-    justify-content: flex-start;
     flex-direction: column;
-    width: 250px;
-    background-color: #f2d0e0;
-}
-
-#menu img{
-    width: 25px;
-}
-
-.pages{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 200px;
-    padding: 5px 10px;
-
-}
-
-#bolos {
-    display: grid;
-    grid-template-rows: repeat(4 1fr);
-    grid-template-columns: repeat(4 1fr);
-    grid-row: 10px;
+    justify-content: space-between;
+    box-shadow: 2px 2px 5px slategrey;
     text-align: center;
-    padding: 10px;
-    width: 230px;
 }
 
-#bolos img {
-    width: 200px;
-    height: 200px;
-    align-items: center;
-    padding: 10px;  
+.bolo-imagem{
+    width: 100%;
 }
 
 footer {
