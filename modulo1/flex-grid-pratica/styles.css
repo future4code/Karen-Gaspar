@@ -1,3 +1,5 @@
+
+/* ESTILIZAÇÃO PÁGINA PRINCIPAL */
 *{
     margin:0;
     padding: 0;
@@ -56,4 +58,23 @@ footer{
     height: 50px;
     padding: 0 20px;
     background-color: #978e84;  
+}
+
+/* ESTILIZAÇÃO PÁGINAS DOS VÍDEOS */
+
+
+video {
+    width: 800px;
+}
+
+h2{
+    margin-bottom: 10px;
+}
+
+.video {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
 }
