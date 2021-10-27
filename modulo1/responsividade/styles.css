@@ -33,9 +33,7 @@ main{
     margin: 30px;
 }
 
-.capa-video{
-    width: 100%;
-}
+
 
 .card-videos{
     display:flex;
@@ -44,6 +42,10 @@ main{
     align-items: stretch;
     background-color: whitesmoke;
     box-shadow: 2px 2px 5px slategrey;
+}
+
+.capa-video{
+    width: 100%;
 }
 
 h3{
