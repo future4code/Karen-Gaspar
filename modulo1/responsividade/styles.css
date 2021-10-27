@@ -1,0 +1,109 @@
+
+/* ESTILIZAÇÃO PÁGINA PRINCIPAL */
+*{
+    margin:0;
+    padding: 0;
+}
+
+body{
+    display: grid;
+    grid-template-rows: 60px 1fr 50px;
+    min-height: 100vh;
+    background-color: #b5b7b2;
+
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 20px;
+    background-color: #978e84;
+}
+input{
+    height: 25px;
+    margin-right: 20px;
+}
+
+main{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    margin: 30px;
+}
+
+.capa-video{
+    width: 100%;
+}
+
+.card-videos{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    background-color: whitesmoke;
+    box-shadow: 2px 2px 5px slategrey;
+}
+
+h3{
+    padding-bottom: 20px;
+    padding-left: 5px;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    padding: 0 20px;
+    background-color: #978e84;  
+}
+
+/* ESTILIZAÇÃO PÁGINAS DOS VÍDEOS */
+
+
+video {
+    width: 800px;
+}
+
+h2{
+    margin-bottom: 10px;
+}
+
+.video {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+@media screen and (max-device-width : 480px) {
+    /* celulares */
+    main {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    input{
+        margin-left: 20px;
+    }
+    video{
+        width: 300px;
+    }
+}
+    
+@media screen and (min-device-width : 481px) and (max-device-width : 800px) {
+    /* tablets */
+    main {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    input{
+        margin-right: 10px;
+    }
+    video{
+        width: 500px;
+    }
+}
+    
