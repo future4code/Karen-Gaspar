@@ -1,74 +1,45 @@
 import React from "react";
-import axios from "axios";
-import styled from "styled-components";
+import styled from "styled-components"
+import UsersPage from "./Components/UsersPage"
+import RegistrationPage from "./Components/RegistrationPage"
 
-const ContainerCadastro = styled.div`
+const Pages = styled.div`
+background-color: black;
+color: whitesmoke;
 display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-padding: 7px;
-button{
-  margin-top: 8px;
-}
-`;
+justify-content: center;`
+
 
 export default class App extends React.Component {
+
   state = {
-    inputNome: "",
-    inputEmail: ""
-    // currentPage: { TelaDeUsuarios }
-  };
+    currentPage: "registration"
+  }
 
-  handleInputNome = (event) => {
-    this.setState({ inputNome: event.target.value });
-  };
-  handleInputEmail = (event) => {
-    this.setState({ inputEmail: event.target.value });
-  };
+  changePage = () => {
+    switch (this.state.currentPage) {
+      case "registration":
+        return <RegistrationPage toUsersPage={this.toUsersPage}/>
+      case "users":
+        return <UsersPage toRegistrationPage={this.toRegistrationPage}/>
+      default:
+        return <div>Error! Page not found!</div>
+    }
+  }
 
-  // changePage = (event) => {
-  //   this.setState({ currentPage: event.target.value });
-  // };
+  toRegistrationPage = () => {
+    this.setState({currentPage: "registration"})
+  }
 
-  createUser = () => {
-    const body = {
-      name: this.state.inputNome,
-      email: this.state.inputEmail
-    };
-
-    axios
-      .post(
-        "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
-        body,
-        {
-          headers: {
-            Authorization: "karen-gaspar-carver"
-          }
-        }
-      )
-      .then((response) => {
-        this.setState({ inputNome: "", inputEmail: "" });
-        alert("Cadastro feito com sucesso!");
-      })
-      .catch((error) => {
-        alert("Ops, parece que faltou digitar o nome e e-mail para cadastro");
-      });
-  };
+  toUsersPage = () => {
+    this.setState({currentPage: "users"})
+  }
 
   render() {
     return (
-      <ContainerCadastro>
-        <div>
-          <button>Ir para a lista de usuários</button>
-        </div>
-        <h2>Cadastro de Usuários</h2>
-        <label>Nome:</label>
-        <input value={this.state.inputNome} onChange={this.handleInputNome} />
-        <label>E-mail:</label>
-        <input value={this.state.inputEmail} onChange={this.handleInputEmail} />
-        <button onClick={this.createUser}>Cadastrar</button>
-      </ContainerCadastro>
-    );
+      <Pages>
+        {this.changePage()}
+      </Pages>
+    )
   }
 }
