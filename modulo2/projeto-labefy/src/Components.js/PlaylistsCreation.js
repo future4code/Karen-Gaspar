@@ -25,6 +25,7 @@ class PlaylistsCreation extends React.Component {
             )
             .then((response)=>{
                 this.setState({playlistName:""})
+                console.log(response)
                 alert("Playlist criada com sucesso!")
             })
             .catch((error)=>{

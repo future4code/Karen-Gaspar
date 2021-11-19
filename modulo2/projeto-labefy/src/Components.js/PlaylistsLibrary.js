@@ -6,6 +6,7 @@ const PlaylistContainer = styled.div`
 display: flex;
 justify-content: space-between;
 border: 1px solid black;
+border-radius: 5%;
 margin: 3px;
 padding: 3px;
 width: 300px;
