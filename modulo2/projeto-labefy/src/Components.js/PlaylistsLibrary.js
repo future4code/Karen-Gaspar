@@ -64,9 +64,9 @@ class PlaylistsLibrary extends React.Component {
             return <PlaylistContainer
                 key={playlist.id}>
                 {playlist.name}
-                <button>Visualizar</button>
+                <button>Adicionar Músicas</button>
+                <button onClick={this.props.toPlaylistsInfo}>Visualizar</button>
                 <button onClick={() => this.deletePlaylist(playlist.id)}>X</button>
-
             </PlaylistContainer>
         })
 
