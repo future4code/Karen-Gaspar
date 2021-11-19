@@ -5,7 +5,7 @@ import styled from "styled-components"
 const PlaylistContainer = styled.div`
 display: flex;
 justify-content: space-between;
-border: 1px solid black;
+background-color: black;
 border-radius: 5%;
 margin: 3px;
 padding: 3px;
@@ -64,7 +64,7 @@ class PlaylistsLibrary extends React.Component {
             return <PlaylistContainer
                 key={playlist.id}>
                 {playlist.name}
-                <button>Adicionar Músicas</button>
+                <button>+</button>
                 <button onClick={this.props.toPlaylistsInfo}>Visualizar</button>
                 <button onClick={() => this.deletePlaylist(playlist.id)}>X</button>
             </PlaylistContainer>
