@@ -1,32 +1,34 @@
 import React from "react";
-import axios from "axios";
 import styled from "styled-components"
 import PlaylistsCreation from "./Components.js/PlaylistsCreation";
 import PlaylistsLibrary from "./Components.js/PlaylistsLibrary";
 import PlaylistsInfo from "./Components.js/PlaylistsInfo";
 
 const HomePageContainer = styled.div`
-
-background-color: lightskyblue;
-color: lightcoral;
+background-image: url("https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80");
+background-size: contain;
+border-left: 200px solid black;
+border-right: 200px solid black;
+color: #c3896e;
 height: 100vh;
 margin: 0;
 padding: 0;
 display: flex;
 flex-direction: column;
-align-items: flex;
+align-items: center;
 justify-content: flex-start;
 `
-const PlaylistsContainer = styled.div`
+const MainContainer = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
 text-align: center;
+height: 100vh;
 `
 
 const Title = styled.div`
-border: 1px solid black;
-
+text-align: center;
+color: #6e3526;
 `
 
 class App extends React.Component {
@@ -42,7 +44,7 @@ class App extends React.Component {
           <PlaylistsCreation/>
           <PlaylistsLibrary toPlaylistsInfo={this.toPlaylistsInfo}/>
           </div>
-      case "music":
+      case "tracks":
         return <PlaylistsInfo toPlaylistsLibrary={this.toPlaylistsLibrary}/>
       default:
         return <div>Erro! Página não encontrada!</div>
@@ -54,18 +56,18 @@ class App extends React.Component {
   }
 
   toPlaylistsInfo = () => {
-    this.setState({currentPage: "music"})
+    this.setState({currentPage: "tracks"})
   }
 
   render() {
     return (
       <HomePageContainer>
         <Title>
-          <h2>Labefy</h2>
+          <h1>Labefy</h1>
         </Title>
-        <PlaylistsContainer>
+        <MainContainer>
         {this.changePage()}
-        </PlaylistsContainer>
+        </MainContainer>
       </HomePageContainer>
     );
   }

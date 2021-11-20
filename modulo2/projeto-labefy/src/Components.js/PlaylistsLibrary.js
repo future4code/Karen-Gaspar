@@ -2,15 +2,20 @@ import React from "react";
 import axios from "axios";
 import styled from "styled-components"
 
-const PlaylistContainer = styled.div`
+const PlaylistNameContainer = styled.div`
 display: flex;
-justify-content: space-between;
-background-color: black;
-border-radius: 5%;
-margin: 3px;
+justify-content: space-around;
+margin-top: 3px;
 padding: 3px;
 width: 300px;
+font-size: 20px;
+button{
+    opacity: 0.7;
+}
 `
+
+const PlaylistsContainer = styled.div`
+margin-top: 180px;`
 
 class PlaylistsLibrary extends React.Component {
     state = {
@@ -50,6 +55,7 @@ class PlaylistsLibrary extends React.Component {
             }
         )
         .then((response)=>{
+            console.log(id)
             alert("Playlist apagada com sucesso!");
             this.getAllPlaylists()
         })
@@ -61,20 +67,19 @@ class PlaylistsLibrary extends React.Component {
     render() {
 
         const playlistList = this.state.playlists.map((playlist) => {
-            return <PlaylistContainer
+            return <PlaylistNameContainer
                 key={playlist.id}>
                 {playlist.name}
-                <button>+</button>
                 <button onClick={this.props.toPlaylistsInfo}>Visualizar</button>
                 <button onClick={() => this.deletePlaylist(playlist.id)}>X</button>
-            </PlaylistContainer>
+            </PlaylistNameContainer>
         })
 
         return (
-            <div>
+            <PlaylistsContainer>
                 <h3>Biblioteca de Playlists</h3> 
-                {playlistList}  
-            </div>
+                {playlistList}   
+            </PlaylistsContainer>
         );
     }
 

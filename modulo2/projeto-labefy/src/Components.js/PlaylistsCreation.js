@@ -1,5 +1,19 @@
 import React from "react";
 import axios from "axios";
+import styled from "styled-components";
+
+const PlaylistSaveContainer = styled.div `
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+h3{
+    margin-top: 0;   
+}
+input, button{
+    opacity: 0.7;
+}
+`
 
 class PlaylistsCreation extends React.Component {
     state = {
@@ -36,14 +50,14 @@ class PlaylistsCreation extends React.Component {
 
     render() {
         return (
-            <div>
+            <PlaylistSaveContainer>
                 <h3>Crie sua playlist</h3>
                 <input
                     placeholder="Nome da playlist"
                     value={this.state.playlistName}
                     onChange={this.handleInputName} />
                 <button onClick={this.createPlaylist}>Salvar</button>
-            </div>
+            </PlaylistSaveContainer>
         );
     }
 
