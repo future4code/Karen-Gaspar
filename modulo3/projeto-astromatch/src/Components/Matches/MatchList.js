@@ -1,9 +1,9 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
-import Header from '../HomePage/Header';
+import MatchesHeader from '../Matches/MatchesHeader';
 import styled from 'styled-components';
 
-const ListBody = styled.body`
+const ListBody = styled.div`
 background-color: white;
 border: 1px solid black;
 margin: 0;
@@ -27,12 +27,12 @@ margin: 10px auto;
 
 function MatchList() {
 
-  // const [matches, setMatches] = useState([])
+  const [matches, setMatches] = useState([])
 
   const getMatches = () => {
     axios.get("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/karen/matches")
     .then((response) => {
-      console.log(response.data)
+      console.log(response.data.matches)
     })
     .catch((error) => {
       console.log(error.data)
@@ -44,7 +44,7 @@ function MatchList() {
 
     return (
       <ListBody>
-        <Header/>
+        <MatchesHeader/>
         <ListContainer>
         <p>My Matches</p>
         </ListContainer>

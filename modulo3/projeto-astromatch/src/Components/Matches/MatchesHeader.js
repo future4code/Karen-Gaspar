@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 import styled from 'styled-components';
-import matches from '../HomePage/img/relationship.png'
+
 
 const HeaderContainer = styled.div`
 background-color: white;
@@ -16,13 +16,13 @@ img{
 }
 `
 
-function Header(props) {
+function MatchesHeader(props) {
     return (
       <HeaderContainer>
         <h3>Astromatch</h3>
-        <img src={matches}/>
+        {/* <button onClick={() => props.toProfilesPage}><img src={}/></button> */}
       </HeaderContainer>
     );
   }
   
-  export default Header;
+  export default MatchesHeader;

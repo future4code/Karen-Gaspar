@@ -1,4 +1,4 @@
-// import {useState, useEffect} from 'react'
+import {useState, useEffect} from 'react'
 import HomePage from './Components/HomePage/HomePage';
 import styled from 'styled-components';
 import MatchList from './Components/Matches/MatchList';
@@ -9,27 +9,30 @@ margin: 50px;
 padding: 0;
 `
 
-function App() {
+function App(props) {
 
-  // const [currentPage, setCurrentPage] = useState('home')
+  // const [currentPage, setCurrentPage] = useState('')
 
-  // const changePage = () => {
-  //   setCurrentPage(currentPage)
+  // const toMatchesPage = (props) => {
+  //   setCurrentPage('matches')
+  // };
+  // const toProfilesPage = (props) => {
+  //   setCurrentPage('profiles')
   // };
 
-  // const choosePage = (props) => {
+  // const changePage = (props) => {
   //   switch (currentPage){
-  //     case 'home':
-  //       return <HomePage changePage={changePage}/>
+  //     case 'profiles':
+  //       return <HomePage toMatchesPage={toMatchesPage}/>
   //     case 'matches':
-  //       return <MatchList changePage={changePage}/>
+  //       return <MatchList toProfilesPage={toProfilesPage}/>
   //   }
   // }
 
   return (
     <AppBody>
     <GlobalStyle/>
-      {/* {choosePage()} */}
+      {/* {changePage()} */}
       <HomePage />
       <MatchList/>
     </AppBody>

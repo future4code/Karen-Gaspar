@@ -2,14 +2,13 @@ import {useState, useEffect} from 'react'
 import styled from 'styled-components';
 import axios from 'axios'
 import ProfilesCard from './ProfilesCard';
-import Header from './Header';
+import HomeHeader from './HomeHeader';
 import like from './img/like.png'
 import dislike from './img/dislike.png'
 
-const HomeBody = styled.body`
+const HomeBody = styled.div`
 background-color: white;
 border: 1px solid black;
-margin: 0;
 padding: 0;
 width: 33vw;
 margin: 0 auto;
@@ -44,7 +43,7 @@ function HomePage() {
 
     return (
       <HomeBody>
-        <Header/>
+        <HomeHeader/>
         <ProfilesCard/>
         <LikeContainer>
         <img src={dislike}/>
