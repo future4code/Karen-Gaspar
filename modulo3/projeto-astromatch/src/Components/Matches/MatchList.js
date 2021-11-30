@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import axios from 'axios'
 import Header from '../HomePage/Header';
 import styled from 'styled-components';
@@ -26,6 +26,22 @@ margin: 10px auto;
 `
 
 function MatchList() {
+
+  // const [matches, setMatches] = useState([])
+
+  const getMatches = () => {
+    axios.get("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/karen/matches")
+    .then((response) => {
+      console.log(response.data)
+    })
+    .catch((error) => {
+      console.log(error.data)
+    })
+  }
+    useEffect(()=> {
+    getMatches()
+  }, [])
+
     return (
       <ListBody>
         <Header/>

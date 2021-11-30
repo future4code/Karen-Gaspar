@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import styled from 'styled-components';
 import axios from 'axios'
 import ProfilesCard from './ProfilesCard';
@@ -30,6 +30,18 @@ img{
 }`
 
 function HomePage() {
+
+
+  const choosePerson = () => {
+    axios.post("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/karen/choose-person")
+    .then(response => console.log(response.data))
+    .catch(error => console.log(error))
+  }
+
+  // useEffect(()=> {
+  //   choosePerson()
+  // }, [])
+
     return (
       <HomeBody>
         <Header/>

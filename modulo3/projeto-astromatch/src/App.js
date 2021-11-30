@@ -1,12 +1,11 @@
-import {useState} from 'react'
-import Matches from './Components/Matches/MatchList';
+// import {useState, useEffect} from 'react'
 import HomePage from './Components/HomePage/HomePage';
 import styled from 'styled-components';
 import MatchList from './Components/Matches/MatchList';
+import GlobalStyle from './Components/GlobalStyle'
 
 const AppBody = styled.div`
-background-color: #9c393a;
-margin: 0;
+margin: 50px;
 padding: 0;
 `
 
@@ -14,11 +13,11 @@ function App() {
 
   // const [currentPage, setCurrentPage] = useState('home')
 
-  // changePage = (props) => {
+  // const changePage = () => {
   //   setCurrentPage(currentPage)
-  // }
+  // };
 
-  // choosePage = (props) => {
+  // const choosePage = (props) => {
   //   switch (currentPage){
   //     case 'home':
   //       return <HomePage changePage={changePage}/>
@@ -29,6 +28,7 @@ function App() {
 
   return (
     <AppBody>
+    <GlobalStyle/>
       {/* {choosePage()} */}
       <HomePage />
       <MatchList/>

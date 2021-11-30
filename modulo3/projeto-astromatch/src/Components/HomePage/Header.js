@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import styled from 'styled-components';
 import matches from '../HomePage/img/relationship.png'
 
