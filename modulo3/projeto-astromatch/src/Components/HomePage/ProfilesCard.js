@@ -1,6 +1,17 @@
 import { useState, useEffect } from 'react'
 import styled from 'styled-components';
 import axios from 'axios';
+import ChooseProfile from './ChooseProfile'
+import HomeHeader from './HomeHeader';
+
+const ProfileBody = styled.div`
+background-color: white;
+border: 1px solid black;
+margin: 0;
+padding: 0;
+width: 33vw;
+margin: 0 auto;
+`
 
 const ProfileContainer = styled.div`
 background-color: white;
@@ -27,7 +38,7 @@ justify-content: space-between;
 width: 15vw;
 `
 
-function ProfilesCard() {
+function ProfilesCard(props) {
 
   const [profile, setProfile] = useState({})
 
@@ -44,6 +55,8 @@ function ProfilesCard() {
   }, [])
 
   return (
+    <ProfileBody>
+    <HomeHeader />
     <ProfileContainer key={profile.id}>
       <img src={profile.photo}/>
       <NameAndAge>
@@ -52,6 +65,8 @@ function ProfilesCard() {
       </NameAndAge>
       <p>{profile.bio}</p>
     </ProfileContainer>
+    <ChooseProfile getProfileToChoose={getProfileToChoose} id={profile.id}/>
+    </ProfileBody>
   );
 }
 

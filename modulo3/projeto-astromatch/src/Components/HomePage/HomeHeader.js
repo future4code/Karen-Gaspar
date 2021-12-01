@@ -20,7 +20,7 @@ function HomeHeader(props) {
     return (
       <HeaderContainer>
         <h3>Astromatch</h3>
-        <img src={matches}/>
+        <button><img src={matches}/></button>
       </HeaderContainer>
     );
   }

@@ -20,7 +20,7 @@ function MatchesHeader(props) {
     return (
       <HeaderContainer>
         <h3>Astromatch</h3>
-        {/* <button onClick={() => props.toProfilesPage}><img src={}/></button> */}
+        <button>Voltar</button>
       </HeaderContainer>
     );
   }

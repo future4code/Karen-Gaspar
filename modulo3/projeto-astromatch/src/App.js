@@ -1,8 +1,8 @@
-import {useState, useEffect} from 'react'
-import HomePage from './Components/HomePage/HomePage';
+import {useState} from 'react'
 import styled from 'styled-components';
 import MatchList from './Components/Matches/MatchList';
 import GlobalStyle from './Components/GlobalStyle'
+import ProfilesCard from './Components/HomePage/ProfilesCard';
 
 const AppBody = styled.div`
 margin: 50px;
@@ -11,7 +11,7 @@ padding: 0;
 
 function App(props) {
 
-  // const [currentPage, setCurrentPage] = useState('')
+  const [currentPage, setCurrentPage] = useState(true)
 
   // const toMatchesPage = (props) => {
   //   setCurrentPage('matches')
@@ -20,21 +20,15 @@ function App(props) {
   //   setCurrentPage('profiles')
   // };
 
-  // const changePage = (props) => {
-  //   switch (currentPage){
-  //     case 'profiles':
-  //       return <HomePage toMatchesPage={toMatchesPage}/>
-  //     case 'matches':
-  //       return <MatchList toProfilesPage={toProfilesPage}/>
-  //   }
-  // }
+  const changePage = () => {
+    setCurrentPage(!currentPage)
+  }
 
   return (
     <AppBody>
     <GlobalStyle/>
-      {/* {changePage()} */}
-      <HomePage />
-      <MatchList/>
+    {currentPage ? <ProfilesCard changePage={changePage}/> : <MatchList changePage={changePage}/>}
+    <button onClick={changePage}>trocar tela</button>
     </AppBody>
   );
 }
