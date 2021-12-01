@@ -25,17 +25,18 @@ width: 28vw;
 height: 8vh;
 margin: 10px auto;
 img{
-    width: 3.5vw;
+    width: 3vw;
 }`
 
 function HomePage() {
 
+  // const [likedProfile, setLikedProfiled] = useState('')
 
-  const choosePerson = () => {
-    axios.post("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/karen/choose-person")
-    .then(response => console.log(response.data))
-    .catch(error => console.log(error))
-  }
+  // const choosePerson = () => {
+  //   axios.post("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/karen/choose-person")
+  //   .then(response => console.log(response.data))
+  //   .catch(error => console.log(error.message))
+  // }
 
   // useEffect(()=> {
   //   choosePerson()
@@ -46,11 +47,10 @@ function HomePage() {
         <HomeHeader/>
         <ProfilesCard/>
         <LikeContainer>
-        <img src={dislike}/>
-        <img src={like}/>
+        <button><img src={dislike}/></button>
+        <button><img src={like}/></button>
         </LikeContainer>
       </HomeBody>
     );
   }
-  
   export default HomePage;
