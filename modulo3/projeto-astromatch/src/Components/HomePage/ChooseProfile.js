@@ -1,8 +1,9 @@
-import {useState, useEffect} from 'react'
+import React from 'react'
 import styled from 'styled-components';
 import axios from 'axios'
 import like from './img/like.png'
 import dislike from './img/dislike.png'
+
 
 
 const LikeContainer = styled.div`
@@ -10,13 +11,15 @@ background-color: white;
 display: flex;
 justify-content: space-around;
 align-items: center;
-border: 1px solid black;
+/* border: 1px solid black; */
+border-bottom-left-radius: 15px;
+border-bottom-right-radius: 15px;
 padding: 0 20px;
-width: 25vw;
+width: 20.2vw;
 height: 8vh;
 margin: 10px auto;
 img{
-    width: 3vw;
+  width: 3vw;
 }
 button{
   border: none;

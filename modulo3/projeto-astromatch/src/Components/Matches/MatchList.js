@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react'
 import axios from 'axios'
 import MatchesHeader from '../Matches/MatchesHeader';
 import styled from 'styled-components';
+import MatchesFooter from './MatchesFooter';
 
 const ListBody = styled.div`
 width: 30vw;
@@ -11,25 +12,29 @@ margin: 0 auto;
 const ListContainer = styled.div`
 display: flex;
 flex-direction: column;
-justify-content: space-between;
 align-items: center;
 padding: 0 20px;
-width: 25vw;
-height: 78vh;
-margin: 10px auto;
+width: 19.9vw;
+height: 60vh;
+margin: 0px auto;
+border: 1px solid black;
 `
 
 const MatchContainer = styled.div`
 display: flex;
 align-items: center;
-width: 25vw;
+width: 22.5vw;
+height: 7vh;
+margin: 5px;
 img{
-  width: 3vw;
-  border-radius: 50px;
+  width: 4vw;
+  height: 7vh;
+  object-fit: cover;
+  border-radius: 50%;
   margin: 10px;
 }`
 
-function MatchList() {
+function MatchList(props) {
 
   const [matches, setMatches] = useState([])
 
@@ -55,10 +60,11 @@ function MatchList() {
   })
     return (
       <ListBody>
-        <MatchesHeader/>
+        <MatchesHeader changePage={props.changePage}/>
         <ListContainer>
         {matchesList}
         </ListContainer>
+        <MatchesFooter/>
       </ListBody>
     );
   }
