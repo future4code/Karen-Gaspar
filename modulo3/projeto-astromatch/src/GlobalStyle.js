@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 
 const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Lobster&display=swap');
 
 *{
     margin: 0;
@@ -13,7 +13,7 @@ body{
     background-size: cover;
     height: 50vh;
     width: 100vw;
-    font-family: 'Lobster'
+    font-family: 'Lilita One'
 }`
 
 export default GlobalStyle;

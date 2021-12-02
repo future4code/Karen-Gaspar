@@ -17,7 +17,7 @@ padding: 0 20px;
 width: 19.9vw;
 height: 60vh;
 margin: 0px auto;
-border: 1px solid black;
+border: 1px solid #02afcc;;
 `
 
 const MatchContainer = styled.div`
@@ -26,6 +26,7 @@ align-items: center;
 width: 22.5vw;
 height: 7vh;
 margin: 5px;
+color: black;
 img{
   width: 4vw;
   height: 7vh;
@@ -50,6 +51,20 @@ function MatchList(props) {
     useEffect(()=> {
     getMatches()
   }, [])
+
+  const clear = (props) => {
+    axios.put("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/karen/clear")
+    .then((response) => {
+      console.log(response.data)
+    })
+    .catch((error) => {
+      console.log(error.data)
+    })
+  }
+    useEffect(()=> {
+    clear()
+  }, [])
+
   
   const matchesList = matches.map((match) => {
     return <MatchContainer
@@ -60,7 +75,7 @@ function MatchList(props) {
   })
     return (
       <ListBody>
-        <MatchesHeader changePage={props.changePage}/>
+        <MatchesHeader changePage={props.changePage} clear={clear} getMatches={getMatches}/>
         <ListContainer>
         {matchesList}
         </ListContainer>

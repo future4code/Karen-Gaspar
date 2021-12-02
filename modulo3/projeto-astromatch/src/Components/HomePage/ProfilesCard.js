@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import styled from 'styled-components';
-import axios from 'axios';
+import styled from 'styled-components'
+import axios from 'axios'
 import ChooseProfile from './ChooseProfile'
-import HomeHeader from './HomeHeader';
+import HomeHeader from './HomeHeader'
 
 const ProfileBody = styled.div`
 margin: 0 auto;
@@ -12,7 +12,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-width: 23vw;
+width: 23.3vw;
 height: 60vh;
 margin: 0 auto;
 
@@ -28,7 +28,7 @@ height: 50%;
 display: flex;
 flex-direction: column;
 justify-content: flex-end;
-color: white;
+color: black;
 font-size: 17px;
 `
 function ProfilesCard(props) {
@@ -49,7 +49,7 @@ function ProfilesCard(props) {
 
   return (
     <ProfileBody>
-    <HomeHeader changePage={props.changePage} />
+    <HomeHeader changePage={props.changePage} clear={props.clear}/>
     <ProfileContainer key={profile.id}>
       <img src={profile.photo}/>
       <ProfileDescription>
