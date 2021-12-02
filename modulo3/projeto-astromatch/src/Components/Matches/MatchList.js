@@ -4,37 +4,29 @@ import MatchesHeader from '../Matches/MatchesHeader';
 import styled from 'styled-components';
 
 const ListBody = styled.div`
-background-color: white;
-border: 1px solid black;
-margin: 0;
-padding: 0;
-width: 33vw;
+width: 30vw;
 margin: 0 auto;
 `
 
 const ListContainer = styled.div`
-background-color: white;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
 align-items: center;
-border: 1px solid black;
 padding: 0 20px;
-width: 28vw;
+width: 25vw;
 height: 78vh;
 margin: 10px auto;
 `
 
 const MatchContainer = styled.div`
-border: 1px solid black;
 display: flex;
-justify-content: space-between;
 align-items: center;
-width: 28vw;
-padding: 3px;
-margin: 0px auto;
+width: 25vw;
 img{
-  width: 4vw;
+  width: 3vw;
+  border-radius: 50px;
+  margin: 10px;
 }`
 
 function MatchList() {

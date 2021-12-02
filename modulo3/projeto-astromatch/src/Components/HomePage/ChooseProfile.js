@@ -12,11 +12,16 @@ justify-content: space-around;
 align-items: center;
 border: 1px solid black;
 padding: 0 20px;
-width: 28vw;
+width: 25vw;
 height: 8vh;
 margin: 10px auto;
 img{
     width: 3vw;
+}
+button{
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
 }`
 
 function HomePage(props) {

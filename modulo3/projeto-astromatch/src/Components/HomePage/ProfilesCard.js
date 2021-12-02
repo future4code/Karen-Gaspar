@@ -5,37 +5,38 @@ import ChooseProfile from './ChooseProfile'
 import HomeHeader from './HomeHeader';
 
 const ProfileBody = styled.div`
-background-color: white;
-border: 1px solid black;
 margin: 0;
 padding: 0;
-width: 33vw;
+width: 30vw;
 margin: 0 auto;
 `
 
 const ProfileContainer = styled.div`
-background-color: white;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
 border: 1px solid black;
 padding: 0 20px;
-width: 28vw;
+width: 25vw;
 height: 60vh;
 margin: 10px auto;
 img{
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height: 90%;
+  border-radius: 10px;
 }
-p{
-  width: 20vw;
-}`
+`
 
-const NameAndAge = styled.div`
+const ProfileDescription = styled.div`
+position: absolute;
+width: 24vw;
+height: 50%;
 display: flex;
-justify-content: space-between;
-width: 15vw;
+flex-direction: column;
+justify-content: flex-end;
+color: whitesmoke;
+font-size: 17px;
 `
 
 function ProfilesCard(props) {
@@ -59,11 +60,11 @@ function ProfilesCard(props) {
     <HomeHeader />
     <ProfileContainer key={profile.id}>
       <img src={profile.photo}/>
-      <NameAndAge>
-      <h3>{profile.name}</h3> 
-      <h3>{profile.age}</h3>
-      </NameAndAge>
+      <ProfileDescription>
+      <h3>{profile.name}, {profile.age}</h3> 
       <p>{profile.bio}</p>
+      </ProfileDescription>
+      
     </ProfileContainer>
     <ChooseProfile getProfileToChoose={getProfileToChoose} id={profile.id}/>
     </ProfileBody>

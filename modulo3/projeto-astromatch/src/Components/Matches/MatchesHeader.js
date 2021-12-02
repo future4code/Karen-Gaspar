@@ -9,7 +9,7 @@ justify-content: space-between;
 align-items: center;
 border: 1px solid black;
 padding: 0 20px;
-width: 28vw;
+width: 25vw;
 margin: 10px auto;
 img{
   width: 3vw;

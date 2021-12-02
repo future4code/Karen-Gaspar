@@ -9,18 +9,26 @@ justify-content: space-between;
 align-items: center;
 border: 1px solid black;
 padding: 0 20px;
-width: 28vw;
+width: 25vw;
 margin: 10px auto;
 img{
   width: 3vw;
 }
 `
+const Botao = styled.button`
+border: none;
+border-radius: 20px;
+width: 3vw;
+cursor: pointer;
+:hover{
+  
+}`
 
 function HomeHeader(props) {
     return (
       <HeaderContainer>
         <h3>Astromatch</h3>
-        <button><img src={matches}/></button>
+        <Botao><img src={matches}/></Botao>
       </HeaderContainer>
     );
   }
