@@ -1,31 +1,9 @@
 import React from 'react'
-import styled from 'styled-components';
+import {LikeContainer} from './styles';
 import axios from 'axios'
 import like from './img/like.png'
 import dislike from './img/dislike.png'
 
-
-
-const LikeContainer = styled.div`
-background-color: white;
-display: flex;
-justify-content: space-around;
-align-items: center;
-border: 1px solid #02afcc;
-border-bottom-left-radius: 15px;
-border-bottom-right-radius: 15px;
-padding: 0 20px;
-width: 20vw;
-height: 8vh;
-margin: 10px auto;
-img{
-  width: 3vw;
-}
-button{
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-}`
 
 function HomePage(props) {
 

@@ -1,44 +1,24 @@
 import { useState, useEffect } from 'react'
-import styled from 'styled-components'
+import { ProfileBody, ProfileContainer, ProfileDescription } from './styles'
 import axios from 'axios'
 import ChooseProfile from './ChooseProfile'
 import HomeHeader from './HomeHeader'
 
-const ProfileBody = styled.div`
-margin: 0 auto;
-`
-const ProfileContainer = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-width: 23.3vw;
-height: 60vh;
-margin: 0 auto;
 
-img{
-  width: 100%;
-  height: 100%;
-}
-`
-const ProfileDescription = styled.div`
-position: absolute;
-width: 20vw;
-height: 50%;
-display: flex;
-flex-direction: column;
-justify-content: flex-end;
-color: black;
-font-size: 17px;
-`
 function ProfilesCard(props) {
 
   const [profile, setProfile] = useState({})
+  const [carregando, setCarregando] = useState("")
 
   const getProfileToChoose = () => {
+    setCarregando("carregando")
     axios.get(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/karen/person`)
-      .then(response => setProfile(response.data.profile))
-      .catch(error => console.log(error))
+      .then(response => 
+        setProfile(response.data.profile), 
+        setCarregando("Carregou"),
+        console.log(carregando))
+      .catch(error => console.log(error),
+      setCarregando("Deu erro"))
   }
 
   useEffect(() => {
@@ -49,14 +29,15 @@ function ProfilesCard(props) {
 
   return (
     <ProfileBody>
-    <HomeHeader changePage={props.changePage} clear={props.clear}/>
+    <HomeHeader changePage={props.changePage}/>
+    {carregando === "carregando" ? <h2>Carregando...</h2> : 
     <ProfileContainer key={profile.id}>
       <img src={profile.photo}/>
       <ProfileDescription>
       <h3>{profile.name}, {profile.age}</h3> 
       <p>{profile.bio}</p>
       </ProfileDescription>
-    </ProfileContainer>
+    </ProfileContainer>}
     <ChooseProfile getProfileToChoose={getProfileToChoose} id={profile.id} />
     </ProfileBody>
   );
