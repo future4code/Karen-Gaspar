@@ -38,6 +38,7 @@ img{
 }
 h2{
   color: #C095f4;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black
 }
 `
 export const Botao = styled.button`
@@ -71,6 +72,7 @@ height: 50%;
 display: flex;
 flex-direction: column;
 justify-content: flex-end;
-color: black;
+color: white;
+text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 font-size: 17px;
 `

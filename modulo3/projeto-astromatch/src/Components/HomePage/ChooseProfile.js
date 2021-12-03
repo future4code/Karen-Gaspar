@@ -7,6 +7,7 @@ import dislike from './img/dislike.png'
 
 function HomePage(props) {
 
+
   const choosePerson = (profileId) => {
 
     const body = {

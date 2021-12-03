@@ -20,7 +20,8 @@ align-items: center;
 width: 22.5vw;
 height: 7vh;
 margin: 5px;
-color: black;
+color: white;
+text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 img{
   width: 4vw;
   height: 7vh;
@@ -45,6 +46,7 @@ img{
 }
 h2{
   color: #C095f4;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 `
 export const Botao = styled.button`
@@ -70,6 +72,7 @@ margin: 10px auto;
 position: relative;
 h2{
     color:#02afcc;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black
 }
 img{
   width: 3vw;

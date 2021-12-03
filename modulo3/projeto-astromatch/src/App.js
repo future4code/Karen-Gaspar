@@ -1,5 +1,4 @@
-import {useState, useEffect} from 'react'
-import axios from 'axios'
+import {useState} from 'react'
 import styled from 'styled-components'
 import MatchList from './Components/Matches/MatchList'
 import GlobalStyle from './GlobalStyle'
@@ -9,7 +8,7 @@ const AppBody = styled.div`
 margin: 60px auto;
 `
 
-function App(props) {
+function App() {
 
   const [currentPage, setCurrentPage] = useState(true)
 
