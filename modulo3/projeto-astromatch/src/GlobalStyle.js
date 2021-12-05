@@ -13,7 +13,8 @@ body{
     background-size: cover;
     height: 50vh;
     width: 100vw;
-    font-family: 'Lilita One'
+    font-family: 'Lilita One';
+    /* background-color: black; */
 }`
 
 export default GlobalStyle;

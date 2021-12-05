@@ -12,16 +12,16 @@ function ProfilesCard(props) {
   // const [carregando, setCarregando] = useState("")
 
   const getProfileToChoose = () => {
+
+
     axios.get(`https://us-central1-missao-newton.cloudfunctions.net/astroMatch/karen/person`)
       .then(response => setProfile(response.data.profile))
       .catch(error => console.log(error.data))
   }
 
   useEffect(() => {
-
     getProfileToChoose()
-
-  }, [])
+  }, [nextProfile])
 
   const toNextProfile = () => {
     setNextProfile(nextProfile + 1)

@@ -14,8 +14,8 @@ function MatchList(props) {
     .then((response) => {
       setMatches(response.data.matches)
     })
-    .catch((error) => {
-      console.log(error.data)
+    .catch(() => {
+      alert("Ocorreu um erro!")
     })
   }
     useEffect(()=> {
@@ -24,12 +24,10 @@ function MatchList(props) {
 
   const clear = () => {
     axios.put("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/karen/clear")
-    .then((response) => {
+    .then(() => {
       setMatches([])
-      console.log(response.data)
     })
-    .catch((error) => {
-      console.log(error.data)
+    .catch(() => {
     })
   }
 
