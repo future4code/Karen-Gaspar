@@ -10,9 +10,9 @@ flex-direction: column;
 align-items: center;
 padding: 0 20px;
 width: 19.9vw;
-height: 60vh;
+height: 355px;
 margin: 0px auto;
-border: 1px solid #02afcc;;
+border: 2px solid #02afcc;
 `
 export const MatchContainer = styled.div`
 display: flex;
@@ -28,24 +28,27 @@ img{
   object-fit: cover;
   border-radius: 50%;
   margin: 10px;
+}
+:hover{
+  background-color: #9B3CAD;
+  cursor: pointer;
 }`
 
 export const HeaderContainer = styled.div`
-background-color: white;
 display: flex;
 justify-content: space-between;
 align-items: center;
-border: 1px solid #C095f4;
+border: 2px solid #02afcc;
 border-top-left-radius: 15px;
 border-top-right-radius: 15px;
 padding: 0 20px;
 width: 20vw;
 margin: 10px auto;
 img{
-  width: 3vw;
+  width: 35px;
 }
 h2{
-  color: #C095f4;
+  color: #02afcc;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 `
@@ -58,11 +61,10 @@ cursor: pointer;
 `
 
 export const FooterContainer = styled.div`
-background-color: white;
 display: flex;
 justify-content: space-around;
 align-items: center;
-border: 1px solid #02afcc;
+border: 2px solid #02afcc;
 border-bottom-left-radius: 15px;
 border-bottom-right-radius: 15px;
 padding: 0 20px;
@@ -75,6 +77,6 @@ h2{
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black
 }
 img{
-  width: 3vw;
+  width: 35px;
 }
 `

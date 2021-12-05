@@ -9,12 +9,8 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
 }
 body{
-    background-image: url("https://image.freepik.com/vetores-gratis/fundo-aquarela-onirico-azul-e-rosa_125540-337.jpg");
-    background-size: cover;
-    height: 50vh;
-    width: 100vw;
-    font-family: 'Lilita One';
-    /* background-color: black; */
+    font-family: 'Arial';
+    background-color: #000409;
 }`
 
 export default GlobalStyle;

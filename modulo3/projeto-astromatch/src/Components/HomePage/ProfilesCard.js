@@ -31,7 +31,7 @@ function ProfilesCard(props) {
     <ProfileBody>
     <HomeHeader changePage={props.changePage}/>
     <ProfileContainer key={profile.id}>
-      <img src={profile.photo}/>
+      <img src={profile.photo} alt="Perfil"/>
       <ProfileDescription>
       <h3>{profile.name}, {profile.age}</h3> 
       <p>{profile.bio}</p>

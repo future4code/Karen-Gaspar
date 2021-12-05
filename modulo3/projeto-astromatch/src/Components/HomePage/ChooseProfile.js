@@ -1,8 +1,8 @@
 import {useState} from 'react'
 import {LikeContainer} from './styles';
 import axios from 'axios'
-import like from './img/like.png'
-import dislike from './img/dislike.png'
+import like from '../img/like.png'
+import dislike from '../img/dislike.png'
 
 
 function HomePage(props) {
@@ -35,8 +35,8 @@ function HomePage(props) {
 
     return (
         <LikeContainer>
-        <button onClick={disLikedProfile}><img src={dislike}/></button>
-        <button onClick={likedProfile}><img src={like}/></button>
+        <button onClick={disLikedProfile}><img src={dislike} alt="Ícone de dar disike"/></button>
+        <button onClick={likedProfile}><img src={like} alt="Ícone de dar like"/></button>
         </LikeContainer>
     );
 }
