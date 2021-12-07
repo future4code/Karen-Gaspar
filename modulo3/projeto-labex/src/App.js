@@ -1,8 +1,10 @@
+import React from 'react'
+import { Router } from "./route/Router";
 
 function App() {
   return (
     <div >
-      <h3>LabeX</h3>
+      <Router/>
     </div>
   );
 }
