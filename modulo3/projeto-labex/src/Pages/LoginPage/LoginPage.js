@@ -1,5 +1,6 @@
 import React from 'react'
 import {useHistory} from 'react-router-dom'
+import { LoginContainer } from './style';
 
 export const LoginPage = () => {
   
@@ -14,10 +15,12 @@ export const LoginPage = () => {
   }
 
     return (
-      <div >
-        <h3>Login</h3>
+      <LoginContainer >
+        <h3>Login de Administração</h3>
+        <input></input>
+        <input></input>
         <button onClick={goToAdminHomePage}>Entrar</button>
         <button onClick={goBack}>Voltar</button>
-      </div>
+      </LoginContainer>
     );
   }

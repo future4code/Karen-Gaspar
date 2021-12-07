@@ -1,5 +1,8 @@
 import React from 'react'
 import {useHistory} from 'react-router-dom'
+import { AdminTripsCard } from '../../Components/AdminTripsCard/AdminTripsCard';
+import { AdminTripsContainer } from './style';
+
 
 export const AdminHomePage = () => {
 
@@ -14,12 +17,15 @@ export const AdminHomePage = () => {
     }
 
     return (
-      <div >
-        <h3>AdminHomePage</h3>
+      <AdminTripsContainer >
+        <h3>Painel Administrativo</h3>
+        <AdminTripsCard/>
+        <div>
         <button onClick={goBack}>Voltar</button>
         <button onClick={goToCreateTripPage}>Criar Viagem</button>
         <button>Logout</button>
-      </div>
+        </div>
+      </AdminTripsContainer>
     );
   }
   
