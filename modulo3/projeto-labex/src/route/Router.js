@@ -1,6 +1,6 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom"
 import {HomePage} from "../pages/HomePage/HomePage"
-import {ListTripsPage} from "../pages/ListTripsPage/ListTripsPage"
+import {TripsListPage} from "../pages/TripsListPage/TripsListPage"
 import {ApplicationFormPage} from "../pages/ApplicationFormPage/ApplicationFormPage"
 import {LoginPage} from "../pages/LoginPage/LoginPage"
 import {AdminHomePage} from "../pages/AdminHomePage/AdminHomePage"
@@ -16,7 +16,7 @@ export const Router = ()=> {
                 <HomePage/>
             </Route>
             <Route exact path={"/trips/list"}>
-                <ListTripsPage/>
+                <TripsListPage/>
             </Route>
             <Route exact path={"/trips/application"}>
                 <ApplicationFormPage/>

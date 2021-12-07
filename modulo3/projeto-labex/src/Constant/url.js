@@ -1,1 +1,1 @@
-export const URL_BASE = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/karen-gaspar-carver/"
+export const BASE_URL = "https://us-central1-labenu-apis.cloudfunctions.net/labeX"

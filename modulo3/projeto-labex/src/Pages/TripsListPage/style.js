@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const ListTripsContainer=styled.div`
+export const TripsListContainer=styled.div`
 display: flex;
 flex-direction: column;
 height: 80vh;
