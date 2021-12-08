@@ -1,15 +1,30 @@
-// import {useEffect, useState} from 'react'
-// import axios from 'axios'
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { BASE_URL } from "../constant/url";
 
-// export function useRequestData(url) {
+export const useRequestData = () => {
+  const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
-//     const [data, setData] = useState(undefined)
+  const getTrips = () => {
+    setIsLoading(true);
+    axios
+      .get(`${BASE_URL}/karen-gaspar-carver/trips`)
+      .then((res) => {
+        setIsLoading(false);
+        setData(res.data.trips);
+      })
+      .catch((err) => {
+        alert(err.response);
+        setIsLoading(false);
+        setError(err);
+      });
+  };
 
-//     useEffect(() => {
-//         axios.get(url)
-//         .then((res) => setData(res.data))
-//         .catch((err) => console.log(err.response.data))
-//     }, [url])
+  useEffect(() => {
+    getTrips()
+  }, []);
 
-//     return data
-// }
+  return [data, isLoading, error];
+};

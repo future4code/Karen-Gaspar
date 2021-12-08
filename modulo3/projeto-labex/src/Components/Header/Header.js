@@ -6,8 +6,7 @@ export const Header = () => {
 
     return (
         <HeaderContainer>
-            <h1>LABEX</h1>
-            <button>Login Adm</button>
+            <h1>Labe<span>X</span></h1>
         </HeaderContainer>
     )
 }

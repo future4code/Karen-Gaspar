@@ -7,7 +7,7 @@ flex-direction: column;
 align-items: center;
 padding: 5px;
 height: 80vh;
-border: 1px solid purple;
+border: 1px solid #B40000;
 div{
     margin: 5px;
     display: flex;

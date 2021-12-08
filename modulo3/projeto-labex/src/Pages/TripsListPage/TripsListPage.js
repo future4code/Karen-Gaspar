@@ -1,28 +1,10 @@
-import axios from 'axios'
-import React, { useState, useEffect } from 'react'
+
 import { useHistory } from 'react-router-dom'
 import { TripsCard } from '../../Components/TripsCard/TripsCard'
-import { BASE_URL } from '../../constant/url'
+import { useRequestData } from '../../hooks/useRequestData'
 import { Buttons, TripsListContainer } from './style'
 
 export const TripsListPage = () => {
-
-  const [trips, setTrips] = useState([])
-
-  const getTrips = () => {
-    axios.get(`${BASE_URL}/karen-gaspar-carver/trips`)
-      .then((res) => {
-        setTrips(res.data)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-  }
-
-  useEffect(() => {
-    getTrips();
-  }, []);
-
 
   const history = useHistory();
 
@@ -34,20 +16,31 @@ export const TripsListPage = () => {
     history.push("/")
   }
 
-  console.log(trips)
+  const [trips, isLoading, error] = useRequestData(`/trips`);
 
+  const tripsList =
+    trips &&
+    trips.map((trip) => {
+      return (
+        <TripsCard key={trip.id} trip={trip} />
+      );
+    });
 
   return (
     <div>
-      <TripsListContainer >
         <h3>Viagens</h3>
         <Buttons>
           <button onClick={goToApplicationFormPage}>Ir para página de formulário</button>
           <button onClick={goToHomePage}>Voltar</button>
         </Buttons>
-        <TripsCard/>
+        <TripsListContainer >
+        {isLoading && <p>Carregando...</p>}
+        {!isLoading && error && <p>Ocorreu um erro...</p>}
+        {!isLoading && trips && trips.length > 0 && tripsList}
+        {!isLoading && trips && trips.length === 0 && (
+          <p>Não há nenhuma viagem!</p>
+        )}
       </TripsListContainer>
-    </div>
-
+      </div>
   );
 };

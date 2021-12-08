@@ -5,5 +5,6 @@ display: flex;
 justify-content: center;
 align-items: center;
 height: 60px;
-border: 1px solid purple;
+border: 1px solid #B40000;
+background-color: #B40000;
 `

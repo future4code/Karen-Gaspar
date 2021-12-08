@@ -1,12 +1,13 @@
 import styled from 'styled-components'
 
 export const TripsCardContainer=styled.div`
-border: 1px solid purple;
+border: 2px solid #B40000;
 display: flex;
 flex-direction: column;
 justify-content: space-around;
 padding: 8px;
-width: 400px;
+width: 350px;
 height: 120px;
-margin: 16px;
+background-color: #337A95;
+
 `
