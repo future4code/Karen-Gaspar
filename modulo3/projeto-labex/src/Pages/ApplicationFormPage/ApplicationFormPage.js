@@ -58,7 +58,7 @@ export const ApplicationFormPage = () => {
   //   setProfession(event.target.value)
   // }
 
-  const [allTrips] = useRequestData("/karen-gaspar-carver/trips")
+  // const [allTrips] = useRequestData("/trips")
 
   return (
     <ApplicationBody>

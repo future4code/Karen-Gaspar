@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import { BASE_URL } from '../../constant/url';
+import { ALUNO, BASE_URL } from '../../constant/url';
 import { LoginContainer, LoginPageBody } from './style';
 
 export const LoginPage = () => {
@@ -24,7 +24,7 @@ export const LoginPage = () => {
       email: email,
       password: password
     }
-    axios.post(`${BASE_URL}/karen-gaspar-carver/login`, body)
+    axios.post(`${BASE_URL}${ALUNO}/login`, body)
     .then((res)=>{
       localStorage.setItem('token', res.data.token);
       history.push("/admin/trips/list")

@@ -10,6 +10,7 @@ height: 80vh;
 
 export const Buttons =styled.div`
 display: flex;
-justify-content: center;
+justify-content: space-around;
 align-items: center;
+margin: 16px;
 `

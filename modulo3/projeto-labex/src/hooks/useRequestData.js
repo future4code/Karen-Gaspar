@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { BASE_URL } from "../constant/url";
+import { ALUNO, BASE_URL } from "../constant/url";
 
 export const useRequestData = () => {
   const [data, setData] = useState([]);
@@ -10,7 +10,7 @@ export const useRequestData = () => {
   const getTrips = () => {
     setIsLoading(true);
     axios
-      .get(`${BASE_URL}/karen-gaspar-carver/trips`)
+      .get(`${BASE_URL}${ALUNO}/trips`)
       .then((res) => {
         setIsLoading(false);
         setData(res.data.trips);

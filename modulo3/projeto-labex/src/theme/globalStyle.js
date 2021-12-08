@@ -11,6 +11,10 @@ body{
     font-family: 'Arial';
     color: white;
 }
+button{
+    background-color: #B86917;
+    padding: 3px;
+}
 `;
 
 export default GlobalStyle;

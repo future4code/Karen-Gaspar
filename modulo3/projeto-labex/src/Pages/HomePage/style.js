@@ -6,8 +6,11 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 height: 80vh;
-button{
-    background-color: #B86917;
+div{
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
 }
 `
 

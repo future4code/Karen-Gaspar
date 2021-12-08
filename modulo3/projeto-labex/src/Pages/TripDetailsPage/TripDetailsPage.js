@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect } from 'react'
 import { useHistory } from 'react-router';
-import { BASE_URL } from '../../constant/url';
+import { ALUNO, BASE_URL } from '../../constant/url';
 import { useProtectedPage } from '../../hooks/useProtectedPage';
 import { TripDetailsBody } from './style';
 
@@ -17,7 +17,7 @@ export const TripDetailsPage = () => {
   useEffect(() => {
     const token = localStorage.getItem('token')
     axios
-    .get(`${BASE_URL}/karen-gaspar-carver/trip/:id`, {
+    .get(`${BASE_URL}${ALUNO}/trip/:id`, {
       headers: {
         auth: token
       }
@@ -29,6 +29,7 @@ export const TripDetailsPage = () => {
       console.log(err.res)
     })
   }, [])
+
 
     return (
       <TripDetailsBody >
