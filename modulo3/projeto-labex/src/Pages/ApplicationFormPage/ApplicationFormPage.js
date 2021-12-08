@@ -1,6 +1,6 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import { FormContainer } from './style'
+import { ApplicationBody, FormContainer } from './style'
 
 export const ApplicationFormPage = () => {
 
@@ -11,6 +11,7 @@ export const ApplicationFormPage = () => {
   }
 
   return (
+    <ApplicationBody>
     <FormContainer >
       <h3>Cadastro do Candidato</h3>
       <input></input>
@@ -23,6 +24,7 @@ export const ApplicationFormPage = () => {
         <button>Enviar</button>
       </div>
     </FormContainer>
+    </ApplicationBody>
   );
 }
 

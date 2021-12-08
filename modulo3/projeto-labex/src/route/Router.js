@@ -5,7 +5,7 @@ import {ApplicationFormPage} from "../pages/ApplicationFormPage/ApplicationFormP
 import {LoginPage} from "../pages/LoginPage/LoginPage"
 import {AdminHomePage} from "../pages/AdminHomePage/AdminHomePage"
 import {CreateTripPage} from "../pages/CreateTripPage/CreateTripPage"
-import {TripDetailsPage} from "../pages/TripDetailsPage"
+import {TripDetailsPage} from "../pages/TripDetailsPage/TripDetailsPage"
 
 
 export const Router = ()=> {

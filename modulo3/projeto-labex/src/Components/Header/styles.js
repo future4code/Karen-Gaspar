@@ -6,12 +6,11 @@ justify-content: space-between;
 align-items: center;
 height: 60px;
 padding: 0 16px;
-border: 1px solid #B40000;
-background-color: #418A95;
+background-color: #D09251;
 h1{
-    color: #004762;
+    color: #146B94;
 }
 span{
-    color:#B40000;
+    color:#B86917;
 }
 `

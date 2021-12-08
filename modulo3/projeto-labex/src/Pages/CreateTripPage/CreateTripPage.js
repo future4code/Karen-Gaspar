@@ -13,11 +13,11 @@ export const CreateTripPage = () => {
   return (
     <CreateTripContainer>
       <h3>CreateTripPage</h3>
-      <input></input>
-      <input></input>
-      <input></input>
-      <input></input>
-      <input></input>
+      <input/>
+      <input/>
+      <input/>
+      <input/>
+      <input/>
       <div>
       <button onClick={goBack}>Voltar</button>
       <button>Criar</button>

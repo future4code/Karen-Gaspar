@@ -7,12 +7,11 @@ flex-direction: column;
 align-items: center;
 padding: 5px;
 height: 80vh;
-border: 1px solid #B40000;
 div{
     margin: 5px;
     display: flex;
     justify-content: space-around;
-    border: 1px solid purple;
+    border: 1px solid #B86917;
     width: 150px;
 }
 `

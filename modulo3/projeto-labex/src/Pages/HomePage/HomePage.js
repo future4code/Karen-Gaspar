@@ -15,9 +15,10 @@ export const HomePage = () => {
 
     return (
       <HomePageContainer >
-        <p>Já pensou em fazer uma viagem espacial? Veja aqui as opções disponíveis!</p>
-        <button onClick={goToListTripsPage}>Ir para página de lista de viagens</button>
-        <button onClick={goToLoginPage}>Ir para página de login de admin</button>
+        <p>Já pensou em fazer uma viagem espacial?</p> 
+        <p>Veja aqui as opções disponíveis!</p>
+        <button onClick={goToListTripsPage}>Ver viagens</button>
+        <button onClick={goToLoginPage}>Login Administração</button>
       </HomePageContainer>
     );
   };
