@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const AdminTripsCardContainer = styled.div`
-border: 1px solid purple;
+background-color: #BC6A1D;
 display: flex;
 align-items: center;
 justify-content: space-between;

@@ -2,9 +2,12 @@ import React from 'react'
 import {useHistory} from 'react-router-dom'
 import { AdminTripsCard } from '../../Components/AdminTripsCard/AdminTripsCard';
 import { AdminTripsContainer } from './style';
+import { useProtectedPage } from '../../hooks/useProtectedPage';
 
 
 export const AdminHomePage = () => {
+
+  useProtectedPage()
 
     const history = useHistory();
 
@@ -16,14 +19,18 @@ export const AdminHomePage = () => {
       history.push("/admin/trips/create")
     }
 
+    const goToTripDetailsPage = () => {
+      history.push("/admin/trips/:id")
+    }
+
     return (
       <AdminTripsContainer >
         <h3>Painel Administrativo</h3>
-        <AdminTripsCard/>
+        <AdminTripsCard goToTripDetailsPage={goToTripDetailsPage}/>
         <div>
-        <button onClick={goBack}>Voltar</button>
-        <button onClick={goToCreateTripPage}>Criar Viagem</button>
-        <button>Logout</button>
+        <p onClick={goBack}>Voltar</p>
+        <p onClick={goToCreateTripPage}>Criar Viagem</p>
+        <p>Logout</p>
         </div>
       </AdminTripsContainer>
     );

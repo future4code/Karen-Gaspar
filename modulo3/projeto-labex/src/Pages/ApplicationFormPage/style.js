@@ -22,7 +22,7 @@ div{
     justify-content: space-around;
     width: 200px;
 }
-input{
+input, select{
     width: 300px;
     height: 20px;
 }

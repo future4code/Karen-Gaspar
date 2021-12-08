@@ -8,5 +8,4 @@ padding: 8px;
 width: 350px;
 height: 120px;
 background-color: #BC6A1D;
-
 `

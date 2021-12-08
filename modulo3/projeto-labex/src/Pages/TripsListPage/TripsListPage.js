@@ -22,7 +22,7 @@ export const TripsListPage = () => {
     trips &&
     trips.map((trip) => {
       return (
-        <TripsCard key={trip.id} trip={trip} />
+        <TripsCard key={trip.id} trip={trip}/>
       );
     });
 
@@ -30,7 +30,7 @@ export const TripsListPage = () => {
     <div>
         <h3>Viagens</h3>
         <Buttons>
-          <button onClick={goToApplicationFormPage}>Ir para página de formulário</button>
+          <button onClick={goToApplicationFormPage}>Inscreva-se</button>
           <button onClick={goToHomePage}>Voltar</button>
         </Buttons>
         <TripsListContainer >

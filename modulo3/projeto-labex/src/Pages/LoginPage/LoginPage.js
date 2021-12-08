@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { BASE_URL } from '../../constant/url';
-import { LoginContainer } from './style';
+import { LoginContainer, LoginPageBody } from './style';
 
 export const LoginPage = () => {
   
@@ -19,19 +19,18 @@ export const LoginPage = () => {
   }
 
   const onSubmitLogin = () => {
-    console.log(email, password);
+    
     const body = {
       email: email,
       password: password
     }
     axios.post(`${BASE_URL}/karen-gaspar-carver/login`, body)
     .then((res)=>{
-      console.log(res.data.token);
       localStorage.setItem('token', res.data.token);
       history.push("/admin/trips/list")
     })
     .catch((err)=>{
-      console.log(err.res)
+      alert("Login inválido!")
     })
   }
 
@@ -40,6 +39,7 @@ export const LoginPage = () => {
   }
 
   return (
+    <LoginPageBody>
     <LoginContainer >
       <h3>Login de Administração</h3>
       <input
@@ -55,5 +55,6 @@ export const LoginPage = () => {
       <button onClick={onSubmitLogin}>Entrar</button>
       <button onClick={goBack}>Voltar</button>
     </LoginContainer>
+    </LoginPageBody>
   );
 }
