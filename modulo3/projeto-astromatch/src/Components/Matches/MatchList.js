@@ -1,0 +1,54 @@
+import {useState, useEffect} from 'react'
+import axios from 'axios'
+import MatchesHeader from '../Matches/MatchesHeader';
+import {ListBody, ListContainer, MatchContainer} from './styles';
+import MatchesFooter from './MatchesFooter';
+
+
+function MatchList(props) {
+
+  const [matches, setMatches] = useState([])
+
+  const getMatches = () => {
+    axios.get("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/karen/matches")
+    .then((response) => {
+      setMatches(response.data.matches)
+    })
+    .catch(() => {
+      alert("Ocorreu um erro!")
+    })
+  }
+    useEffect(()=> {
+    getMatches()
+  }, [])
+
+  const clear = () => {
+    axios.put("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/karen/clear")
+    .then(() => {
+      setMatches([])
+    })
+    .catch(() => {
+    })
+  }
+
+  const matchesList = matches.map((match) => {
+    return <MatchContainer
+        key={match.id}>
+        <img src={match.photo}/>
+        <h4>{match.name}</h4>
+    </MatchContainer>
+  })
+  
+    return (
+      <ListBody>
+        <MatchesHeader changePage={props.changePage}/>
+        <ListContainer>
+        {matchesList}
+        </ListContainer>
+        <MatchesFooter clear={clear} getMatches={getMatches}/>
+      </ListBody>
+    );
+  }
+  
+  export default MatchList;
+  
