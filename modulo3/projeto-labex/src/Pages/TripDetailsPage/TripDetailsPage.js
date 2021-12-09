@@ -8,7 +8,7 @@ export const TripDetailsPage = () => {
   useProtectedPage()
   const history = useHistory()
   const { id } = useParams()
-  const [tripDetails, getTripDetails] = useRequestData(`/trip/${id}`)
+  const [tripDetails] = useRequestData(`/trip/${id}`)
 
   const goBack = () => {
     history.goBack()

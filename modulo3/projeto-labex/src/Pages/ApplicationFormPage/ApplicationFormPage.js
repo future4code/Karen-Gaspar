@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useForm } from '../../hooks/useForm'
-import { ApplicationBody, FormContainer } from './style'
+import { FormContainer, MainApplicationContainer } from './style'
 import { countries} from '../../constant/countries'
 import { useRequestData } from '../../hooks/useRequestData'
 import { Buttons } from '../TripsListPage/style'
@@ -28,7 +28,7 @@ export const ApplicationFormPage = () => {
   })
   console.log(tripOption)
   return (
-    <ApplicationBody>
+    <MainApplicationContainer>
       <FormContainer >
         <h3>Formulário de inscrição</h3>
         <form onSubmit={register}>
@@ -91,7 +91,7 @@ export const ApplicationFormPage = () => {
           </Buttons>
         </form>
       </FormContainer>
-    </ApplicationBody>
+    </MainApplicationContainer>
   );
 }
 

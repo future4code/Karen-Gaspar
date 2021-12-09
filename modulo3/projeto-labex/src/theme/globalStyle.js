@@ -15,7 +15,7 @@ button{
     background-color: #B86917;
     padding: 3px;
 }
-input, select{
+input, select, option{
     width: 280px;
     height: 20px;
     margin: 5px;
