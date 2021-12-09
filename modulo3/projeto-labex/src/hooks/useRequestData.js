@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { ALUNO, BASE_URL } from "../constant/url";
 
-export const useRequestData = () => {
+export const useRequestData = (endpoint) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
@@ -10,7 +10,7 @@ export const useRequestData = () => {
   const getTrips = () => {
     setIsLoading(true);
     axios
-      .get(`${BASE_URL}${ALUNO}/trips`)
+      .get(`${BASE_URL}${endpoint}`)
       .then((res) => {
         setIsLoading(false);
         setData(res.data.trips);

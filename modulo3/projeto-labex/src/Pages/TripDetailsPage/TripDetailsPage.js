@@ -1,43 +1,32 @@
-import axios from 'axios';
-import React, { useEffect } from 'react'
-import { useHistory } from 'react-router';
-import { ALUNO, BASE_URL } from '../../constant/url';
+import { useHistory, useParams } from 'react-router-dom';
 import { useProtectedPage } from '../../hooks/useProtectedPage';
-import { TripDetailsBody } from './style';
+import { useRequestData } from '../../hooks/useRequestData';
+import { MainContainer, TripDetailsContainer } from './style';
 
 export const TripDetailsPage = () => {
+
+  useProtectedPage()
   const history = useHistory()
+  const {id} = useParams()
+  const [tripDetails, getTripDetails] = useRequestData(`/trip/${id}`)
 
   const goBack = () => {
     history.goBack()
   }
 
-  useProtectedPage()
-
-  useEffect(() => {
-    const token = localStorage.getItem('token')
-    axios
-    .get(`${BASE_URL}${ALUNO}/trip/:id`, {
-      headers: {
-        auth: token
-      }
-    })
-    .then((res)=>{
-      console.log(res.data);
-    })
-    .catch((err)=>{
-      console.log(err.res)
-    })
-  }, [])
+  console.log(tripDetails)
+  
 
 
     return (
-      <TripDetailsBody >
-        <h3>Detalhes</h3>
-        <button onClick={goBack}>Voltar</button>
+      <MainContainer>
+        <TripDetailsContainer >
+        <h3>Detalhes da Viagem</h3>
         <h3>Candidatos Pendentes</h3>
         <h3>Candidatos Aprovados</h3>
-      </TripDetailsBody>
+        </TripDetailsContainer>
+        <button onClick={goBack}>Voltar</button>
+      </MainContainer>
     );
   }
   

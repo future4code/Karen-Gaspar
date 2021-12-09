@@ -1,104 +1,88 @@
-import axios from 'axios'
-import { BASE_URL } from '../../constant/url'
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import { useForm } from '../../hooks/useForm'
 import { ApplicationBody, FormContainer } from './style'
-import { useRequestData } from '../../hooks/useRequestData'
+// import { useRequestData } from '../../hooks/useRequestData'
 
 export const ApplicationFormPage = () => {
 
   const history = useHistory()
+  const { form, onChangeInputs, cleanFields } = useForm({ name: "", age: "", applicationText: "", profession: "", country: "" })
 
   const goBack = () => {
     history.goBack()
   }
 
-
-  // const [name, setName] = useState('')
-  // const [age, setAge] = useState('')
-  // const [text, setText] = useState('')
-  // const [profession, setProfession] = useState('')
-  // const [country, setCountry] = useState([])
-
-  // const applyToTrip = (tripId) => {
-
-  //   const body = {
-  //     name: name,
-  //     age: age,
-  //     text: text,
-  //     profession: profession,
-  //     country: country
-  //   }
-
-  //   axios.post(`${BASE_URL}/karen-gaspar-carver/trips/${tripId}/apply`, body)
-  //   .then((res)=>{
-  //     console.log(res)
-  //     setName('')
-  //     setAge('')
-  //     setText('')
-  //     setProfession('')
-  //     setCountry([])
-  //     alert("Candidatura realizada com sucesso. Boa sorte!")
-  //   })
-  //   .catch((err)=>{
-  //     console.log(err.res);
-  //   })
-  // }
-
-  // const handleName = (event) => {
-  //   setName(event.target.value)
-  // }
-  // const handleAge = (event) => {
-  //   setAge(event.target.value)
-  // }
-  // const handleText = (event) => {
-  //   setText(event.target.value)
-  // }
-  // const handleProfession = (event) => {
-  //   setProfession(event.target.value)
-  // }
-
-  // const [allTrips] = useRequestData("/trips")
+  const register = (event) => {
+    event.preventDefault();
+    alert("Sua inscrição foi realizada com sucesso. Boa sorte!", form);
+    cleanFields();
+  };
 
   return (
     <ApplicationBody>
-      <button onClick={goBack}>Voltar</button>
       <FormContainer >
-        <h3>Cadastro do Candidato</h3>
-        <select >
-          <option>Escolha uma viagem</option>
-          {/* {tripsOptions} */}
-        </select>
-        <input
-          placeholder="Nome"
-          type="text"
-        // value={name}
-        // onChange={handleName}
-        />
-        <input
-          placeholder="Idade"
-          type="number"
-        // value={age}
-        // onChange={handleAge}
-        />
-        <input
-          placeholder="Texto de candidatura"
-          type="text"
-        // value={text}
-        // onChange={handleText}
-        />
-        <input
-          placeholder="Profissão"
-          type="text"
-        // value={profession}
-        // onChange={handleProfession}
-        />
-        <select>
-          <option>Escolha um País</option>
-        </select>
-        <div>
-          {/* <button onClick={applyToTrip}>Enviar</button> */}
-        </div>
+        <h3>Inscrição do Candidato</h3>
+        <form onSubmit={register}>
+          <select >
+            <option>Escolha uma viagem</option>
+          </select>
+          <input
+            placeholder="Nome"
+            type="text"
+            name={"name"}
+            value={form.name}
+            onChange={onChangeInputs}
+            required
+            pattern={"^.{3,}"}
+            title={"O nome deve ter no mínimo 3 letras"}
+          />
+          <input
+            placeholder="Idade"
+            type="number"
+            name={"age"}
+            value={form.age}
+            onChange={onChangeInputs}
+            required
+            min={18}
+          />
+          <input
+            placeholder="Texto de candidatura"
+            type="text"
+            name={"applicationText"}
+            value={form.applicationText}
+            onChange={onChangeInputs}
+            required
+            pattern={"^.{30,}"}
+            title={"O texto deve ter no mínimo 30 caracteres"}
+          />
+          <input
+            placeholder="Profissão"
+            type="text"
+            name={"country"}
+            value={form.profession}
+            onChange={onChangeInputs}
+            required
+            pattern={"^.{10,}$"}
+            title={"A profissão deve ter no mínimo 10 caracteres"}
+          />
+          <select placeholder={"País"}
+            name={"country"}
+            value={form.country}
+            onChange={onChangeInputs}
+            required>
+            <option value={""} disabled >Escolha um País</option>
+            <option>Brasil</option>
+            <option>Argentina</option>
+            <option>Chile</option>
+            <option>Peru</option>
+            <option>Colombia</option>
+          </select>
+          <div>
+            <button>Enviar</button>
+            <button onClick={goBack}>Voltar</button>
+          </div>
+        </form>
       </FormContainer>
     </ApplicationBody>
   );

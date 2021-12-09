@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import { ALUNO, BASE_URL } from '../../constant/url';
+import { BASE_URL } from '../../constant/url';
 import { LoginContainer, LoginPageBody } from './style';
 
 export const LoginPage = () => {
@@ -24,7 +24,7 @@ export const LoginPage = () => {
       email: email,
       password: password
     }
-    axios.post(`${BASE_URL}${ALUNO}/login`, body)
+    axios.post(`${BASE_URL}/login`, body)
     .then((res)=>{
       localStorage.setItem('token', res.data.token);
       history.push("/admin/trips/list")
@@ -52,8 +52,10 @@ export const LoginPage = () => {
         type="password"
         value={password}
         onChange={onChangePassword} />
+      <div>
       <button onClick={onSubmitLogin}>Entrar</button>
       <button onClick={goBack}>Voltar</button>
+      </div>
     </LoginContainer>
     </LoginPageBody>
   );

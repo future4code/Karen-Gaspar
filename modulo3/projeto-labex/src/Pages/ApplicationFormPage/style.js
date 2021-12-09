@@ -20,7 +20,7 @@ div{
     margin: 5px;
     display: flex;
     justify-content: space-around;
-    width: 200px;
+    width: 300px;
 }
 input, select{
     width: 300px;

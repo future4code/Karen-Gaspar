@@ -20,4 +20,10 @@ input, select{
     width: 200px;
     height: 20px;
 }
+div{
+    display: flex;
+    justify-content: space-around;
+    width: 200px;
+    padding: 0 3px;
+}
 `
