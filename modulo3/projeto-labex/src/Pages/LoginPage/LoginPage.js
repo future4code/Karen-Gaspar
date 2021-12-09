@@ -2,27 +2,20 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { BASE_URL } from '../../constant/url';
+import { useForm } from '../../hooks/useForm';
 import { LoginContainer, LoginPageBody } from './style';
 
 export const LoginPage = () => {
   
   const history = useHistory();
+  const { form, onChangeInputs } = useForm({ email: "", password: ""})
 
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-
-  const onChangeEmail = (event) => {
-    setEmail(event.target.value)
-  }
-  const onChangePassword = (event) => {
-    setPassword(event.target.value)
-  }
 
   const onSubmitLogin = () => {
     
     const body = {
-      email: email,
-      password: password
+      email: form.email,
+      password: form.password
     }
     axios.post(`${BASE_URL}/login`, body)
     .then((res)=>{
@@ -38,24 +31,39 @@ export const LoginPage = () => {
     history.goBack()
   }
 
+  const login = (event) => {
+    event.preventDefault();
+    onSubmitLogin(form)
+  }
+
   return (
     <LoginPageBody>
     <LoginContainer >
       <h3>Login de Administração</h3>
+      <form onSubmit={login}>
       <input
         placeholder="E-mail"
         type="email"
-        value={email}
-        onChange={onChangeEmail} />
+        name={"email"}
+        value={form.email}
+        onChange={onChangeInputs}
+        required 
+        />
       <input
         placeholder="Senha"
         type="password"
-        value={password}
-        onChange={onChangePassword} />
+        name={"password"}
+        value={form.password}
+        onChange={onChangeInputs}
+        required
+        pattern={"^.{6,}$"}
+        title={"A senha deve ter no mínimo 6 caracteres"} 
+        />
       <div>
-      <button onClick={onSubmitLogin}>Entrar</button>
+      <button>Entrar</button>
       <button onClick={goBack}>Voltar</button>
       </div>
+      </form>
     </LoginContainer>
     </LoginPageBody>
   );

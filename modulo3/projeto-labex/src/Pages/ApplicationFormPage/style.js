@@ -12,7 +12,7 @@ display: flex;
 justify-content: space-evenly;
 flex-direction: column;
 align-items: center;
-padding: 16px;
+border: 1px solid black;
 width: 300px;
 height: 300px;
 background-color: #D09251;
@@ -21,9 +21,5 @@ div{
     display: flex;
     justify-content: space-around;
     width: 300px;
-}
-input, select{
-    width: 300px;
-    height: 20px;
 }
 `

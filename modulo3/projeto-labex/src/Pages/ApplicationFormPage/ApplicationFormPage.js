@@ -3,12 +3,15 @@ import { useHistory } from 'react-router-dom'
 import { useForm } from '../../hooks/useForm'
 import { ApplicationBody, FormContainer } from './style'
 import { countries} from '../../constant/countries'
+import { useRequestData } from '../../hooks/useRequestData'
+import { Buttons } from '../TripsListPage/style'
 // import { useRequestData } from '../../hooks/useRequestData'
 
 export const ApplicationFormPage = () => {
 
   const history = useHistory()
   const { form, onChangeInputs, cleanFields } = useForm({ name: "", age: "", applicationText: "", profession: "", country: "" })
+  const [trips] = useRequestData(`/trips`)
 
   const goBack = () => {
     history.goBack()
@@ -18,8 +21,12 @@ export const ApplicationFormPage = () => {
     event.preventDefault();
     alert("Sua inscrição foi realizada com sucesso. Boa sorte!", form);
     cleanFields();
-  };
+  }
 
+  const tripOption = trips && trips.map((trip) => {
+    return <option>{trip.name}</option>
+  })
+  console.log(tripOption)
   return (
     <ApplicationBody>
       <FormContainer >
@@ -27,6 +34,7 @@ export const ApplicationFormPage = () => {
         <form onSubmit={register}>
           <select >
             <option>Escolha uma viagem</option>
+            {tripOption}
           </select>
           <input
             placeholder="Nome"
@@ -77,10 +85,10 @@ export const ApplicationFormPage = () => {
               return <option value={country}>{country}</option>
             })}
           </select>
-          <div>
+          <Buttons>
             <button>Enviar</button>
             <button onClick={goBack}>Voltar</button>
-          </div>
+          </Buttons>
         </form>
       </FormContainer>
     </ApplicationBody>

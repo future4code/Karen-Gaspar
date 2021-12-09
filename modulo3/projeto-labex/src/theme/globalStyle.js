@@ -15,6 +15,15 @@ button{
     background-color: #B86917;
     padding: 3px;
 }
-`;
+input, select{
+    width: 280px;
+    height: 20px;
+    margin: 5px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}`;
 
 export default GlobalStyle;
