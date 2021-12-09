@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { ALUNO, BASE_URL } from "../constant/url";
+import { BASE_URL } from "../constant/url";
 
 export const useRequestData = (endpoint) => {
   const [data, setData] = useState([]);

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useForm } from '../../hooks/useForm'
 import { ApplicationBody, FormContainer } from './style'
+import { countries} from '../../constant/countries'
 // import { useRequestData } from '../../hooks/useRequestData'
 
 export const ApplicationFormPage = () => {
@@ -22,7 +23,7 @@ export const ApplicationFormPage = () => {
   return (
     <ApplicationBody>
       <FormContainer >
-        <h3>Inscrição do Candidato</h3>
+        <h3>Formulário de inscrição</h3>
         <form onSubmit={register}>
           <select >
             <option>Escolha uma viagem</option>
@@ -59,7 +60,7 @@ export const ApplicationFormPage = () => {
           <input
             placeholder="Profissão"
             type="text"
-            name={"country"}
+            name={"profession"}
             value={form.profession}
             onChange={onChangeInputs}
             required
@@ -72,11 +73,9 @@ export const ApplicationFormPage = () => {
             onChange={onChangeInputs}
             required>
             <option value={""} disabled >Escolha um País</option>
-            <option>Brasil</option>
-            <option>Argentina</option>
-            <option>Chile</option>
-            <option>Peru</option>
-            <option>Colombia</option>
+            {countries.map((country)=>{
+              return <option value={country}>{country}</option>
+            })}
           </select>
           <div>
             <button>Enviar</button>
