@@ -5,35 +5,56 @@ import { FormContainer, MainApplicationContainer } from './style'
 import { countries} from '../../constant/countries'
 import { useRequestData } from '../../hooks/useRequestData'
 import { Buttons } from '../TripsListPage/style'
-// import { useRequestData } from '../../hooks/useRequestData'
+import axios from 'axios'
+import { BASE_URL } from '../../constant/url'
+
 
 export const ApplicationFormPage = () => {
 
   const history = useHistory()
   const { form, onChangeInputs, cleanFields } = useForm({ name: "", age: "", applicationText: "", profession: "", country: "" })
   const [trips] = useRequestData(`/trips`)
+  const [setTripId] = useState("")
 
   const goBack = () => {
     history.goBack()
   }
 
+
+  const applyTotrip = (body, tripId) => {
+    axios
+    .post(`${BASE_URL}/trips/${tripId}/apply`, body)
+    .then((res) => {
+      console.log(res.data)
+      alert("Sua inscrição foi realizada com sucesso. Boa sorte!", form);
+    })
+    .catch((err) => {
+      alert("Algo deu errado, tente mais tarde!")
+    })
+
+  }
+
+  const onChangeTrip = (event) => {
+    setTripId(event.target.value)
+}
+
   const register = (event) => {
     event.preventDefault();
-    alert("Sua inscrição foi realizada com sucesso. Boa sorte!", form);
+    applyTotrip(form)
     cleanFields();
   }
 
   const tripOption = trips && trips.map((trip) => {
-    return <option>{trip.name}</option>
+    return <option key={trip.id} value={trip.id}>{trip.name}</option>
   })
-  console.log(tripOption)
+
   return (
     <MainApplicationContainer>
       <FormContainer >
         <h3>Formulário de inscrição</h3>
         <form onSubmit={register}>
-          <select >
-            <option>Escolha uma viagem</option>
+          <select defaultValue="" onChangeTrip={onChangeTrip}>
+            <option value={""} disabled>Escolha uma viagem</option>
             {tripOption}
           </select>
           <input

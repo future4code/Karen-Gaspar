@@ -10,7 +10,11 @@ export const useRequestData = (endpoint) => {
   const getTrips = () => {
     setIsLoading(true);
     axios
-      .get(`${BASE_URL}${endpoint}`)
+      .get(`${BASE_URL}${endpoint}`, {
+        headers: {
+          auth: localStorage.getItem("token")
+        }
+      })
       .then((res) => {
         setIsLoading(false);
         setData(res.data.trips);

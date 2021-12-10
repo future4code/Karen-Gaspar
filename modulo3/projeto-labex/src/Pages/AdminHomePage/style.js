@@ -4,14 +4,14 @@ export const AdminTripsContainer = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
-justify-content: space-between;
-height: 80vh;
-div{
-    padding: 8px;
-    width: 400px;
-    background-color: #B86917;
-    display: flex;
-    justify-content: space-around;
-}
+justify-content: space-around;
+padding: 16px;
+width: 400px;
 `
-
+export const MainAdminHomeContainer = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-around;
+height: 100vh;
+`

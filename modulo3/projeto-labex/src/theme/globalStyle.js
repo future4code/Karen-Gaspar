@@ -12,10 +12,13 @@ body{
     color: white;
 }
 button{
-    background-color: #B86917;
+    color: #D09251;
     padding: 3px;
+    background-color: #146B94;
+    font-weight: bold;
+    font-size: 15px;
 }
-input, select, option{
+input, select{
     width: 280px;
     height: 20px;
     margin: 5px;
@@ -24,6 +27,7 @@ form{
     display: flex;
     flex-direction: column;
     align-items: center;
-}`;
+}
+`;
 
 export default GlobalStyle;
