@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+### Projeto LabeX
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Objetivo do projeto
 
-## Available Scripts
+Esse projeto consiste em criar uma plataforma de gerenciamento de viagens espaciais que contém duas áreas de acesso: uma pública e uma privada que deve ser acessada com login de administrador. Nele é possível se candidatar para as viagens disponíveis, bem como criar novos roteiros para disponibilizar ao público.
 
-In the project directory, you can run:
+## Cores:
 
-### `npm start`
+Utilizei uma paleta de cores baseada nas cores da imagem de fundo do site que remete às cores de roupa de astronauta.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Canva:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+O wireframe foi desenvolvido no canva, pensando na melhor demonstração dos elementos de cada uma das 7 páginas.
 
-### `npm test`
+## Tecnologias à serem usadas:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React Js
+- API LabeX
+- Axios
+- Custom Hooks
 
-### `npm run build`
+## O que funciona:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Função de inscrição de candidato.
+- Função de trocar de páginas.
+- Função de renderizar a lista de viagens na página pública.
+- Função de logar.
+- Função de criar uma viagem.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## O que não funciona:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Função de deletar o card da viagem na tela home de admin.
+- Função de aprovar e reprovar candidatos.
+- Função de renderizar a viagem com os candidatos pendentes de aprovação.
 
-### `npm run eject`
+## Link
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Você pode acessar o site clicando no link: https://ka-labex.surge.sh/
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Email e senha
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+karenasgaspar@gmail.com
+481526
