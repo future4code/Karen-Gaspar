@@ -10,7 +10,7 @@ export const AdminHomePage = () => {
 
   useProtectedPage()
   const history = useHistory();
-  const [tripsAdmin, getTripsAdmin] = useRequestData('/trips', {})
+  const [tripsAdmin, getTripsAdmin] = useRequestData('/trips')
 
   const goBack = () => {
     history.goBack()
@@ -20,18 +20,18 @@ export const AdminHomePage = () => {
     history.push("/admin/trips/create")
   }
 
-  const goToTripDetailsPage = () => {
-    history.push("/admin/trips/:id")
+  const goToTripDetailsPage = (id) => {
+    history.push(`/admin/trips/${id}`)
   }
 
   const tripsListAdmin = tripsAdmin && tripsAdmin.map((trip) => {
-    return <AdminTripsCard key={trip.id} name={trip.name} getTripsAdmin={getTripsAdmin} goToTripDetailsPage={goToTripDetailsPage} />
+    return <AdminTripsCard key={trip.id} trip={trip} getTripsAdmin={getTripsAdmin} goToTripDetailsPage={goToTripDetailsPage} />
   })
 
   return (
     <MainAdminHomeContainer>
-      <div>
         <h3>Painel Administrativo</h3>
+        <div>
         <button onClick={goBack}>Voltar</button>
         <button onClick={goToCreateTripPage}>Criar Viagem</button>
         <button>Logout</button>

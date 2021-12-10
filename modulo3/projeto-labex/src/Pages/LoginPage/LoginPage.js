@@ -22,7 +22,7 @@ export const LoginPage = () => {
       localStorage.setItem('token', res.data.token);
       history.push("/admin/trips/list")
     })
-    .catch((err)=>{
+    .catch(()=>{
       alert("Login inválido!")
     })
   }

@@ -1,16 +1,16 @@
+// import axios from 'axios'
 import React from 'react'
-import { useHistory } from 'react-router'
 import {AdminTripsCardContainer} from './style'
+// import {BASE_URL} from '../../constant/url'
 
 
 export const AdminTripsCard = (props) => {
 
-    const history = useHistory()
-    const {name, getTrips} = props
+    const {trip, goToTripDetailsPage} = props
 
     return (
-        <AdminTripsCardContainer onClick={props.goToTripDetailsPage}>
-            <p><strong>{name}</strong></p>
+        <AdminTripsCardContainer onClick={() => {goToTripDetailsPage(trip.id)}}>
+            <p><strong>{trip.name}</strong></p>
             <button>Remover</button>
         </AdminTripsCardContainer>
     )

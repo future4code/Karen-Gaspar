@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useForm } from '../../hooks/useForm'
 import { FormContainer, MainApplicationContainer } from './style'
-import { countries} from '../../constant/countries'
+import { countries } from '../../constant/countries'
 import { useRequestData } from '../../hooks/useRequestData'
 import { Buttons } from '../TripsListPage/style'
 import axios from 'axios'
@@ -14,33 +14,30 @@ export const ApplicationFormPage = () => {
   const history = useHistory()
   const { form, onChangeInputs, cleanFields } = useForm({ name: "", age: "", applicationText: "", profession: "", country: "" })
   const [trips] = useRequestData(`/trips`)
-  const [setTripId] = useState("")
+  const [tripId, setTripId] = useState("")
 
   const goBack = () => {
     history.goBack()
   }
 
-
   const applyTotrip = (body, tripId) => {
     axios
-    .post(`${BASE_URL}/trips/${tripId}/apply`, body)
-    .then((res) => {
-      console.log(res.data)
-      alert("Sua inscrição foi realizada com sucesso. Boa sorte!", form);
-    })
-    .catch((err) => {
-      alert("Algo deu errado, tente mais tarde!")
-    })
-
+      .post(`${BASE_URL}/trips/${tripId}/apply`, body)
+      .then(() => {
+        alert("Sua inscrição foi realizada com sucesso. Boa sorte!", form);
+      })
+      .catch(() => {
+        alert("Algo deu errado, tente mais tarde!")
+      })
   }
 
   const onChangeTrip = (event) => {
     setTripId(event.target.value)
-}
+  }
 
   const register = (event) => {
     event.preventDefault();
-    applyTotrip(form)
+    applyTotrip(form, tripId)
     cleanFields();
   }
 
@@ -53,7 +50,7 @@ export const ApplicationFormPage = () => {
       <FormContainer >
         <h3>Formulário de inscrição</h3>
         <form onSubmit={register}>
-          <select defaultValue="" onChangeTrip={onChangeTrip}>
+          <select defaultValue="" onChange={onChangeTrip}>
             <option value={""} disabled>Escolha uma viagem</option>
             {tripOption}
           </select>
@@ -102,7 +99,7 @@ export const ApplicationFormPage = () => {
             onChange={onChangeInputs}
             required>
             <option value={""} disabled >Escolha um País</option>
-            {countries.map((country)=>{
+            {countries.map((country) => {
               return <option value={country}>{country}</option>
             })}
           </select>

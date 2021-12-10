@@ -6,11 +6,13 @@ import {LoginPage} from "../pages/LoginPage/LoginPage"
 import {AdminHomePage} from "../pages/AdminHomePage/AdminHomePage"
 import {CreateTripPage} from "../pages/CreateTripPage/CreateTripPage"
 import {TripDetailsPage} from "../pages/TripDetailsPage/TripDetailsPage"
+import { Header } from "../Components/Header/Header"
 
 
 export const Router = ()=> {
     return (
         <BrowserRouter>
+        <Header/>
         <Switch>
             <Route exact path={"/"}>
                 <HomePage/>

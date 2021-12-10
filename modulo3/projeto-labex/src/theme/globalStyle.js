@@ -17,6 +17,10 @@ button{
     background-color: #146B94;
     font-weight: bold;
     font-size: 15px;
+    cursor: pointer;
+    :hover{
+        
+    }
 }
 input, select{
     width: 280px;

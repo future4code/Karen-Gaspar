@@ -9,6 +9,10 @@ padding: 0 16px;
 background-color: #D09251;
 h1{
     color: #146B94;
+    cursor: pointer;
+    :hover{
+        font-size: 34px;
+    }
 }
 span{
     color:#B86917;
