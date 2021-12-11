@@ -11,7 +11,7 @@ export const AdminHomePage = () => {
   useProtectedPage()
   const history = useHistory();
   const [tripsAdmin, getTripsAdmin] = useRequestData('/trips')
-
+  
   const goBack = () => {
     history.goBack()
   }
