@@ -1,5 +1,11 @@
 import styled from 'styled-components'
 
+export const ListMainContainer=styled.div`
+display: flex;
+flex-direction: column;
+
+`
+
 export const TripsListContainer=styled.div`
 display: grid;
 grid-template-columns: repeat(3, 1fr);
@@ -10,7 +16,10 @@ height: 100vh;
 
 export const Buttons =styled.div`
 display: flex;
-justify-content: space-around;
+justify-content: center;
 align-items: center;
 margin: 20px;
+button{
+    margin: 10px;
+}
 `

@@ -25,5 +25,6 @@ div{
     justify-content: space-around;
     width: 200px;
     padding: 0 3px;
+    margin: 10px;
 }
 `

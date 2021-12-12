@@ -2,7 +2,7 @@
 import { useHistory } from 'react-router-dom'
 import { TripsCard } from '../../Components/TripsCard/TripsCard'
 import { useRequestData } from '../../hooks/useRequestData'
-import { Buttons, TripsListContainer } from './style'
+import { Buttons, ListMainContainer, TripsListContainer } from './style'
 
 export const TripsListPage = () => {
 
@@ -27,7 +27,7 @@ export const TripsListPage = () => {
     });
 
   return (
-    <div>
+    <ListMainContainer>
       <Buttons>
         <button onClick={goToApplicationFormPage}>Inscreva-se</button>
         <button onClick={goToHomePage}>Voltar</button>
@@ -40,6 +40,6 @@ export const TripsListPage = () => {
           <p>Não há nenhuma viagem!</p>
         )}
       </TripsListContainer>
-    </div>
+    </ListMainContainer>
   );
 };
