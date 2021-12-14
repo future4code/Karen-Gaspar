@@ -3,30 +3,32 @@ import { InputsContainer} from "./styled"
 import TextField from "@material-ui/core/TextField"
 import { useForm } from "../../hooks/useForm"
 import { Button } from "@material-ui/core"
-import axios from "axios"
-import {BASE_URL} from "../../constants/urls"
 
 
-const LoginForm = () => {
+const SignUpForm = () => {
 
-  const { form, onChangeInputs, clearFields } = useForm({ email: "", password: "" })
+  const { form, onChangeInputs, clearFields } = useForm({ name: "", email: "", password: "" })
 
-  const onSubmitLogin = (event) => {
+  const onSubmitSignUp = (event) => {
+    console.log(form)
     event.preventDefault()
-    login()
-  }
-   
-  const login = () =>{
-    axios.post(`${BASE_URL}/users/login`, form)
-    .then((res)=> {localStorage.setItem("token", res.data.token)
-    clearFields()
-  })
-    .catch((err)=> alert("Há algo errado com o login! Verifique e tente novamente."))
+
   }
 
   return (
       <InputsContainer>
-        <form onSubmit={onSubmitLogin}>
+        <form onSubmit={onSubmitSignUp}>
+        <TextField
+            type={"text"}
+            label={"Nome"}
+            name={"name"}
+            value={form.name}
+            onChange={onChangeInputs}
+            variant={"outlined"}
+            fullWidth
+            margin={"dense"}
+            required
+          />
           <TextField
             type={"email"}
             label={"E-mail"}
@@ -48,6 +50,8 @@ const LoginForm = () => {
             fullWidth
             margin={"dense"}
             required
+            inputProps = {{pattern: "^.{8,}"}}
+            title={"A senha deve ter no mínimo 8 e no máximo 30 caracteres"}
           />
           <Button
             type={"submit"}
@@ -55,11 +59,11 @@ const LoginForm = () => {
             variant={"contained"}
             color={"primary"}
           >
-            Entrar
+            Cadastrar
           </Button>
         </form>
       </InputsContainer>
   );
 }
 
-export default LoginForm;
+export default SignUpForm;
