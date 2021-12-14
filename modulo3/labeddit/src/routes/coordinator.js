@@ -8,6 +8,6 @@ export const goToSignUpPage = (history) => {
 export const goToFeedPage = (history) => {
     history.push("/")
 }
-export const goToPostPage = (history) => {
-    history.push("/posts")
+export const goToPostPage = (history, id) => {
+    history.push(`/posts/${id}/comments`)
 }
