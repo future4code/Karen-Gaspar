@@ -6,9 +6,11 @@ flex-direction: column;
 align-items: center;
 width: 100vw;
 `
+
 export const LogoImage = styled.img`
-width: 45vw;
-max-width: 250px;
+width: 40vw;
+max-width: 200px;
+margin-top: 20px;
 `
 
 export const InputsContainer = styled.div`
@@ -16,20 +18,21 @@ display: flex;
 flex-direction: column;
 align-items: center;
 width: 80vw;
-max-width: 450px;
+max-width: 350px;
 margin-bottom: 20px;
 `
 
-export const LoginFormContainer = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-width: 80vw;
-max-width: 450px;
-margin-bottom: 20px;
-`
+// export const LoginFormContainer = styled.div`
+// display: flex;
+// flex-direction: column;
+// align-items: center;
+// width: 80vw;
+// max-width: 450px;
+// margin-bottom: 20px;
+// `
 
 export const SignUpContainer = styled.div`
 width: 80vw;
 max-width: 450px;
 `
+

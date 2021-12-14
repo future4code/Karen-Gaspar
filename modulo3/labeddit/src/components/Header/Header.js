@@ -13,7 +13,7 @@ const Header = () => {
   return (
       <AppBar position="static">
         <StyledToolBar>
-          <Button onClick={() => goToFeedPage(history)}><img src={logo} alt="alien"/> LabEddit</Button>
+          <Button onClick={() => goToLoginPage(history)}><img src={logo} alt="alien"/> LabEddit</Button>
           {/* <Button onClick={() => goToFeedPage(history)} color="inherit">LabEddit</Button> */}
           <Button onClick={() => goToLoginPage(history)} color="inherit">Login</Button>
         </StyledToolBar>

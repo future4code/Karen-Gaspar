@@ -1,40 +1,32 @@
 import React from "react"
-import { InputsContainer, LogoImage, MainContainer } from "./styled"
+import { LogoImage, MainContainer, SignUpContainer } from "./styled"
 import logo from "../../assets/alien.png"
-import TextField from "@material-ui/core/TextField"
-import {useForm} from "../../hooks/useForm"
+import { Button } from "@material-ui/core"
+import {useHistory} from 'react-router-dom'
+import {goToSignUpPage} from '../../routes/coordinator'
+import LoginForm from "./LoginForm"
+
 
 const LoginPage = () => {
-  
-  const {form, onChangeInputs, clearFields} = useForm({email: "", password: ""})
 
-  const onSubmitLogin = () =>{
-
-  }
+  const history = useHistory()
 
   return (
     <MainContainer >
-      <LogoImage src={logo} alt="alien"/>
-      <InputsContainer>
-      <form onSubmit={onSubmitLogin}>
-        <TextField
-        label={"E-mail"}
-        name={"email"}
-        value={form.email}
-        onChange={onChangeInputs}
-        
-        />
-        <TextField
-        label={"Senha"}
-        name={"password"}
-        value={form.password}
-        onChange={onChangeInputs}
-        
-        />
-
-      </form>
-      </InputsContainer>
-    </MainContainer>
+      <LogoImage src={logo} alt="alien" />
+      <LoginForm/>
+      <SignUpContainer >
+        <Button
+          onClick={() => goToSignUpPage(history)}
+          type={"submit"}
+          fullWidth
+          variant={"text"}
+          color={"primary"}
+        >
+          Não possui conta? Cadastre-se
+        </Button>
+      </SignUpContainer>
+    </MainContainer >
   );
 }
 
