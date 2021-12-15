@@ -3,16 +3,20 @@ import { InputsContainer} from "./styled"
 import TextField from "@material-ui/core/TextField"
 import { useForm } from "../../hooks/useForm"
 import { Button } from "@material-ui/core"
+import { useUnprotectedPage } from "../../hooks/useUnprotectedPage"
+import { signUp } from "../../services/user"
+import { useHistory } from "react-router-dom"
 
 
-const SignUpForm = () => {
-
-  const { form, onChangeInputs, clearFields } = useForm({ name: "", email: "", password: "" })
+const SignUpForm = ({setRigthButton}) => {
+  
+  useUnprotectedPage()
+  const history = useHistory()
+  const { form, onChangeInputs, clearFields } = useForm({ username: "", email: "", password: "" })
 
   const onSubmitSignUp = (event) => {
-    console.log(form)
     event.preventDefault()
-
+    signUp(form, clearFields, history, setRigthButton)
   }
 
   return (
@@ -21,8 +25,8 @@ const SignUpForm = () => {
         <TextField
             type={"text"}
             label={"Nome"}
-            name={"name"}
-            value={form.name}
+            name={"username"}
+            value={form.username}
             onChange={onChangeInputs}
             variant={"outlined"}
             fullWidth
@@ -50,8 +54,6 @@ const SignUpForm = () => {
             fullWidth
             margin={"dense"}
             required
-            inputProps = {{pattern: "^.{8,}"}}
-            title={"A senha deve ter no mínimo 8 e no máximo 30 caracteres"}
           />
           <Button
             type={"submit"}

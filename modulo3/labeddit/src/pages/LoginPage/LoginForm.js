@@ -3,27 +3,23 @@ import { InputsContainer} from "./styled"
 import TextField from "@material-ui/core/TextField"
 import { useForm } from "../../hooks/useForm"
 import { Button } from "@material-ui/core"
-import axios from "axios"
-import {BASE_URL} from "../../constants/urls"
+import {login} from "../../services/user"
+import {useHistory} from 'react-router-dom'
+import { useUnprotectedPage } from "../../hooks/useUnprotectedPage"
 
 
-const LoginForm = () => {
+const LoginForm = ({setRigthButton}) => {
 
+  useUnprotectedPage()
+  const history = useHistory()
   const { form, onChangeInputs, clearFields } = useForm({ email: "", password: "" })
 
   const onSubmitLogin = (event) => {
     event.preventDefault()
-    login()
-  }
-   
-  const login = () =>{
-    axios.post(`${BASE_URL}/users/login`, form)
-    .then((res)=> {localStorage.setItem("token", res.data.token)
-    clearFields()
-  })
-    .catch((err)=> alert("Há algo errado com o login! Verifique e tente novamente."))
-  }
+    login(form, clearFields, history, setRigthButton)
 
+  }
+  
   return (
       <InputsContainer>
         <form onSubmit={onSubmitLogin}>

@@ -7,14 +7,14 @@ import {goToSignUpPage} from '../../routes/coordinator'
 import LoginForm from "./LoginForm"
 
 
-const LoginPage = () => {
+const LoginPage = ({setRigthButton}) => {
 
   const history = useHistory()
 
   return (
     <MainContainer >
       <LogoImage src={logo} alt="alien" />
-      <LoginForm/>
+      <LoginForm setRigthButton={setRigthButton}/>
       <SignUpContainer >
         <Button
           onClick={() => goToSignUpPage(history)}
