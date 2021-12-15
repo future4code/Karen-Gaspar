@@ -21,3 +21,4 @@ export const signUp = (body, clearFields, history, setRightButton) =>{
 })
 .catch((err)=> alert(err.response.data.message))
 }
+

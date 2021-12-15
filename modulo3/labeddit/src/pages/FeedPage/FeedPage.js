@@ -5,6 +5,8 @@ import {BASE_URL} from '../../constants/urls'
 import PostCard from "../../components/PostCard/PostCard"
 import { goToPostPage } from "../../routes/coordinator"
 import {useHistory} from 'react-router-dom'
+import { MainContainer, FormContainer } from "./styled"
+import FeedForm from "./FeedForm"
 
 
 const FeedPage = () => {
@@ -32,9 +34,12 @@ const FeedPage = () => {
   })
 
   return (
-    <div >
+    <MainContainer>
+      <FormContainer>
+        <FeedForm/>
+      </FormContainer>
       {postsList}
-    </div>
+    </MainContainer>
   );
 }
 

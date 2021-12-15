@@ -9,17 +9,10 @@ const PostPage = () => {
   const params = useParams()
   // const allPosts = useRequestData([], `${BASE_URL}/posts`)
   const post = useRequestData([], `${BASE_URL}/posts/${params.id}/comments`)
-  console.log(params)
 
   // const clickedPost = allPosts.filter((post) =>{
-
-  //   return ( 
-  //   <div key={post.id}>
-  //   {post.username}
-  //   {post.body}
-  //   </div> 
-  //   )
-  // })
+  //   return post.id === post.id})
+ 
 
   return (
     <div >
