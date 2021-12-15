@@ -7,10 +7,10 @@ import { PostCardContainer, PostCardContent } from './styled';
 
 const PostCard = (props) => {
   
-    const {username, body} = props
+    const {username, body, commentCount, voteSum, onClick} = props
 
   return (
-    <PostCardContainer>
+    <PostCardContainer onClick={onClick}>
       <PostCardContent>
         <Typography component="p">
         {username}
@@ -21,10 +21,11 @@ const PostCard = (props) => {
         </Typography>
       </PostCardContent>
       <CardActions>
-        <Button size="small">Vote 1</Button>
-        <Button size="small">Vote -1</Button>
-        <Typography variant="body2" component="p">
-        Comentários
+        <Button size="small">Yes</Button>
+        {voteSum}
+        <Button size="small">No</Button>
+        <Typography component="p">
+        {commentCount} Comentários
         </Typography>
       </CardActions>
     </PostCardContainer>

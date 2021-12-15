@@ -19,7 +19,7 @@ const Router = ({ setRigthButton }) => {
             <Route exact path="/">
                 <FeedPage />
             </Route>
-            <Route exact path="/posts/:id/comments">
+            <Route exact path="/posts/:id">
                 <PostPage />
             </Route>
             <Route>

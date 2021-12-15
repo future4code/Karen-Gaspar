@@ -9,5 +9,5 @@ export const goToFeedPage = (history) => {
     history.push("/")
 }
 export const goToPostPage = (history, id) => {
-    history.push(`/posts/${id}/comments`)
+    history.push(`/posts/${id}`)
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import AppBar from '@material-ui/core/AppBar'
 import Button from '@material-ui/core/Button'
 import {StyledToolBar} from './styled'
@@ -24,7 +24,6 @@ const Header = ({rigthButton, setRigthButton}) => {
       goToLoginPage(history)
     }
   }
-
 
   return (
       <AppBar position="static">
