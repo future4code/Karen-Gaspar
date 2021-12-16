@@ -22,15 +22,6 @@ max-width: 350px;
 margin-bottom: 20px;
 `
 
-// export const LoginFormContainer = styled.div`
-// display: flex;
-// flex-direction: column;
-// align-items: center;
-// width: 80vw;
-// max-width: 450px;
-// margin-bottom: 20px;
-// `
-
 export const SignUpContainer = styled.div`
 width: 80vw;
 max-width: 450px;

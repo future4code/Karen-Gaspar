@@ -7,6 +7,7 @@ import { goToPostPage } from "../../routes/coordinator"
 import {useHistory} from 'react-router-dom'
 import { MainContainer, FormContainer } from "./styled"
 import FeedForm from "./FeedForm"
+import Loading from "../../components/Loading/Loading"
 
 
 const FeedPage = () => {
@@ -17,6 +18,7 @@ const FeedPage = () => {
 
   const onClickCard = (id) => {
     goToPostPage(history, id)
+    console.log(id)
   }
 
   const postsList = posts.map((post) =>{
@@ -38,7 +40,7 @@ const FeedPage = () => {
       <FormContainer>
         <FeedForm/>
       </FormContainer>
-      {postsList}
+      {postsList.length > 0 ? postsList : <Loading/>}
     </MainContainer>
   );
 }

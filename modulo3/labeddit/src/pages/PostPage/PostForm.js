@@ -1,4 +1,4 @@
-import { createPost } from "../../services/posts"
+import { createComment } from "../../services/posts"
 import TextField from "@material-ui/core/TextField"
 import { useForm } from "../../hooks/useForm"
 import { Button, CircularProgress } from "@material-ui/core"
@@ -7,34 +7,24 @@ import { InputsContainer } from "./styled"
 import { useState } from "react"
 
 
-const FeedForm = () => {
+const PostForm = (props) => {
 
     useProtectedPage()
-    const { form, onChangeInputs, clearFields} = useForm({ title: "", body: "" })
+    const {id} = props
+    const {form, onChangeInputs, clearFields} = useForm({ body: "" })
     const [isLoading, setIsLoading] = useState(false)
   
-    const onSubmitFeed = (event) => {
+    const onSubmitComment = (event) => {
       event.preventDefault()
-      createPost(form, clearFields, setIsLoading)
+      createComment(id, form, clearFields, setIsLoading)
     }
     
     return (
         <InputsContainer>
-          <form onSubmit={onSubmitFeed}>
+          <form onSubmit={onSubmitComment}>
             <TextField
               type={"text"}
-              label={"Título"}
-              name={"title"}
-              value={form.title}
-              onChange={onChangeInputs}
-              variant={"outlined"}
-              fullWidth
-              margin={"dense"}
-              required
-            />
-            <TextField
-              type={"text"}
-              label={"O que você está pensando?"}
+              label={"Comentário"}
               name={"body"}
               value={form.body}
               onChange={onChangeInputs}
@@ -49,11 +39,11 @@ const FeedForm = () => {
               variant={"contained"}
               color={"primary"}
             >
-              {isLoading ? <CircularProgress color={"inherit"} size={24}/> : <>Postar</>}
+             {isLoading ? <CircularProgress color={"inherit"} size={24}/> : <>Comentar</>}
             </Button>
           </form>
         </InputsContainer>
     );
   }
   
-  export default FeedForm;
+  export default PostForm;

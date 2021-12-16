@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { InputsContainer} from "./styled"
 import TextField from "@material-ui/core/TextField"
 import { useForm } from "../../hooks/useForm"
@@ -6,6 +6,7 @@ import { Button } from "@material-ui/core"
 import { useUnprotectedPage } from "../../hooks/useUnprotectedPage"
 import { signUp } from "../../services/user"
 import { useHistory } from "react-router-dom"
+import { CircularProgress } from "@material-ui/core"
 
 
 const SignUpForm = ({setRigthButton}) => {
@@ -13,10 +14,11 @@ const SignUpForm = ({setRigthButton}) => {
   useUnprotectedPage()
   const history = useHistory()
   const { form, onChangeInputs, clearFields } = useForm({ username: "", email: "", password: "" })
+  const [isLoading, setIsLoading] = useState(false)
 
   const onSubmitSignUp = (event) => {
     event.preventDefault()
-    signUp(form, clearFields, history, setRigthButton)
+    signUp(form, clearFields, history, setRigthButton, setIsLoading)
   }
 
   return (
@@ -61,7 +63,7 @@ const SignUpForm = ({setRigthButton}) => {
             variant={"contained"}
             color={"primary"}
           >
-            Cadastrar
+            {isLoading ? <CircularProgress color={"inherit"} size={24}/> : <>Cadastrar</>}
           </Button>
         </form>
       </InputsContainer>

@@ -12,7 +12,7 @@ export const FormContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 400px;
-  margin: 10px auto;
+  margin: 60px auto;
   height: 100px;
 `
 
