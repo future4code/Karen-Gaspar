@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom"
 import LoginPage from "../pages/LoginPage/LoginPage"
 import FeedPage from "../pages/FeedPage/FeedPage"
 import SignUpPage from "../pages/SignUpPage/SignUpPage"
-import PostPage from "../pages/PostPage/PostPage"
+import PostDetailsPage from "../pages/PostDetailsPage/PostDetailsPage"
 import ErrorPage from "../pages/ErrorPage/ErrorPage"
 
 
@@ -20,7 +20,7 @@ const Router = ({ setRigthButton }) => {
                 <FeedPage />
             </Route>
             <Route exact path="/posts/:id">
-                <PostPage />
+                <PostDetailsPage />
             </Route>
             <Route>
                 <ErrorPage />

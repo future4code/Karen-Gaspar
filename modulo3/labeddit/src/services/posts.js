@@ -43,7 +43,22 @@ export const createPostVote = (id) => {
     }
   })
   .then((res) => {
-    alert(res.data)
+    console.log(res.data)
+  })
+  .catch((err)=> {
+    console.log(err.res)
+  })
+}
+
+export const createCommentVote = (id) => {
+  const body = {"direction": 1}
+  axios.post(`${BASE_URL}/comments/${id}/votes`, body, {
+    headers: {
+      Authorization: localStorage.getItem("token")
+    }
+  })
+  .then((res) => {
+    console.log(res.data)
   })
   .catch((err)=> {
     console.log(err.res)

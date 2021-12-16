@@ -9,7 +9,6 @@ export const PostCardContainer = styled(Card)`
   align-items: center;
   width: 400px;
   margin: 10px auto;
-  background-color: #272729;
 `
 
 export const PostCardContent = styled(CardContent)`

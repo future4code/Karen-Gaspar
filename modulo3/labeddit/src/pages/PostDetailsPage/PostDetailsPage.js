@@ -6,10 +6,10 @@ import Loading from "../../components/Loading/Loading";
 import { BASE_URL } from "../../constants/urls";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
 import useRequestData from "../../hooks/useRequestData";
-import PostForm from "./PostForm";
+import PostDetailsForm from "./PostDetailsForm";
 import { FormContainer, MainContainer } from "./styled";
 
-const PostPage = () => {
+const PostDetailsPage = () => {
   useProtectedPage()
   const params = useParams()
   const allPosts = useRequestData([], `${BASE_URL}/posts`)
@@ -46,7 +46,7 @@ const PostPage = () => {
     <MainContainer >
       {clickedPost}
       <FormContainer>
-        <PostForm id={params.id} />
+        <PostDetailsForm id={params.id} />
       </FormContainer>
       {/* {commentsList.length === 0 ? (<Typography>Não há nenhum comentário!</Typography>) : commentsList} */}
       {commentsList.length > 0 ? commentsList : <Loading />}
@@ -54,4 +54,4 @@ const PostPage = () => {
   );
 }
 
-export default PostPage
+export default PostDetailsPage
