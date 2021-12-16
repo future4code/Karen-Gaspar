@@ -1,20 +1,19 @@
 import React from 'react';
 import CardActions from '@material-ui/core/CardActions'
-import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
-import { CommentCardContainer, CommentCardContent } from './styled';
+import { ClickedPostCardContainer, ClickedPostCardContent } from './styled'
 import IconButton from '@material-ui/core/SvgIcon'
 import ArrowDownwardOutlinedIcon from '@material-ui/icons/ArrowDownwardOutlined'
 import ArrowUpwardOutlinedIcon from '@material-ui/icons/ArrowUpwardOutlined'
 
 
-const CommentCard = (props) => {
+const ClickedPostCard = (props) => {
   
-    const {username, body, voteSum } = props
+    const {username, body, commentCount, voteSum} = props
 
   return (
-    <CommentCardContainer >
-      <CommentCardContent>
+    <ClickedPostCardContainer>
+      <ClickedPostCardContent>
         <Typography component="p">
         {username}
         </Typography>
@@ -22,18 +21,21 @@ const CommentCard = (props) => {
         <Typography component="p">
         {body}
         </Typography>
-      </CommentCardContent>
+      </ClickedPostCardContent>
       <CardActions>
-      <IconButton>
+        <IconButton>
           <ArrowUpwardOutlinedIcon/>
         </IconButton>
         {voteSum}
         <IconButton>
           <ArrowDownwardOutlinedIcon/>
         </IconButton>
+        <Typography component="p">
+        {commentCount} Comentários
+        </Typography>
       </CardActions>
-    </CommentCardContainer>
+    </ClickedPostCardContainer>
   );
 }
 
-export default CommentCard
+export default ClickedPostCard

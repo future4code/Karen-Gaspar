@@ -27,11 +27,25 @@ export const createComment = (id, body, clearFields) => {
     }
   })
     .then((res) => {
-      alert("Comment comentado")
+      alert("Comentário criado com sucesso!")
       clearFields()
     })
     .catch((err) => {
-      console.log(err.response)
+      console.log(err.res)
     })
 }
 
+export const createPostVote = (id) => {
+  const body = {"direction": 1}
+  axios.post(`${BASE_URL}/posts/${id}/votes`, body, {
+    headers: {
+      Authorization: localStorage.getItem("token")
+    }
+  })
+  .then((res) => {
+    alert(res.data)
+  })
+  .catch((err)=> {
+    console.log(err.res)
+  })
+}

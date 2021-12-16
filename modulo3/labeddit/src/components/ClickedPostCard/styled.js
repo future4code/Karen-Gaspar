@@ -3,20 +3,19 @@ import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 
 
-export const CommentCardContainer = styled(Card)`
+export const ClickedPostCardContainer = styled(Card)`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 400px;
   margin: 10px auto;
-  background-color: #272729;
-  /* height: 80px; */
+  /* background-color: #272729; */
 `
 
-export const CommentCardContent = styled(CardContent)`
+export const ClickedPostCardContent = styled(CardContent)`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 30px;
+  height: 100px;
 `

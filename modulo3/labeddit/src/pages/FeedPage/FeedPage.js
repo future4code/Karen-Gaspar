@@ -8,6 +8,7 @@ import {useHistory} from 'react-router-dom'
 import { MainContainer, FormContainer } from "./styled"
 import FeedForm from "./FeedForm"
 import Loading from "../../components/Loading/Loading"
+import { createPostVote } from "../../services/posts"
 
 
 const FeedPage = () => {
@@ -18,9 +19,12 @@ const FeedPage = () => {
 
   const onClickCard = (id) => {
     goToPostPage(history, id)
-    console.log(id)
   }
 
+  const onClickVote = (id) => {
+    createPostVote(id)
+  }
+   
   const postsList = posts.map((post) =>{
 
     return ( 
@@ -30,7 +34,8 @@ const FeedPage = () => {
     body={post.body}
     commentCount={post.commentCount}
     voteSum={post.voteSum}
-    onClick={() => onClickCard(post.id)}
+    onClickCard={() => onClickCard(post.id)}
+    onClickVote={() => onClickVote(post.id)}
     />
     )
   })

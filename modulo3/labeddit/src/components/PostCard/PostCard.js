@@ -1,29 +1,36 @@
 import React from 'react';
 import CardActions from '@material-ui/core/CardActions'
-import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import { PostCardContainer, PostCardContent } from './styled';
+import IconButton from '@material-ui/core/SvgIcon'
+import ArrowDownwardOutlinedIcon from '@material-ui/icons/ArrowDownwardOutlined'
+import ArrowUpwardOutlinedIcon from '@material-ui/icons/ArrowUpwardOutlined'
 
 
 const PostCard = (props) => {
   
-    const {username, body, commentCount, voteSum, onClick} = props
+    const {username, body, commentCount, voteSum, onClickCard, onClickVote} = props
+
 
   return (
-    <PostCardContainer onClick={onClick}>
+    <PostCardContainer onClick={onClickCard}>
       <PostCardContent>
         <Typography component="p">
         {username}
         </Typography>
         <br/>
-        <Typography component="h4">
+        <Typography component="p">
         {body}
         </Typography>
       </PostCardContent>
       <CardActions>
-        <Button size="small">Yes</Button>
+      <IconButton onClick={onClickVote}>
+          <ArrowUpwardOutlinedIcon/>
+        </IconButton>
         {voteSum}
-        <Button size="small">No</Button>
+        <IconButton >
+          <ArrowDownwardOutlinedIcon/>
+        </IconButton>
         <Typography component="p">
         {commentCount} Comentários
         </Typography>
