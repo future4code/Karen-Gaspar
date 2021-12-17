@@ -4,7 +4,9 @@ import Button from '@material-ui/core/Button'
 import {StyledToolBar} from './styled'
 import { goToLoginPage, goToFeedPage } from '../../routes/coordinator'
 import {useHistory} from 'react-router-dom'
-import logo from '../../assets/alien.png'
+import logoImage from '../../assets/alien.png'
+// import { Typography } from '@material-ui/core'
+import logo from '../../assets/labeddit-dark-logo.png'
 
 const Header = ({rigthButton, setRigthButton}) => {
   
@@ -28,7 +30,10 @@ const Header = ({rigthButton, setRigthButton}) => {
   return (
       <AppBar position="static">
         <StyledToolBar>
-          <Button onClick={() => goToFeedPage(history)}><img src={logo} alt="alien"/> LabEddit</Button>
+          <Button onClick={() => goToFeedPage(history)}>
+            <img src={logoImage} alt="alien"/>
+            <img src={logo} alt="labeddit"/>
+          </Button>
           <Button onClick={rightButtonAction} color="inherit">{rigthButton}</Button>
         </StyledToolBar>
       </AppBar>

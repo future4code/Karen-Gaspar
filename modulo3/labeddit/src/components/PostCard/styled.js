@@ -11,10 +11,25 @@ export const PostCardContainer = styled(Card)`
   margin: 10px auto;
 `
 
+export const PostHeader = styled.div`
+display: flex;
+justify-content: space-between;
+width: 95%;
+margin: 5px;
+border-bottom: 1px solid #F5F5F5;
+`
+
 export const PostCardContent = styled(CardContent)`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100px;
+`
+
+export const CardFooter = styled.div`
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 95%;
+border-top: 1px solid #F5F5F5;
 `
