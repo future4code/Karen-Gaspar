@@ -10,7 +10,6 @@ export const CommentCardContainer = styled(Card)`
   width: 400px;
   margin: 10px auto;
   background-color: #272729;
-  /* height: 80px; */
 `
 
 export const CommentCardContent = styled(CardContent)`

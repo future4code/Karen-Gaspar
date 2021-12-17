@@ -10,7 +10,7 @@ import ArrowUpwardOutlinedIcon from '@material-ui/icons/ArrowUpwardOutlined'
 
 const CommentCard = (props) => {
   
-    const {username, body, voteSum } = props
+    const {username, body, voteSum, onClickVote} = props
 
   return (
     <CommentCardContainer >
@@ -25,7 +25,7 @@ const CommentCard = (props) => {
       </CommentCardContent>
       <CardActions>
       <IconButton>
-          <ArrowUpwardOutlinedIcon/>
+          <ArrowUpwardOutlinedIcon onClick={onClickVote}/>
         </IconButton>
         {voteSum}
         <IconButton>
