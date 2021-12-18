@@ -10,13 +10,13 @@ import { useState } from "react"
 const PostForm = (props) => {
 
     useProtectedPage()
-    const {id} = props
+    const {id, updatePage} = props
     const {form, onChangeInputs, clearFields} = useForm({ body: "" })
     const [isLoading, setIsLoading] = useState(false)
   
     const onSubmitComment = (event) => {
       event.preventDefault()
-      createComment(id, form, clearFields, setIsLoading, props.updatePage)
+      createComment(id, form, clearFields, setIsLoading, updatePage)
     }
     
     return (
