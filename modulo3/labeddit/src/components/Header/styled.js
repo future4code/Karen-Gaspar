@@ -6,5 +6,6 @@ display: flex;
 justify-content: space-between;
 img{
     width: 38px;
+    margin-right: 8px;
 }
 `

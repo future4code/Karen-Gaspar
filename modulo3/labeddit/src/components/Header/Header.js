@@ -5,8 +5,7 @@ import {StyledToolBar} from './styled'
 import { goToLoginPage, goToFeedPage } from '../../routes/coordinator'
 import {useHistory} from 'react-router-dom'
 import logoImage from '../../assets/alien.png'
-// import { Typography } from '@material-ui/core'
-import logo from '../../assets/labeddit-dark-logo.png'
+import { Typography } from '@material-ui/core'
 
 const Header = ({rigthButton, setRigthButton}) => {
   
@@ -32,7 +31,7 @@ const Header = ({rigthButton, setRigthButton}) => {
         <StyledToolBar>
           <Button onClick={() => goToFeedPage(history)}>
             <img src={logoImage} alt="alien"/>
-            <img src={logo} alt="labeddit"/>
+            <Typography color="inherit" variant="h5">LABEDDIT</Typography>
           </Button>
           <Button onClick={rightButtonAction} color="inherit">{rigthButton}</Button>
         </StyledToolBar>

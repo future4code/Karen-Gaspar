@@ -12,6 +12,7 @@ const FeedForm = () => {
     useProtectedPage()
     const { form, onChangeInputs, clearFields} = useForm({ title: "", body: "" })
     const [isLoading, setIsLoading] = useState(false)
+     
   
     const onSubmitFeed = (event) => {
       event.preventDefault()
