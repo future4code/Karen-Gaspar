@@ -16,16 +16,16 @@ const PostCard = (props) => {
   return (
     <PostCardContainer onClick={onClickCard}>
       <PostHeader>
-        <Typography variant="p">
+        <Typography variant="body2">
           {username}
         </Typography>
-        <Typography variant="p" >
+        <Typography variant="body2" >
           {title}
         </Typography>
       </PostHeader>
       <Divider />
       <PostCardContent >
-        <Typography variant="p">
+        <Typography variant="body2">
           {body}
         </Typography>
       </PostCardContent>
@@ -36,13 +36,13 @@ const PostCard = (props) => {
             <ArrowUpwardOutlinedIcon />
           </IconButton>
           <div>
-          {voteSum}
+          {voteSum > 0 ? voteSum : 0}
           </div>
           <IconButton >
             <ArrowDownwardOutlinedIcon />
           </IconButton>
           </CardActions>
-          <Typography variant="p">
+          <Typography variant="body2">
             {commentCount > 0 ? commentCount : 0} comentários
           </Typography>
       </CardFooter>

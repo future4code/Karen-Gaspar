@@ -7,16 +7,15 @@ import { InputsContainer } from "./styled"
 import { useState } from "react"
 
 
-const FeedForm = () => {
+const FeedForm = (props) => {
 
     useProtectedPage()
     const { form, onChangeInputs, clearFields} = useForm({ title: "", body: "" })
     const [isLoading, setIsLoading] = useState(false)
-     
   
     const onSubmitFeed = (event) => {
       event.preventDefault()
-      createPost(form, clearFields, setIsLoading)
+      createPost(form, clearFields, setIsLoading, props.updatePage)
     }
     
     return (
@@ -50,7 +49,7 @@ const FeedForm = () => {
               variant={"contained"}
               color={"primary"}
             >
-              {isLoading ? <CircularProgress color={"inherit"} size={24}/> : <>Postar</>}
+              {isLoading ? <CircularProgress color={"primary"} size={24}/> : <>Postar</>}
             </Button>
           </form>
         </InputsContainer>

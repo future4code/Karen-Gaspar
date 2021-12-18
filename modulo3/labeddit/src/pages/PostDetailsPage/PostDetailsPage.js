@@ -14,7 +14,7 @@ const PostDetailsPage = () => {
   useProtectedPage()
   const params = useParams()
   const allPosts = useRequestData([], `${BASE_URL}/posts`)
-  const comments = useRequestData([], `${BASE_URL}/posts/${params.id}/comments`)
+  const [comments, updatePage] = useRequestData([], `${BASE_URL}/posts/${params.id}/comments`)
 
   const onClickVote = (id) => {
     createCommentVote(id)
@@ -52,7 +52,7 @@ const PostDetailsPage = () => {
     <MainContainer >
       {clickedPost}
       <FormContainer>
-        <PostDetailsForm id={params.id} />
+        <PostDetailsForm id={params.id} updatePage={updatePage}/>
       </FormContainer>
       {/* {commentsList.length === 0 ? (<Typography>Não há nenhum comentário!</Typography>) : commentsList} */}
       {commentsList.length > 0 ? commentsList : <Loading />}

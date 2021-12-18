@@ -1,7 +1,7 @@
 import axios from "axios"
 import { BASE_URL } from "../constants/urls"
 
-export const createPost = (body, clearFields, setIsLoading) => {
+export const createPost = (body, clearFields, setIsLoading, updatePage) => {
   setIsLoading(true)
   axios.post(`${BASE_URL}/posts`, body, {
     headers: {
@@ -9,7 +9,7 @@ export const createPost = (body, clearFields, setIsLoading) => {
     }
   })
     .then((res) => {
-      alert("Post postado")
+      updatePage()
       clearFields()
       setIsLoading(false)
     })
@@ -19,23 +19,25 @@ export const createPost = (body, clearFields, setIsLoading) => {
     })
 }
 
-export const createComment = (id, body, clearFields) => {
-  
+export const createComment = (id, body, clearFields, setIsLoading, updatePage) => {
+  setIsLoading(true)
   axios.post(`${BASE_URL}/posts/${id}/comments`, body, {
     headers: {
       Authorization: localStorage.getItem("token")
     }
   })
     .then((res) => {
-      alert("Comentário criado com sucesso!")
+      updatePage()
       clearFields()
+      setIsLoading(false)
     })
     .catch((err) => {
       console.log(err.res)
+      setIsLoading(false)
     })
 }
 
-export const createPostVote = (id) => {
+export const createPostVote = (id, updatePage) => {
   const body = {"direction": 1}
   axios.post(`${BASE_URL}/posts/${id}/votes`, body, {
     headers: {
@@ -44,13 +46,14 @@ export const createPostVote = (id) => {
   })
   .then((res) => {
     console.log(res.data)
+    updatePage()
   })
   .catch((err)=> {
     console.log(err.res)
   })
 }
 
-export const createCommentVote = (id) => {
+export const createCommentVote = (id, updatePage) => {
   const body = {"direction": 1}
   axios.post(`${BASE_URL}/comments/${id}/votes`, body, {
     headers: {
@@ -59,6 +62,7 @@ export const createCommentVote = (id) => {
   })
   .then((res) => {
     console.log(res.data)
+    updatePage()
   })
   .catch((err)=> {
     console.log(err.res)

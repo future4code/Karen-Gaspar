@@ -16,7 +16,7 @@ const PostForm = (props) => {
   
     const onSubmitComment = (event) => {
       event.preventDefault()
-      createComment(id, form, clearFields, setIsLoading)
+      createComment(id, form, clearFields, setIsLoading, props.updatePage)
     }
     
     return (

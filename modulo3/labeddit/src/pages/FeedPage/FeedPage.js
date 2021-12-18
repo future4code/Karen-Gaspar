@@ -14,7 +14,7 @@ import { createPostVote } from "../../services/posts"
 const FeedPage = () => {
   useProtectedPage()
   const history = useHistory()
-  const posts = useRequestData([], `${BASE_URL}/posts`)
+  const [posts, updatePage] = useRequestData([], `${BASE_URL}/posts`)
   const [upVote, setUpVote] = useState(false)
   const [downVote, setDownVote] = useState(false)
   
@@ -46,7 +46,7 @@ const FeedPage = () => {
   return (
     <MainContainer>
       <FormContainer>
-        <FeedForm/>
+        <FeedForm updatePage={updatePage}/>
       </FormContainer>
       {postsList.length > 0 ? postsList : <Loading/>}
     </MainContainer>
