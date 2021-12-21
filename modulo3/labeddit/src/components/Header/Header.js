@@ -19,7 +19,7 @@ const Header = ({rigthButton, setRigthButton}) => {
   const rightButtonAction = () =>{
     if (token) {
     logout()
-    setRigthButton("Login")
+    setRigthButton("Entrar")
     goToLoginPage(history)
     } else {
       goToLoginPage(history)
@@ -29,9 +29,9 @@ const Header = ({rigthButton, setRigthButton}) => {
   return (
       <AppBar position="static">
         <StyledToolBar>
-          <Button onClick={() => goToFeedPage(history)}>
+          <Button color="inherit" onClick={() => goToFeedPage(history)}>
             <img src={logoImage} alt="alien"/>
-            <Typography color="inherit" variant="h5">LABEDDIT</Typography>
+            <Typography variant="h5">LABEDDIT</Typography>
           </Button>
           <Button onClick={rightButtonAction} color="inherit">{rigthButton}</Button>
         </StyledToolBar>

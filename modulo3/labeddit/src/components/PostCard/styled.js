@@ -6,7 +6,7 @@ import CardContent from '@material-ui/core/CardContent'
 export const PostCardContainer = styled(Card)`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   width: 400px;
   margin: 10px auto;
 `

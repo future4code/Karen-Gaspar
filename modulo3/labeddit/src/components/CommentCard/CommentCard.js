@@ -2,36 +2,41 @@ import React from 'react';
 import CardActions from '@material-ui/core/CardActions'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
-import { CommentCardContainer, CommentCardContent } from './styled';
+import { CommentCardContainer, CommentCardContent, CommentCardFooter, CommentCardHeader } from './styled';
 import IconButton from '@material-ui/core/SvgIcon'
 import ArrowDownwardOutlinedIcon from '@material-ui/icons/ArrowDownwardOutlined'
 import ArrowUpwardOutlinedIcon from '@material-ui/icons/ArrowUpwardOutlined'
 
 
 const CommentCard = (props) => {
-  
-    const {username, body, voteSum, onClickVote} = props
+
+  const { username, body, voteSum, onClickVote } = props
 
   return (
     <CommentCardContainer >
-      <CommentCardContent>
-        <Typography component="p">
-        {username}
+      <CommentCardHeader>
+        <Typography variant="body2">
+          {username}
         </Typography>
-        <br/>
-        <Typography component="p">
-        {body}
+      </CommentCardHeader>
+      <CommentCardContent>
+        <Typography variant="body2">
+          {body}
         </Typography>
       </CommentCardContent>
-      <CardActions>
-      <IconButton>
-          <ArrowUpwardOutlinedIcon onClick={onClickVote}/>
-        </IconButton>
-        {voteSum}
-        <IconButton>
-          <ArrowDownwardOutlinedIcon/>
-        </IconButton>
-      </CardActions>
+      <CommentCardFooter>
+        <CardActions>
+          <IconButton onClick={onClickVote} >
+            <ArrowUpwardOutlinedIcon />
+          </IconButton>
+          <div>
+            {voteSum > 0 ? voteSum : 0}
+          </div>
+          <IconButton >
+            <ArrowDownwardOutlinedIcon />
+          </IconButton>
+        </CardActions>
+      </CommentCardFooter>
     </CommentCardContainer>
   );
 }

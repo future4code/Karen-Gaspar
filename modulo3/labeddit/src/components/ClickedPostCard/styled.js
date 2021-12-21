@@ -6,10 +6,16 @@ import CardContent from '@material-ui/core/CardContent'
 export const ClickedPostCardContainer = styled(Card)`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   width: 400px;
   margin: 10px auto;
-  /* background-color: #272729; */
+`
+export const ClickedPostHeader = styled.div`
+display: flex;
+justify-content: space-between;
+width: 95%;
+margin: 5px;
+border-bottom: 1px solid #F5F5F5;
 `
 
 export const ClickedPostCardContent = styled(CardContent)`
@@ -17,5 +23,12 @@ export const ClickedPostCardContent = styled(CardContent)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100px;
+`
+
+export const ClickedCardFooter = styled.div`
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 95%;
+border-top: 1px solid #F5F5F5;
 `

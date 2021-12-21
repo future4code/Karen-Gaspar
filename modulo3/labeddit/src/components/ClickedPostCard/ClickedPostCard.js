@@ -1,39 +1,44 @@
 import React from 'react';
 import CardActions from '@material-ui/core/CardActions'
 import Typography from '@material-ui/core/Typography'
-import { ClickedPostCardContainer, ClickedPostCardContent } from './styled'
+import { ClickedCardFooter, ClickedPostCardContainer, ClickedPostCardContent, ClickedPostHeader } from './styled'
 import IconButton from '@material-ui/core/SvgIcon'
 import ArrowDownwardOutlinedIcon from '@material-ui/icons/ArrowDownwardOutlined'
 import ArrowUpwardOutlinedIcon from '@material-ui/icons/ArrowUpwardOutlined'
 
 
 const ClickedPostCard = (props) => {
-  
-    const {username, body, commentCount, voteSum} = props
+
+  const { username, body, commentCount, voteSum } = props
 
   return (
     <ClickedPostCardContainer>
-      <ClickedPostCardContent>
-        <Typography component="p">
-        {username}
+      <ClickedPostHeader>
+        <Typography variant="body2">
+          {username}
         </Typography>
-        <br/>
-        <Typography component="p">
-        {body}
+      </ClickedPostHeader>
+      <ClickedPostCardContent>
+        <Typography variant="body2">
+          {body}
         </Typography>
       </ClickedPostCardContent>
-      <CardActions>
-        <IconButton>
-          <ArrowUpwardOutlinedIcon/>
-        </IconButton>
-        {voteSum}
-        <IconButton>
-          <ArrowDownwardOutlinedIcon/>
-        </IconButton>
-        <Typography component="p">
-        {commentCount} Comentários
-        </Typography>
-      </CardActions>
+      <ClickedCardFooter>
+        <CardActions>
+          <IconButton>
+            <ArrowUpwardOutlinedIcon />
+          </IconButton>
+          <div>
+            {voteSum > 0 ? voteSum : 0}
+          </div>
+          <IconButton>
+            <ArrowDownwardOutlinedIcon />
+          </IconButton>
+          </CardActions>
+          <Typography variant="body2">
+            {commentCount > 0 ? commentCount : 0} comentários
+          </Typography>
+      </ClickedCardFooter>
     </ClickedPostCardContainer>
   );
 }

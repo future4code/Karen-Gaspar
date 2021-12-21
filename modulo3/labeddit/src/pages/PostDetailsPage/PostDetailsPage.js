@@ -6,14 +6,14 @@ import Loading from "../../components/Loading/Loading";
 import { BASE_URL } from "../../constants/urls";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
 import useRequestData from "../../hooks/useRequestData";
-import { createCommentVote } from "../../services/posts";
+import { createCommentVote } from "../../services/votes";
 import PostDetailsForm from "./PostDetailsForm";
 import { FormContainer, MainContainer } from "./styled";
 
 const PostDetailsPage = () => {
   useProtectedPage()
   const params = useParams()
-  const allPosts = useRequestData([], `${BASE_URL}/posts`)
+  const [allPosts] = useRequestData([], `${BASE_URL}/posts`)
   const [comments, updatePage] = useRequestData([], `${BASE_URL}/posts/${params.id}/comments`)
 
   const onClickVote = (id) => {

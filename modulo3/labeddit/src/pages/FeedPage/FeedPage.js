@@ -8,7 +8,7 @@ import {useHistory} from 'react-router-dom'
 import { MainContainer, FormContainer } from "./styled"
 import FeedForm from "./FeedForm"
 import Loading from "../../components/Loading/Loading"
-import { createPostVote } from "../../services/posts"
+import { createPostVote } from "../../services/votes"
 
 
 const FeedPage = () => {

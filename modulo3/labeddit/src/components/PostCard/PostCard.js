@@ -14,8 +14,8 @@ const PostCard = (props) => {
 
 
   return (
-    <PostCardContainer onClick={onClickCard}>
-      <PostHeader>
+    <PostCardContainer >
+      <PostHeader onClick={onClickCard}>
         <Typography variant="body2">
           {username}
         </Typography>
@@ -24,7 +24,7 @@ const PostCard = (props) => {
         </Typography>
       </PostHeader>
       <Divider />
-      <PostCardContent >
+      <PostCardContent onClick={onClickCard} >
         <Typography variant="body2">
           {body}
         </Typography>

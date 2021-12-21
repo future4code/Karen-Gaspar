@@ -12,10 +12,11 @@ const FeedForm = (props) => {
     useProtectedPage()
     const { form, onChangeInputs, clearFields} = useForm({ title: "", body: "" })
     const [isLoading, setIsLoading] = useState(false)
+    const {updatePage} = props
   
     const onSubmitFeed = (event) => {
       event.preventDefault()
-      createPost(form, clearFields, setIsLoading, props.updatePage)
+      createPost(form, clearFields, setIsLoading, updatePage)
     }
     
     return (
@@ -33,7 +34,6 @@ const FeedForm = (props) => {
               required
             />
             <TextField
-              type={"text"}
               label={"O que você está pensando?"}
               name={"body"}
               value={form.body}
