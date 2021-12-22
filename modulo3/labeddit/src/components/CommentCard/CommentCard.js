@@ -33,7 +33,7 @@ const CommentCard = (props) => {
             {voteSum > 0 ? voteSum : 0}
           </div>
           <IconButton >
-            <ArrowDownwardOutlinedIcon />
+            <ArrowDownwardOutlinedIcon/>
           </IconButton>
         </CardActions>
       </CommentCardFooter>

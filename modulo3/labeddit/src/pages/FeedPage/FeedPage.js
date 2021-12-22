@@ -23,8 +23,28 @@ const FeedPage = () => {
     goToPostPage(history, id)
   }
 
-  const onClickVote = (id) => {
-    createPostVote(id)
+  const onClickUpVote = (id, vote) => {
+    const body = {
+      direction: vote
+    }
+    if (vote === 1){
+      setUpVote(true)
+      createPostVote(id, body, updatePage)
+    }else{
+      setUpVote(false)
+    }
+  }
+
+  const onClickDownVote = (id, vote) => {
+    const body = {
+      direction: vote
+    }
+    if (vote === -1){
+      setDownVote(true)
+      createPostVote(id, body, updatePage)
+    }else{
+      setDownVote(false)
+    }
   }
    
   const postsList = posts.map((post) =>{
@@ -38,7 +58,8 @@ const FeedPage = () => {
     commentCount={post.commentCount}
     voteSum={post.voteSum}
     onClickCard={() => onClickCard(post.id)}
-    onClickVote={() => onClickVote(post.id)}
+    onClickUpVote={() => onClickUpVote(post.id)}
+    onClickDownVote={() => onClickDownVote(post.id)}
     />
     )
   })

@@ -8,12 +8,12 @@ width: 100vw;
 `
 
 export const FormContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 400px;
-  margin: 60px auto;
-  height: 100px;
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 400px;
+margin: 60px auto;
+height: 100px;
 `
 
 export const InputsContainer = styled.div`
@@ -22,5 +22,4 @@ flex-direction: column;
 align-items: center;
 width: 80vw;
 max-width: 350px;
-margin-bottom: 20px;
 `

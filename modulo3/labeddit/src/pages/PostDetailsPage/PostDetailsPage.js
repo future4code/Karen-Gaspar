@@ -17,7 +17,7 @@ const PostDetailsPage = () => {
   const [comments, updatePage] = useRequestData([], `${BASE_URL}/posts/${params.id}/comments`)
 
   const onClickVote = (id) => {
-    createCommentVote(id)
+    createCommentVote(id, updatePage)
   }
 
   const clickedPost = allPosts

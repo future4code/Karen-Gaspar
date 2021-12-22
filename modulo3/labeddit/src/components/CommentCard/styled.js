@@ -4,11 +4,11 @@ import CardContent from '@material-ui/core/CardContent'
 
 
 export const CommentCardContainer = styled(Card)`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 400px;
-  margin: 10px auto;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+width: 400px;
+margin: 10px auto;
 `
 
 export const CommentCardHeader = styled.div`
@@ -20,10 +20,10 @@ border-bottom: 1px solid #F5F5F5;
 `
 
 export const CommentCardContent = styled(CardContent)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
 `
 
 export const CommentCardFooter = styled.div`

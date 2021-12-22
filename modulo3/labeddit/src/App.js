@@ -8,7 +8,7 @@ import { BrowserRouter } from "react-router-dom"
 const App = () => {
 
   const token = localStorage.getItem("token")
-  const [rigthButton, setRigthButton] = useState(token ? "Logout" : "Login")
+  const [rigthButton, setRigthButton] = useState(token ? "Sair" : "Entrar")
 
   return (
 
