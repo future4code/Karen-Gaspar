@@ -8,43 +8,31 @@ import {useHistory} from 'react-router-dom'
 import { MainContainer, FormContainer } from "./styled"
 import FeedForm from "./FeedForm"
 import Loading from "../../components/Loading/Loading"
-import { createPostVote } from "../../services/votes"
+import { changePostVote, createPostVote, deletePostVote } from "../../services/votes"
 
 
 const FeedPage = () => {
   useProtectedPage()
   const history = useHistory()
   const [posts, updatePage] = useRequestData([], `${BASE_URL}/posts`)
-  const [upVote, setUpVote] = useState(false)
-  const [downVote, setDownVote] = useState(false)
-  
 
   const onClickCard = (id) => {
     goToPostPage(history, id)
   }
 
-  const onClickUpVote = (id, vote) => {
+  const onClickVote = (id, vote) => {
     const body = {
       direction: vote
     }
     if (vote === 1){
-      setUpVote(true)
       createPostVote(id, body, updatePage)
-    }else{
-      setUpVote(false)
+    }else if (vote === -1){
+      changePostVote(id, body, updatePage)
     }
   }
 
-  const onClickDownVote = (id, vote) => {
-    const body = {
-      direction: vote
-    }
-    if (vote === -1){
-      setDownVote(true)
-      createPostVote(id, body, updatePage)
-    }else{
-      setDownVote(false)
-    }
+  const onClickDeleteVote = (id, updatePage) => {
+    deletePostVote(id, updatePage)
   }
    
   const postsList = posts.map((post) =>{
@@ -57,9 +45,10 @@ const FeedPage = () => {
     body={post.body}
     commentCount={post.commentCount}
     voteSum={post.voteSum}
+    userVote={post.userVote}
     onClickCard={() => onClickCard(post.id)}
-    onClickUpVote={() => onClickUpVote(post.id)}
-    onClickDownVote={() => onClickDownVote(post.id)}
+    onClickUpVote={() => onClickVote(post.id, 1)}
+    onClickDeleteVote={() => onClickDeleteVote(post.id)}
     />
     )
   })

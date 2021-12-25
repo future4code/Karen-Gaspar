@@ -10,7 +10,7 @@ import { Divider } from '@material-ui/core';
 
 const PostCard = (props) => {
 
-  const { title, username, body, commentCount, voteSum, onClickCard, onClickUpVote, onClickDownVote } = props
+  const { title, username,  body, commentCount, voteSum, userVote, onClickCard, onClickVote, onClickDeleteVote } = props
 
 
   return (
@@ -32,13 +32,13 @@ const PostCard = (props) => {
       <Divider />
       <CardFooter>
         <CardActions>
-          <IconButton onClick={onClickUpVote}>
-            <ArrowUpwardOutlinedIcon />
+          <IconButton> 
+          {userVote === 1 ? <ArrowUpwardOutlinedIcon onClick={onClickDeleteVote}/> : <ArrowUpwardOutlinedIcon onClick={onClickVote}/>}
           </IconButton>
           <div>
           {voteSum > 0 ? voteSum : 0}
           </div>
-          <IconButton onClick={onClickDownVote}>
+          <IconButton>
             <ArrowDownwardOutlinedIcon  />
           </IconButton>
           </CardActions>
