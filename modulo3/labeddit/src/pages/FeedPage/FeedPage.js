@@ -40,6 +40,7 @@ const FeedPage = () => {
     return ( 
     <PostCard 
     key={post.id}
+    id={post.id}
     title={post.title}
     username={post.username}
     body={post.body}
@@ -47,8 +48,8 @@ const FeedPage = () => {
     voteSum={post.voteSum}
     userVote={post.userVote}
     onClickCard={() => onClickCard(post.id)}
-    onClickUpVote={() => onClickVote(post.id, 1)}
-    onClickDeleteVote={() => onClickDeleteVote(post.id)}
+    onClickVote={onClickVote}
+    onClickDeleteVote={() => onClickDeleteVote(post.id, updatePage)}
     />
     )
   })

@@ -1,16 +1,16 @@
-import React from 'react';
+import React from 'react'
 import CardActions from '@material-ui/core/CardActions'
 import Typography from '@material-ui/core/Typography'
-import { CardFooter, PostCardContainer, PostCardContent, PostHeader } from './styled';
+import { CardFooter, IconButtons, PostCardContainer, PostCardContent, PostHeader } from './styled'
 import IconButton from '@material-ui/core/SvgIcon'
 import ArrowDownwardOutlinedIcon from '@material-ui/icons/ArrowDownwardOutlined'
 import ArrowUpwardOutlinedIcon from '@material-ui/icons/ArrowUpwardOutlined'
-import { Divider } from '@material-ui/core';
+import { Divider } from '@material-ui/core'
 
 
 const PostCard = (props) => {
 
-  const { title, username,  body, commentCount, voteSum, userVote, onClickCard, onClickVote, onClickDeleteVote } = props
+  const { id, title, username, body, commentCount, voteSum, userVote, onClickCard, onClickVote, onClickDeleteVote } = props
 
 
   return (
@@ -32,19 +32,29 @@ const PostCard = (props) => {
       <Divider />
       <CardFooter>
         <CardActions>
-          <IconButton> 
-          {userVote === 1 ? <ArrowUpwardOutlinedIcon onClick={onClickDeleteVote}/> : <ArrowUpwardOutlinedIcon onClick={onClickVote}/>}
-          </IconButton>
+          {userVote === 1 ?
+            <IconButtons onClick={onClickDeleteVote}>
+              <ArrowUpwardOutlinedIcon color={userVote === 1 ? "primary" : "inherit"} />
+            </IconButtons> :
+            <IconButtons onClick={() => onClickVote(id, 1)}>
+              <ArrowUpwardOutlinedIcon color={userVote === 1 ? "primary" : "inherit"} />
+            </IconButtons>
+          }
           <div>
-          {voteSum > 0 ? voteSum : 0}
+            {voteSum > 0 ? voteSum : 0}
           </div>
-          <IconButton>
-            <ArrowDownwardOutlinedIcon  />
-          </IconButton>
-          </CardActions>
-          <Typography variant="body2">
-            {commentCount > 0 ? commentCount : 0} comentários
-          </Typography>
+          {userVote === - 1 ?
+            <IconButtons onClick={onClickDeleteVote}>
+              <ArrowDownwardOutlinedIcon color={userVote === - 1 ? "primary" : "inherit"} />
+            </IconButtons> :
+            <IconButtons onClick={() => onClickVote(id, -1)}>
+              <ArrowDownwardOutlinedIcon color={userVote === - 1 ? "primary" : "inherit"} />
+            </IconButtons>
+          }
+        </CardActions>
+        <Typography variant="body2">
+          {commentCount > 0 ? commentCount : 0} comentários
+        </Typography>
       </CardFooter>
     </PostCardContainer>
   );
