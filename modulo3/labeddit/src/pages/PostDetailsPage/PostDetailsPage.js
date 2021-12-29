@@ -39,6 +39,7 @@ const PostDetailsPage = () => {
       return (
         <ClickedPostCard
           key={post.id}
+          title={post.title}
           username={post.username}
           body={post.body}
           commentCount={post.commentCount}
@@ -67,6 +68,7 @@ const PostDetailsPage = () => {
       <FormContainer>
         <PostDetailsForm id={params.id} updatePage={updatePage}/>
       </FormContainer>
+      {/* {commentsList.length === 0 ? <p>Não há nenhum comentário!</p> : commentsList} */}
       {commentsList.length > 0 ? commentsList : <Loading />}
     </MainContainer>
   );

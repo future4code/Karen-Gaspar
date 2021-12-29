@@ -5,6 +5,9 @@ display: flex;
 flex-direction: column;
 align-items: center;
 width: 100vw;
+
+@media screen and (max-device-width : 480px){
+width: 100vw;
 `
 
 export const LogoImage = styled.img`

@@ -7,9 +7,13 @@ import IconButton from '@material-ui/core/SvgIcon'
 export const PostCardContainer = styled(Card)`
 display: flex;
 flex-direction: column;
-align-items: flex-start;
+align-items: center;
 width: 400px;
 margin: 10px auto;
+
+@media screen and (max-device-width : 480px){
+width: 85vw;
+margin-left: 25px;
 `
 
 export const PostHeader = styled.div`

@@ -9,6 +9,10 @@ flex-direction: column;
 align-items: flex-start;
 width: 400px;
 margin: 10px auto;
+
+@media screen and (max-device-width : 480px){
+width: 85vw;
+margin-left: 25px;
 `
 export const ClickedPostHeader = styled.div`
 display: flex;

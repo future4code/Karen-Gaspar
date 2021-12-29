@@ -8,4 +8,7 @@ img{
     width: 38px;
     margin-right: 8px;
 }
+
+@media screen and (max-device-width : 480px){
+width: 90vw;
 `

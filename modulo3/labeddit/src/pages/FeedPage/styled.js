@@ -5,6 +5,9 @@ display: flex;
 flex-direction: column;
 align-items: center;
 width: 100vw;
+
+@media screen and (max-device-width : 480px){
+width: 85vw;
 `
 
 export const FormContainer = styled.div`
@@ -14,6 +17,10 @@ align-items: center;
 width: 400px;
 margin: 60px auto;
 height: 100px;
+
+@media screen and (max-device-width : 480px){
+width: 85vw;
+margin-left: 25px;
 `
 
 export const InputsContainer = styled.div`

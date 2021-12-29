@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { useProtectedPage } from "../../hooks/useProtectedPage"
 import useRequestData from '../../hooks/useRequestData'
 import {BASE_URL} from '../../constants/urls'
