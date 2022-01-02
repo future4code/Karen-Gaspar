@@ -20,12 +20,12 @@ Esse projeto consiste em criar uma rede social parecia com o Reddit. Nela é pos
 - Função de postagem.
 - Função de renderizar os posts.
 - Função de comentar um post específico.
-- Função de votar positivamente em um post ou comentário.
+- Função de votar em um post ou comentário.
+- Função de mudar ou deletar voto.
 
 ## O que não funciona:
 
-- Função de voto negativo.
-- Função de mudar ou deletar voto.
+Nada.
 
 ## Link
 
