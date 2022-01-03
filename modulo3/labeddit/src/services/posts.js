@@ -14,7 +14,7 @@ export const createPost = (body, clearFields, setIsLoading, updatePage) => {
       setIsLoading(false)
     })
     .catch((err) => {
-      alert(err)
+      console.log(err)
       setIsLoading(false)
     })
 }

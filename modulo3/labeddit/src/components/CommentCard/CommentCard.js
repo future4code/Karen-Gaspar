@@ -23,7 +23,7 @@ const CommentCard = (props) => {
         </Typography>
       </CommentCardContent>
       <CommentCardFooter>
-      <CardActions>
+        <CardActions>
           {userVote === 1 ?
             <IconButtons onClick={onClickDeleteVote}>
               <ArrowUpwardOutlinedIcon color={userVote === 1 ? "primary" : "inherit"} />

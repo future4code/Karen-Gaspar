@@ -2,19 +2,19 @@ import React from "react"
 import { LogoImage, MainContainer, SignUpContainer } from "./styled"
 import logo from "../../assets/alien.png"
 import { Button } from "@material-ui/core"
-import {useHistory} from 'react-router-dom'
-import {goToSignUpPage} from '../../routes/coordinator'
+import { useHistory } from 'react-router-dom'
+import { goToSignUpPage } from '../../routes/coordinator'
 import LoginForm from "./LoginForm"
 
 
-const LoginPage = ({setRigthButton}) => {
+const LoginPage = ({ setRigthButton }) => {
 
   const history = useHistory()
 
   return (
     <MainContainer >
       <LogoImage src={logo} alt="alien" />
-      <LoginForm setRigthButton={setRigthButton}/>
+      <LoginForm setRigthButton={setRigthButton} />
       <SignUpContainer >
         <Button
           onClick={() => goToSignUpPage(history)}

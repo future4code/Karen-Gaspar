@@ -20,9 +20,9 @@ const PostDetailsPage = () => {
     const body = {
       direction: vote
     }
-    if (vote === 1){
+    if (vote === 1) {
       createCommentVote(id, body, updatePage)
-    }else if (vote === -1){
+    } else if (vote === -1) {
       changeCommentVote(id, body, updatePage)
     }
   }
@@ -66,9 +66,8 @@ const PostDetailsPage = () => {
     <MainContainer >
       {clickedPost}
       <FormContainer>
-        <PostDetailsForm id={params.id} updatePage={updatePage}/>
+        <PostDetailsForm id={params.id} updatePage={updatePage} />
       </FormContainer>
-      {/* {commentsList.length === 0 ? <p>Não há nenhum comentário!</p> : commentsList} */}
       {commentsList.length > 0 ? commentsList : <Loading />}
     </MainContainer>
   );

@@ -1,10 +1,10 @@
 import React from "react"
 import { useProtectedPage } from "../../hooks/useProtectedPage"
 import useRequestData from '../../hooks/useRequestData'
-import {BASE_URL} from '../../constants/urls'
+import { BASE_URL } from '../../constants/urls'
 import PostCard from "../../components/PostCard/PostCard"
 import { goToPostPage } from "../../routes/coordinator"
-import {useHistory} from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import { MainContainer, FormContainer } from "./styled"
 import FeedForm from "./FeedForm"
 import Loading from "../../components/Loading/Loading"
@@ -24,9 +24,9 @@ const FeedPage = () => {
     const body = {
       direction: vote
     }
-    if (vote === 1){
+    if (vote === 1) {
       createPostVote(id, body, updatePage)
-    }else if (vote === -1){
+    } else if (vote === -1) {
       changePostVote(id, body, updatePage)
     }
   }
@@ -34,32 +34,32 @@ const FeedPage = () => {
   const onClickDeleteVote = (id, updatePage) => {
     deletePostVote(id, updatePage)
   }
-   
-  const postsList = posts.map((post) =>{
 
-    return ( 
-    <PostCard 
-    key={post.id}
-    id={post.id}
-    title={post.title}
-    username={post.username}
-    body={post.body}
-    commentCount={post.commentCount}
-    voteSum={post.voteSum}
-    userVote={post.userVote}
-    onClickCard={() => onClickCard(post.id)}
-    onClickVote={onClickVote}
-    onClickDeleteVote={() => onClickDeleteVote(post.id, updatePage)}
-    />
+  const postsList = posts.map((post) => {
+
+    return (
+      <PostCard
+        key={post.id}
+        id={post.id}
+        title={post.title}
+        username={post.username}
+        body={post.body}
+        commentCount={post.commentCount}
+        voteSum={post.voteSum}
+        userVote={post.userVote}
+        onClickCard={() => onClickCard(post.id)}
+        onClickVote={onClickVote}
+        onClickDeleteVote={() => onClickDeleteVote(post.id, updatePage)}
+      />
     )
   })
 
   return (
     <MainContainer>
       <FormContainer>
-        <FeedForm updatePage={updatePage}/>
+        <FeedForm updatePage={updatePage} />
       </FormContainer>
-      {postsList.length > 0 ? postsList : <Loading/>}
+      {postsList.length > 0 ? postsList : <Loading />}
     </MainContainer>
   );
 }

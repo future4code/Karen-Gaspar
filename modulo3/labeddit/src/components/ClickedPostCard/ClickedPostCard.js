@@ -34,10 +34,10 @@ const ClickedPostCard = (props) => {
           <IconButton>
             <ArrowDownwardOutlinedIcon />
           </IconButton>
-          </CardActions>
-          <Typography variant="body2">
-            {commentCount > 0 ? commentCount : 0} comentários
-          </Typography>
+        </CardActions>
+        <Typography variant="body2">
+          {commentCount > 0 ? commentCount : 0} comentários
+        </Typography>
       </ClickedCardFooter>
     </ClickedPostCardContainer>
   );

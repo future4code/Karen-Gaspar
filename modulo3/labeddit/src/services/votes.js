@@ -67,13 +67,13 @@ export const deletePostVote = (id, updatePage) => {
       Authorization: localStorage.getItem("token")
     }
   })
-  .then((res) => {
-    console.log(res.data)
-    updatePage()
-  })
-  .catch((err) => {
-    console.log(err)
-  })
+    .then((res) => {
+      console.log(res.data)
+      updatePage()
+    })
+    .catch((err) => {
+      console.log(err)
+    })
 }
 
 export const deleteCommentVote = (id, updatePage) => {
@@ -82,11 +82,11 @@ export const deleteCommentVote = (id, updatePage) => {
       Authorization: localStorage.getItem("token")
     }
   })
-  .then((res) => {
-    console.log(res.data)
-    updatePage()
-  })
-  .catch((err) => {
-    console.log(err)
-  })
+    .then((res) => {
+      console.log(res.data)
+      updatePage()
+    })
+    .catch((err) => {
+      console.log(err)
+    })
 }

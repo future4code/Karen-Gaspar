@@ -4,11 +4,11 @@ import logo from "../../assets/alien.png"
 import SignUpForm from "./SignUpForm";
 
 
-const SignUpPage = ({setRigthButton}) => {
+const SignUpPage = ({ setRigthButton }) => {
   return (
     <MainContainer >
       <LogoImage src={logo} alt="alien" />
-      <SignUpForm setRigthButton={setRigthButton}/>
+      <SignUpForm setRigthButton={setRigthButton} />
     </MainContainer>
   );
 }
