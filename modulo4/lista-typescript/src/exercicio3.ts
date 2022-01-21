@@ -10,7 +10,6 @@ enum genero {
 
 type filme = {nomeDoFilme: string, anoLancamento: number, generoDoFilme: genero, pontuacao? : number}
 
-function filmeInfo(nomeDoFilme: string, anoLancamento: number, generoDoFilme: genero, pontuacao? : number):filme {
-	
+// function filmeInfo(nomeDoFilme: string, anoLancamento: number, generoDoFilme: genero, pontuacao? : number):filme {
 
-}
+// }

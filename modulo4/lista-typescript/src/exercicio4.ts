@@ -10,7 +10,7 @@ enum setor {
 type colaboradores = { nome: string, salário: number, setor: setor, presencial: boolean }
 
 
-const colaboradoresInfo: colaboradores[] = 
+const colaboradoresInfo = 
 [
 	{ nome: "Marcos", salário: 2500, setor: setor.MARKETING, presencial: true },
 	{ nome: "Maria" ,salário: 1500, setor: setor.VENDAS, presencial: false},
@@ -21,8 +21,8 @@ const colaboradoresInfo: colaboradores[] =
 	{ nome: "Paola" ,salário: 3500, setor: setor.MARKETING, presencial: true }
 ]
 
-function colaboradoresPorSetor(arrayDeColaboradores:colaboradores[]):colaboradores[] {
-    return arrayDeColaboradores.filter((colaborador)=>{
+function colaboradoresPorSetor(colaboradoresInfo:colaboradores[]):colaboradores[] {
+    return colaboradoresInfo.filter((colaborador)=>{
         return colaborador.setor === setor.MARKETING && colaborador.presencial === true
     })
 }
