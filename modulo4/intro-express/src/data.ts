@@ -1,3 +1,6 @@
+
+// Exercício 3 e 6
+
 type Users = { id: number, name: string, phone: number | string , email: string, website: string }
 type Posts = { id: number, title: string, body: string, userId: number }
 
@@ -24,10 +27,16 @@ export const users: Users [] = [
 export const posts: Posts[] = [
     {
         id: 10,
-            title: "eum et est occaecati",
-            body: "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit",
-            userId: 1,
+        title: "eum et est occaecati",
+        body: "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit",
+        userId: 1,
     },
+    {
+        userId: 1,
+        id: 12,
+        title: "eum et est occaecati",
+        body: "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
+      },
     {
         id: 11,
             title: "nesciunt quas odio",
