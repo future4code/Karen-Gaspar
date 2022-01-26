@@ -1,4 +1,6 @@
-type Product = {id: string, name: string, price: number}
+// Exercício 2
+
+export type Product = {id: string, name: string, price: number}
 
 export const products: Product[] = [
     {

@@ -1,5 +1,5 @@
 import express, { Request, Response } from "express";
-import {products} from "./data"
+import {Product, products} from "./data"
 
 import { AddressInfo } from "net";
 
@@ -23,4 +23,61 @@ const server = app.listen(process.env.PORT || 3003, () => {
 // })
 
 
+//Exercício 3
 
+app.post("/products", (req: Request, res: Response) => {
+    try{
+        const {name, price} = req.body
+
+        if (!name || !price) {
+            throw new Error ("Campos necessários para criar produto não foram informados")
+        }
+        const newProduct: Product = {
+            id: Date.now().toString(),
+            name,
+            price
+        }
+        products.push(newProduct)
+    
+        res.status(200).send(products)
+    }
+
+    catch (error: any) {
+    res.status(400).send(error.message)
+    }
+})
+
+
+// Exercício 4
+
+app.get("/products", (req: Request, res: Response) => {
+    res.status(200).send(products)
+})
+
+// Exercício 5
+
+// app.put("/products/:id/price", (req: Request, res: Response) => {
+    
+//     try{
+
+//     const productId = req.params.id
+
+//     if (!productId) {
+//         throw new Error ("Id do produto não informado")
+//     }
+
+//     const newPrice = {}
+
+//     for (let product of products) {
+//         if (product.id === productId) {
+
+//         }
+//     }
+    
+//     res.status(200).send(products)
+//     }
+
+//     catch (error: any) {
+//         res.status(400).send(error.message)
+//     }
+// })
