@@ -109,11 +109,44 @@ app.get("/clients/balance", (req: Request, res: Response)=>{
   }
 })
 
-// app.put("/clients/", (req: Request, res: Response)=>{
-//   let errorCode = 400
-//   try{
-//     res.status(200).send("Deu bom!")
-//   }catch(error: any){
-//     res.status(errorCode).send("Deu ruim!")
-//   }
-// })
+app.put("/clients/balance", (req: Request, res: Response)=>{
+  let errorCode = 400
+  try{
+
+    const cpf: string = req.query.cpf as string
+    const newBalance = req.body.balance 
+
+    if (!cpf){
+      errorCode = 422
+      throw new Error("Please check the queries")
+    }
+
+    if (!newBalance) {
+      errorCode = 422
+      throw new Error("Plese inform the amount")
+    }
+
+    if (typeof newBalance !== "number" || newBalance <= 0) {
+      errorCode = 422
+      throw new Error("The amount must be higher than zero.")
+    }
+
+    let isClientFound = false
+
+    for (let client of clients){
+      if (client.cpf === cpf){
+        client.balance = newBalance
+        isClientFound = true
+      }
+    }
+
+    if (!isClientFound){
+      errorCode = 404
+      throw new Error("Client not found")
+    }
+
+    res.status(200).send(clients)
+  }catch(error: any){
+    res.status(errorCode).send({message: error.message})
+  }
+})
