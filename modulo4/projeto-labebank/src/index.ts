@@ -27,50 +27,50 @@ app.get("/clients", (req: Request, res: Response) => {
 app.post("/clients", (req: Request, res: Response) => {
   let errorCode: number = 400
   try {
-    
-    const { name, cpf, birthDate} = req.body
 
-    const sameCpf = clients.find((client)=> client.cpf === req.body.cpf)
-   
+    const { name, cpf, birthDate } = req.body
+
+    const sameCpf = clients.find((client) => client.cpf === req.body.cpf)
+
     const clientBirthDate: string[] = birthDate.split("/")
-   
-    const birthDateConvert: Date ={
+
+    const birthDateConvert: Date = {
       day: Number(clientBirthDate[0]),
       month: Number(clientBirthDate[1]),
       year: Number(clientBirthDate[2]),
     }
-    
+
     const currentDate: Date = {
       day: new Date().getDate(),
       month: new Date().getMonth() + 1,
       year: new Date().getFullYear(),
     }
 
-    
+
     if (!name || !cpf || !birthDate) {
       errorCode = 422
       throw new Error("Please check the fields")
     }
-   
-    if (sameCpf){
+
+    if (sameCpf) {
       errorCode = 422
       throw new Error("This CPF is already registered")
     }
-    
-    if (currentDate.year - birthDateConvert.year < 18){
+
+    if (currentDate.year - birthDateConvert.year < 18) {
       errorCode = 401
       throw new Error("The user needs to be 18 to open an account")
     }
     else if (currentDate.year - birthDateConvert.year === 18)
-    if (currentDate.month < birthDateConvert.month){
-      errorCode = 401
-      throw new Error("The user needs to be 18 to open an account")
-    }
-    else if (currentDate.month === birthDateConvert.month)
-      if (currentDate.day < birthDateConvert.day){
-      errorCode = 401
-      throw new Error("The user needs to be 18 to open an account")
-    }
+      if (currentDate.month < birthDateConvert.month) {
+        errorCode = 401
+        throw new Error("The user needs to be 18 to open an account")
+      }
+      else if (currentDate.month === birthDateConvert.month)
+        if (currentDate.day < birthDateConvert.day) {
+          errorCode = 401
+          throw new Error("The user needs to be 18 to open an account")
+        }
 
     const newClient: Client = {
       name,
@@ -87,36 +87,38 @@ app.post("/clients", (req: Request, res: Response) => {
   }
 })
 
-app.get("/clients/balance", (req: Request, res: Response)=>{
+app.get("/clients/balance", (req: Request, res: Response) => {
   let errorCode = 400
-  try{
+  try {
     const cpf: string = req.query.cpf as string
     const client: Client | undefined = clients.find((client) => client.cpf === cpf)
 
-    if (!cpf){
+    if (!cpf) {
       errorCode = 422
       throw new Error("Please check the queries")
     }
 
-    if(!client){
+    if (!client) {
       errorCode = 404
       throw new Error("Client not found")
     }
 
     res.status(200).send(client)
-  }catch(error: any){
-    res.status(errorCode).send({message: error.message})
+  } catch (error: any) {
+    res.status(errorCode).send({ message: error.message })
   }
 })
 
-app.put("/clients/balance", (req: Request, res: Response)=>{
+app.put("/clients/balance", (req: Request, res: Response) => {
   let errorCode = 400
-  try{
+  try {
 
     const cpf: string = req.query.cpf as string
-    const newBalance = req.body.balance 
+    const name: string = req.query.name as string
+    const newBalance = req.body.balance
+    const client: Client | undefined = clients.find((client) => client.cpf === cpf && client.name === name)
 
-    if (!cpf){
+    if (!cpf || !name) {
       errorCode = 422
       throw new Error("Please check the queries")
     }
@@ -131,22 +133,22 @@ app.put("/clients/balance", (req: Request, res: Response)=>{
       throw new Error("The amount must be higher than zero.")
     }
 
-    let isClientFound = false
-
-    for (let client of clients){
-      if (client.cpf === cpf){
-        client.balance = newBalance
-        isClientFound = true
-      }
-    }
-
-    if (!isClientFound){
+    if (!client) {
       errorCode = 404
       throw new Error("Client not found")
     }
 
-    res.status(200).send(clients)
-  }catch(error: any){
-    res.status(errorCode).send({message: error.message})
+    for (let client of clients) {
+      if (client.cpf === cpf) {
+        client.balance = newBalance
+      }
+    }
+
+    res.status(200).send(`Transaction completed. The amount in your account is R$${newBalance}`)
+
+  } catch (error: any) {
+    res.status(errorCode).send({ message: error.message })
   }
 })
+
+
