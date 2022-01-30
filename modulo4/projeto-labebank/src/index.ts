@@ -115,20 +115,20 @@ app.put("/clients/balance", (req: Request, res: Response) => {
 
     const cpf: string = req.query.cpf as string
     const name: string = req.query.name as string
-    const newBalance = req.body.balance
-    const client: Client | undefined = clients.find((client) => client.cpf === cpf && client.name === name)
+    const bankDeposit = req.body.balance
+    const client: Client | undefined = clients.find((client) => client.cpf === cpf && client.name.toLowerCase() === name.toLowerCase())
 
     if (!cpf || !name) {
       errorCode = 422
       throw new Error("Please check the queries")
     }
 
-    if (!newBalance) {
+    if (!bankDeposit) {
       errorCode = 422
       throw new Error("Plese inform the amount")
     }
 
-    if (typeof newBalance !== "number" || newBalance <= 0) {
+    if (typeof bankDeposit !== "number" || bankDeposit <= 0) {
       errorCode = 422
       throw new Error("The amount must be higher than zero.")
     }
@@ -140,11 +140,16 @@ app.put("/clients/balance", (req: Request, res: Response) => {
 
     for (let client of clients) {
       if (client.cpf === cpf) {
-        client.balance = newBalance
+        client.balance = bankDeposit
+        client.transactions.push({
+          value: bankDeposit,
+          date: new Date().toLocaleDateString(),
+          description: "Depósito de dinheiro"
+        })
       }
     }
 
-    res.status(200).send(`Transaction completed. The amount in your account is R$${newBalance}`)
+    res.status(200).send({client})
 
   } catch (error: any) {
     res.status(errorCode).send({ message: error.message })
