@@ -155,10 +155,17 @@ WHERE (name LIKE "%G%" OR name LIKE "%g%" OR name LIKE "%A%" OR name LIKE "%a%")
 
 ### Exercício 5
 
-a) Query resposta:
+a) Resposta: a query possui as colunas id no tipo VARCHAR e é o PK da tabela, o name também é VARCHAR com limitaçõ de 255 caracteres, a synopsis é do tipo TEXT que é string sem limitação de caracteres, o release_date é do tipo DATE que traz o formato de data e o rating é do tipo número inteiro. Todos devem ser preenchidos para que a query funcione.
 
+Query resposta:
 ```
-
+CREATE TABLE Movie (
+	id VARCHAR(255) PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    synopsis TEXT NOT NULL,
+    release_date DATE NOT NULL,
+    rating INT NOT NULL
+)
 ```
 
 b) Query resposta:
