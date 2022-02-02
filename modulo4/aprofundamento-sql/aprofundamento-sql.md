@@ -69,3 +69,54 @@ d) Query resposta:
 ```
 SELECT SUM(salary) FROM Actor;
 ```
+### Exercício 5
+
+a) Resposta: Os comandos da query são para contar a quantidade de gêneros e agrupá-los pelo seus valores, sendo assim ele retorna 3 male e 3 female.
+
+b) Query resposta:
+```
+SELECT id, name FROM Actor ORDER BY name DESC;
+```
+C) Query resposta:
+```
+SELECT * FROM Actor ORDER BY salary ASC;
+```
+d) Query resposta:
+
+```
+SELECT * FROM Actor ORDER BY salary DESC LIMIT 3;
+```
+e) Query resposta:
+
+```
+SELECT AVG(salary), gender FROM Actor GROUP BY gender;
+```
+### Exercício 6
+
+a) Query resposta:
+
+```
+ALTER TABLE Movie ADD playing_limit_date VARCHAR(255) NOT NULL;
+```
+
+b) Query resposta:
+
+```
+ALTER TABLE Movie CHANGE rating rating FLOAT NOT NULL;
+```
+
+c) Query resposta:
+```
+UPDATE Movie SET playing_limit_date = "2022-03-01" WHERE id = "003";
+
+UPDATE Movie SET playing_limit_date = "2021-12-31" WHERE id = "004";
+```
+d) Resposta: 0 row(s) affected Rows matched: 0  Changed: 0  Warnings: 0 = essa resposta significa que nenhuma linha foi afetada com o comando pois nenhuma linha com o id informado foi encontrada.
+
+Queries usadas:
+
+```
+DELETE FROM Movie WHERE id = "003";
+
+UPDATE Movie SET synopsis = "Durante o carnaval de 1943 na Bahia, Vadinho, um mulherengo e jogador inveterado, morre repentinamente." WHERE id = "003";
+```
