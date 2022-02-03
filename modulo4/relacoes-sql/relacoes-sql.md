@@ -63,3 +63,26 @@ b) Query resposta:
 SELECT m.name as name, m.id as movie_id, r.rate as rating FROM Movie m
 INNER JOIN Rating r ON m.id = r.movie_id;
 ```
+
+### Exercício 4 - desafio
+
+a) Query resposta:
+
+```
+SELECT Movie.name as name, Movie.id as movie_id, Rating.rate as rating, Rating.comment as comment FROM Movie 
+LEFT JOIN Rating ON Movie.id = Rating.movie_id;
+```
+
+b) Query resposta:
+```
+SELECT Movie.id as movie_id, Movie.name, MovieCast.actor_id FROM Movie 
+RIGHT JOIN MovieCast  ON MovieCast.movie_id = Movie.id;
+```
+
+c) Query resposta:
+
+```
+SELECT AVG(Rating.rate) as Average_Rating, Movie.id, Movie.name FROM Movie 
+LEFT JOIN Rating ON Movie.id = Rating.movie_id
+GROUP BY (Movie.id);
+```
