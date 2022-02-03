@@ -2,6 +2,7 @@ import express, { Express, Request, Response } from 'express'
 import cors from 'cors'
 import { AddressInfo } from "net";
 import connection from './connection';
+import { request } from 'http';
 
 const app: Express = express();
 
@@ -108,6 +109,25 @@ app.get("/actor", async (req: Request, res: Response)=>{
 })
 
 //Ex 4
+// a)
+app.put("/actor", async (req: Request, res: Response)=>{
+   try{
+      await updateActor(req.body.id, req.body.salary)
+      res.status(200).send("Salary updated!")
+   }catch(error: any){
+      res.status(400).send({message: error.sqlMessage || error.message})
+   }
+})
+
+//b)
+app.delete("/actor/:id", async (req: Request, res: Response)=>{
+   try{
+      await deleteActor(req.params.id)
+      res.status(200).send({message: "Actor deleted!"})
+   }catch(error: any){
+      res.status(400).send({message: error.sqlMessage || error.message})
+   }
+})
 
 
 // Server

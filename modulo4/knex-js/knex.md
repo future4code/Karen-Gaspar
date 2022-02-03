@@ -90,11 +90,25 @@ app.get("/actor", async (req: Request, res: Response)=>{
 a) Endpoint resposta:
 
 ```
-
+app.put("/actor", async (req: Request, res: Response)=>{
+   try{
+      await updateActor(req.body.id, req.body.salary)
+      res.status(200).send("Salary updated!")
+   }catch(error: any){
+      res.status(400).send({message: error.sqlMessage || error.message})
+   }
+})
 ```
 
 b) Endpoint resposta:
 
 ```
-
+app.delete("/actor/:id", async (req: Request, res: Response)=>{
+   try{
+      await deleteActor(req.params.id)
+      res.status(200).send({message: "Actor deleted!"})
+   }catch(error: any){
+      res.status(400).send({message: error.sqlMessage || error.message})
+   }
+})
 ```
