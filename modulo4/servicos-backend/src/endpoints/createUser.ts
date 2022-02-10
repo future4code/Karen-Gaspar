@@ -31,15 +31,18 @@ export const createUserAddress = async (req: Request, res: Response): Promise<vo
 
         const email = "g6e8k2i3m1o7e5d9@labenualunos.slack.com"
 
-        const info = await mailTransporter.sendMail({
+        await mailTransporter.sendMail({
             from: `<${process.env.NODEMAILER_USER}>`,
             to: email,
             subject: "Aula service-backend",
-            text: `Olá, ${email}! `,
-            html: `<p>Olá, ${email}!</p>`
+            text: `Olá, ${email}! O objeto usado para realizar o envio desse email foi o mailTransporter.sendMai({
+                from: meu email, to: seu email, subject: assunto da aula, text: corpo do email, html: corpo do email
+            }) `,
+            html: `<p>Olá, ${email}! O objeto usado para realizar o envio desse email foi o mailTransporter.sendMai({
+                from: meu email, to: seu email, subject: assunto da aula, text: corpo do email, html: corpo do email
+            })</p>`
         })
 
-        console.log(info)
         res.status(201).send({ message: "Address created successfuly" })
     } catch (error: any) {
         res.status(errorCode).send({ message: error.message })
