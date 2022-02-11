@@ -8,20 +8,20 @@ export const getUserPurchases= async (req: Request, res: Response): Promise<void
     try {
 
         const id = req.params.user_id as string
-        const userPurchases = await selectUserPurchases(id)
-        console.log(id)
+        const result = await selectUserPurchases(id)
 
         if(!id){
             errorCode = 422
             throw new Error('Verifique se o ID foi informado')
         }
 
-        if(!userPurchases){
+        if(!result){
             errorCode = 404
             throw new Error('Usuário não encontrado')
         }
-        
-        res.status(200).send(userPurchases)
+
+
+        res.status(200).send({user: result})
     } catch (error: any) {
         res.status(errorCode).send({ message: error.message })
     }

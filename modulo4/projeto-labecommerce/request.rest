@@ -2,8 +2,8 @@ POST http://localhost:3003/users
 Content-Type: application/json
 
 {
-    "name": "Melissa",
-    "email": "mel@email.com",
+    "name": "Marina",
+    "email": "mar@email.com",
     "password": "minhasenha123"
 }
 
@@ -18,9 +18,9 @@ POST http://localhost:3003/products
 Content-Type: application/json
 
 {
-    "name": "Laptop",
-    "price": 4000.00,
-    "imageUrl": "https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ"
+    "name": "Celular",
+    "price": 2000.00,
+    "imageUrl": "https://images.unsplash.com/photo-1560617544-b4f287789e24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80"
 }
 
 ###
@@ -35,11 +35,12 @@ Content-Type: application/json
 
 {
     "userId": "1644517573143",
-    "productId": "1644542680280",
-    "quantity": 2
+    "productId": "1644609951422",
+    "quantity": 1
 }
 
 ### 
 
-GET http://localhost:3003/users/:user_id/purchases
+GET http://localhost:3003/users/1644517573143/purchases
 Content-Type: application/json 
+

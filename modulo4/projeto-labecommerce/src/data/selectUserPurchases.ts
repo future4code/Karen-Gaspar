@@ -8,5 +8,6 @@ export const selectUserPurchases = async (id: string): Promise<any> => {
        ON p.user_id = u.id
        WHERE p.user_id ='${id}'
        `)
-    return result[0][0]
+    return result [0]
 } 
+
