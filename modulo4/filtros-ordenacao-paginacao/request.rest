@@ -1,0 +1,23 @@
+
+GET http://localhost:3003/users/name?name=paula
+Content-Type: application/json
+
+###
+
+GET http://localhost:3003/users/cx
+Content-Type: application/json
+
+###
+
+GET http://localhost:3003/users/order?order=ASC
+Content-Type: application/json
+
+###
+
+GET http://localhost:3003/users/pages?page=2
+Content-Type: application/json
+
+###
+
+GET http://localhost:3003/users?name=n&order=DESC&sort=name&page=2
+Content-Type: application/json
