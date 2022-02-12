@@ -1,0 +1,9 @@
+POST http://localhost:3003/users
+Content-Type: application/json
+
+{
+    "cep": "08250-600",
+    "number": 25
+}
+
+
