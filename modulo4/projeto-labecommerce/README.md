@@ -28,5 +28,4 @@ Esse projeto consiste em criar uma API de uma loja online, onde é possível cad
 
 https://documenter.getpostman.com/view/18385963/UVeNm2dP
 
-### Link do Heroku
 
