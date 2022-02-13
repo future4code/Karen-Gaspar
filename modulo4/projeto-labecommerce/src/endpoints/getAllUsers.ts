@@ -12,7 +12,7 @@ export const getAllUsers = async (req: Request, res: Response): Promise<void> =>
             throw new Error("Nenhum usuário encontrado")
         }
         
-        res.status(200).send({usuários: users})
+        res.status(200).send({users: users})
     } catch (error: any) {
         res.status(errorCode).send({ message: error.message })
     }

@@ -10,6 +10,6 @@ export const insertUser = async (
         id,
         name,
         email,
-        password,
+        password
     }).into('labecommerce_users')
 }

@@ -25,7 +25,7 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3003/products?order=desc
+GET http://localhost:3003/products?search=mi
 Content-Type: application/json 
 
 ###
@@ -41,6 +41,6 @@ Content-Type: application/json
 
 ### 
 
-GET http://localhost:3003/users/1644753076252/purchases
+GET http://localhost:3003/users/:user_id/purchases
 Content-Type: application/json 
 
