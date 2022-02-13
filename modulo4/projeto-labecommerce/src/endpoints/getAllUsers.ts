@@ -1,4 +1,5 @@
 import { Request, Response } from 'express'
+import { selectUserPurchases } from '../data/selectUserPurchases'
 import { selectUsers } from '../data/selectUsers'
 
 export const getAllUsers = async (req: Request, res: Response): Promise<void> => {
@@ -7,11 +8,10 @@ export const getAllUsers = async (req: Request, res: Response): Promise<void> =>
     try {
         const users = await selectUsers()
 
-        if (!users.length) {
-            errorCode = 404
-            throw new Error("Nenhum usuário encontrado")
+        for (let i = 0; i < users.length; i++){
+            users[i].purchases = await selectUserPurchases(users[i].id) 
         }
-        
+
         res.status(200).send({users: users})
     } catch (error: any) {
         res.status(errorCode).send({ message: error.message })
