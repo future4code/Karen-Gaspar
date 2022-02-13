@@ -2,7 +2,7 @@ import { connection } from "../connection";
 
 export const selectProducts = async ():Promise<any> => {
     const result = await connection("labecommerce_products")
-       .select('*')
+
     return result
 } 
 

@@ -1,4 +1,5 @@
 import { Request, Response } from 'express'
+import { connection } from '../connection'
 import { selectProducts } from '../data/selectProducts'
 
 
@@ -6,7 +7,16 @@ export const getAllProducts = async (req: Request, res: Response): Promise<void>
     let errorCode: number = 400
 
     try {
-        const products = await selectProducts()
+
+        const order= req.query.order as string
+        let products
+
+        if (!order) {
+            products = await selectProducts()
+        } else {
+            products = await connection('labecommerce_products')
+            .orderBy ("name", order)
+        }
 
         if (!products.length) {
             errorCode = 404

@@ -25,7 +25,7 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3003/products
+GET http://localhost:3003/products?order=DESC
 Content-Type: application/json 
 
 ###
