@@ -21,7 +21,7 @@ export const getUserPurchases= async (req: Request, res: Response): Promise<void
         }
 
 
-        res.status(200).send({user: result})
+        res.status(200).send({purchases: result})
     } catch (error: any) {
         res.status(errorCode).send({ message: error.message })
     }

@@ -9,13 +9,17 @@ export const getAllProducts = async (req: Request, res: Response): Promise<void>
     try {
 
         const order= req.query.order as string
+        const search = req.query.search as string
         let products
 
-        if (!order) {
+        if (!order && !search ) {
             products = await selectProducts()
-        } else {
+        } else if (!search) {
             products = await connection('labecommerce_products')
             .orderBy ("name", order)
+        } else if (search) {
+            products = await connection('labecommerce_products')
+            .where('name', 'LIKE', `%${search}%`)
         }
 
         if (!products.length) {
@@ -23,7 +27,7 @@ export const getAllProducts = async (req: Request, res: Response): Promise<void>
             throw new Error("Nenhum produto encontrado")
         }
         
-        res.status(200).send(products)
+        res.status(200).send({produtos: products})
     } catch (error: any) {
         res.status(errorCode).send({ message: error.message })
     }

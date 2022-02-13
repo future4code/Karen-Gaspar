@@ -2,8 +2,8 @@ POST http://localhost:3003/users
 Content-Type: application/json
 
 {
-    "name": "Marina",
-    "email": "mar@email.com",
+    "name": "Rodrigo",
+    "email": "ro@email.com",
     "password": "minhasenha123"
 }
 
@@ -18,14 +18,14 @@ POST http://localhost:3003/products
 Content-Type: application/json
 
 {
-    "name": "Celular",
-    "price": 2000.00,
-    "imageUrl": "https://images.unsplash.com/photo-1560617544-b4f287789e24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80"
+    "name": "Microphone",
+    "price": 850.00,
+    "imageUrl": "https://images.unsplash.com/photo-1585102651425-8caf7848e44b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=581&q=80"
 }
 
 ###
 
-GET http://localhost:3003/products?order=DESC
+GET http://localhost:3003/products?order=desc
 Content-Type: application/json 
 
 ###
@@ -34,13 +34,13 @@ POST http://localhost:3003/purchases
 Content-Type: application/json
 
 {
-    "userId": "1644517573143",
-    "productId": "1644609951422",
-    "quantity": 1
+    "userId": "1644753076252",
+    "productId": "1644752522133",
+    "quantity": 3
 }
 
 ### 
 
-GET http://localhost:3003/users/1644517573143/purchases
+GET http://localhost:3003/users/1644753076252/purchases
 Content-Type: application/json 
 
