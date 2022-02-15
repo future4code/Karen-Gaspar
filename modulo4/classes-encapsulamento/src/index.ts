@@ -25,7 +25,7 @@ class UserAccount {
         this.name = name;
         this.age = age;
     }
-    public getName(){
+    public getName():string{
         return this.name
     }
 }
@@ -47,7 +47,7 @@ class Transaction {
       this.value = value;
       this.description = description
     }
-    public getValue(){
+    public getValue():number{
         return this.value
     }
 }
@@ -58,3 +58,11 @@ transaction.getValue()
 
 // Resposta:
 
+class Bank {
+    private accounts: UserAccount[];
+  
+    constructor(accounts: UserAccount[]) {
+      this.accounts = accounts;
+    }
+  
+  }
