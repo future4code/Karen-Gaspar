@@ -25,15 +25,34 @@ class UserAccount {
         this.name = name;
         this.age = age;
     }
+    public getName(){
+        return this.name
+    }
 }
-
 const account = new UserAccount("222-333-444-55", "Ana", 25)
+account.getName()
 
 // c) Resposta: Criando métodos públicos (getters/setter) conseguimos ter acesso às propriedades privadas
 
 //Exercício 2
-
 //Resposta:
+
+class Transaction {
+    private date: string;
+    private value: number;
+    private description: string;
+    
+    constructor(date: string, value: number, description: string) {
+      this.date = date;
+      this.value = value;
+      this.description = description
+    }
+    public getValue(){
+        return this.value
+    }
+}
+const transaction = new Transaction("14/02/2022", 300, "Débito em conta")
+transaction.getValue()
 
 // Exercício 3
 
