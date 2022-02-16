@@ -11,5 +11,5 @@ a) Resposta: Uma só vez.
 b) Resposta: Uma só vez. Porque seu constructor está sendo acessado.
 
 ### Exercício 3
-a) Resposta: 
-b) Resposta: 
+a) Resposta: Não, porque ela é privada e somente acessível na classe User se houver um getter.
+

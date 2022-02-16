@@ -32,7 +32,7 @@ class User {
     }
 }
 const user = new User('user1', 'user@email.com', 'Karen', 'mypassword')
-console.log(user.getId(), user.getName(), user.getEmail())
+console.log({id: user.getId(), name: user.getName(), email: user.getEmail()})
 
 // Exercício 2
 
@@ -58,5 +58,13 @@ class Customer extends User {
 }
 const customer = new Customer('customer1', 'customer@email.com', 'Rodrigo', 'mypassword', '78946123')
 
+// Exercício 3
 
+console.log({
+    id: customer.getId(), 
+    name: customer.getName(), 
+    email: customer.getEmail(),
+    purchaseTotal: customer.purchaseTotal,
+    creditCard: customer.getCreditCard()
+ })
 
