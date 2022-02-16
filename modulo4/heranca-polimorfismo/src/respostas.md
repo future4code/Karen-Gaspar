@@ -7,7 +7,7 @@ b) Resposta: Uma só vez.
 
 ### Exercício 2
 
-a) Resposta: Nenhuma.
+a) Resposta: Uma só vez.
 b) Resposta: Uma só vez. Porque seu constructor está sendo acessado.
 
 ### Exercício 3

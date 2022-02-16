@@ -32,7 +32,7 @@ class User {
     }
 }
 const user = new User('user1', 'user@email.com', 'Karen', 'mypassword')
-console.log(user)
+console.log(user.getId(), user.getName(), user.getEmail())
 
 // Exercício 2
 
