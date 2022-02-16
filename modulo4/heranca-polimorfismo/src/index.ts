@@ -1,4 +1,4 @@
-// Exercício 1
+// Exercício Herança
 
 class User {
     private id: string;
@@ -30,11 +30,14 @@ class User {
     public getName(): string {
         return this.name
     }
+
+    public introduceYourself(): string {
+        return `Olá, ${this.name}. Bom dia!`
+    }
 }
 const user = new User('user1', 'user@email.com', 'Karen', 'mypassword')
 console.log({id: user.getId(), name: user.getName(), email: user.getEmail()})
 
-// Exercício 2
 
 class Customer extends User {
     public purchaseTotal: number = 0;
@@ -57,14 +60,14 @@ class Customer extends User {
     }
 }
 const customer = new Customer('customer1', 'customer@email.com', 'Rodrigo', 'mypassword', '78946123')
-
-// Exercício 3
+customer.introduceYourself()
 
 console.log({
     id: customer.getId(), 
     name: customer.getName(), 
     email: customer.getEmail(),
     purchaseTotal: customer.purchaseTotal,
-    creditCard: customer.getCreditCard()
- })
+    creditCard: customer.getCreditCard(),
+    introduction: customer.introduceYourself()
+})
 
