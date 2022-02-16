@@ -36,7 +36,7 @@ class User {
     }
 }
 const user = new User('user1', 'user@email.com', 'Karen', 'mypassword')
-console.log({id: user.getId(), name: user.getName(), email: user.getEmail()})
+console.log({ id: user.getId(), name: user.getName(), email: user.getEmail() })
 
 
 class Customer extends User {
@@ -63,11 +63,82 @@ const customer = new Customer('customer1', 'customer@email.com', 'Rodrigo', 'myp
 customer.introduceYourself()
 
 console.log({
-    id: customer.getId(), 
-    name: customer.getName(), 
+    id: customer.getId(),
+    name: customer.getName(),
     email: customer.getEmail(),
     purchaseTotal: customer.purchaseTotal,
     creditCard: customer.getCreditCard(),
     introduction: customer.introduceYourself()
 })
 
+// Exercíco Polimorfismo
+
+export interface Client {
+    name: string;
+    registrationNumber: number;
+    consumedEnergy: number;
+    calculateBill(): number;
+
+}
+
+const client: Client = {
+    name: "Karen",
+    registrationNumber: 101,
+    consumedEnergy: 123,
+
+    calculateBill: () => {
+        return 2;
+    }
+}
+//   console.log({
+//       name: client.name, 
+//       registrtionNumber: client.registrationNumber, 
+//       consumedEnergy: client.consumedEnergy,
+//       bill: client.calculateBill()
+//     })
+console.log(client)
+
+export abstract class Place {
+    constructor(protected cep: string) { }
+
+    public getCep(): string {
+        return this.cep;
+    }
+}
+// const place = new Place ()
+
+export class Residence extends Place {
+    constructor(
+        protected residentsQuantity: number,
+        cep: string
+    ) {
+        super(cep);
+    }
+    public getResidentsQuantity(): number{
+        return this.residentsQuantity
+    }
+}
+
+export class Commerce extends Place {
+    constructor(
+        protected floorsQuantity: number,
+        cep: string
+    ) {
+        super(cep);
+    }
+    public getfloorsQuantity(): number{
+        return this.floorsQuantity
+    }
+}
+
+export class Industry extends Place {
+    constructor(
+        protected machinesQuantity: number,
+        cep: string
+    ) {
+        super(cep);
+    }
+    public getmachinesQuantity(): number{
+        return this.machinesQuantity
+    }
+}
