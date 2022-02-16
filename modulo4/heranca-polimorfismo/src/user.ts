@@ -32,10 +32,11 @@ class User {
       }
   }
   const user = new User ('user1', 'user@email.com', 'Karen', 'mypassword' )
+  console.log(user)
 
   //a) Resposta: Não seria possível imprimir o password porque ele está encapsulado 
   // em private e não há um getter acessando a propriedade.
 
-  //b) Resposta: Uma só vez
+  //b) Resposta: Uma só vez.
 
   
