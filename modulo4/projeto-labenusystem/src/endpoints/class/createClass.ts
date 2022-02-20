@@ -1,5 +1,5 @@
 import { Request, Response } from 'express'
-import { BaseDatabase } from '../../data/BaseDataBase'
+import { BaseDatabase } from '../../data/BaseDatabase'
 import { Class } from '../../entities/Class'
 
 export const createClass = async (req: Request, res: Response): Promise<void> => {

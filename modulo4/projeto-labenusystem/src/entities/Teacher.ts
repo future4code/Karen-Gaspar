@@ -8,7 +8,6 @@ export class Teacher extends User {
         email: string,
         birth_date: string,
         class_id: string,
-        public expertise: string[]
     ) {
         super(id, name, email, birth_date, class_id)
 
@@ -17,6 +16,5 @@ export class Teacher extends User {
         if (typeof email !== 'string') throw new Error('Type of email must be a "string"')
         if (typeof birth_date !== 'string') throw new Error('Type of birth_date must be a "string"')
         if (typeof class_id !== 'string') throw new Error('Type of class_id must be a "string"')
-        if (typeof expertise!== 'string') throw new Error('Type of expertise must be a "string"')
     }
 }

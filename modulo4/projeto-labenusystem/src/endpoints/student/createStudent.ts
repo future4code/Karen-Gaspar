@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
 import moment from 'moment'
-import { BaseDatabase } from '../../data/BaseDataBase'
+import { BaseDatabase } from '../../data/BaseDatabase'
 import { Student } from '../../entities/Student'
 
 export const createStudent = async (req: Request, res: Response): Promise<void> => {
@@ -8,7 +8,7 @@ export const createStudent = async (req: Request, res: Response): Promise<void> 
 
     try {
 
-        const { name, email, birth_date, class_id, hobby } = req.body
+        const { name, email, birth_date, class_id} = req.body
         const id = 'SID' + Date.now().toString()
 
         if (!name || !email || !birth_date || !class_id) {
@@ -22,7 +22,6 @@ export const createStudent = async (req: Request, res: Response): Promise<void> 
             email,
             moment(birth_date, 'DD/MM/YYYY').format('YYYY/MM/DD'),
             class_id,
-            hobby
         )
         
         const createStudent = (student: Student) => BaseDatabase.connection('labenusystem_student').insert(student)
