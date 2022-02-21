@@ -21,7 +21,7 @@ export const createTeacher = async (req: Request, res: Response): Promise<void> 
             name,
             email,
             moment(birth_date, 'DD/MM/YYYY').format('YYYY/MM/DD'),
-            class_id,
+            class_id
         )
        
         const createTeacher = (teacher: Teacher) => BaseDatabase.connection('labenusystem_teacher').insert(teacher)

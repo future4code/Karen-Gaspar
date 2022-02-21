@@ -14,7 +14,7 @@ Content-Type: application/json
     "name": "Karen",
     "email": "ka@email.com",
     "birth_date": "08/07/1988",
-    "class_id": "CID1645316032953",
+    "class_id": "CID1645316032953"
 }
 
 ### 
@@ -26,5 +26,5 @@ Content-Type: application/json
     "name": "Karen",
     "email": "ka@email.com",
     "birth_date": "08/07/1988",
-    "class_id": "CID1645316147382",
+    "class_id": "CID1645316147382"
 }
