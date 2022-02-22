@@ -1,4 +1,5 @@
 import { Request, Response } from "express"
+import { connection } from "../connection"
 import { insertUser } from "../data/insertUser"
 import { generateToken } from "../services/Authenticator"
 import { generateId } from "../services/idGenerator"
@@ -8,13 +9,20 @@ export const createUser = async (req: Request, res: Response): Promise<void> => 
         const {email, password} = req.body
         const id = generateId()
 
+        const [user] = await connection('users_table')
+        .where({ email })
+
+        if (user) {
+            throw new Error("E-mail já cadastrado")
+        }
+
         if (!email || email.indexOf("@") === -1) {
             throw new Error("Preencha um e-mail válido");
         }
 
         if (!password || password.length < 6) {
             throw new Error("Senha deve possuir no mínimo 6 caracteres");
-          }
+        }
 
         await insertUser(
             id,
@@ -26,6 +34,6 @@ export const createUser = async (req: Request, res: Response): Promise<void> => 
 
         res.status(200).send({"token" : "Token criado com sucesso"})
     } catch (error: any) {
-        res.status(500).send(error.message || error.sqlMessage)
+        res.status(400).send(error.message || error.sqlMessage)
     }
 }
