@@ -8,7 +8,7 @@ export const generateToken = (input: AuthenticationData): string => {
         {
             id: input.id,
         },
-        String(process.env.JWT_KEY),
+        process.env.JWT_KEY as string,
         {
             expiresIn
         }

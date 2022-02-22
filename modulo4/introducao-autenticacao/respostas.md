@@ -2,7 +2,6 @@
 
 a) Acho coerente o uso de strings para representar id, uma vez que esse tipo permite que diversos caracteres façam parte do id, havendo menos risco de um conflito. É melhor que somente números, pelo memso motivo citado.
 
-b) Código se encontra no arquivo idGenerator.ts da pasta services.
 
 ### Exercício 2
 
@@ -17,12 +16,11 @@ password VARCHAR(255) NOT NULL
 );
 ```
 
-c) Código se encontra no arquivo insertUser.ts da pasta data.
-
 ### Exercício 3
 
 a) o "as string" converte o dado vindo do env em string, se não usarmos dará um erro porque esse dado vem inicialmente como um objeto.
 
-b) Código se encontra eno arquivo Authenticator.ts da pasta services e types.ts da pasta src.
+### Exercício 7
 
-c) 
+a)
+b)
