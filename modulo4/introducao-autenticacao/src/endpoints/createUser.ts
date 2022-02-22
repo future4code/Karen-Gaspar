@@ -8,6 +8,14 @@ export const createUser = async (req: Request, res: Response): Promise<void> => 
         const {email, password} = req.body
         const id = generateId()
 
+        if (!email || email.indexOf("@") === -1) {
+            throw new Error("Preencha um e-mail válido");
+        }
+
+        if (!password || password.length < 6) {
+            throw new Error("Senha deve possuir no mínimo 6 caracteres");
+          }
+
         await insertUser(
             id,
             email,
