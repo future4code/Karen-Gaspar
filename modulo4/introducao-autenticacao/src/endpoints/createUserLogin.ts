@@ -1,5 +1,4 @@
 import { Request, Response } from "express"
-import { connection } from "../connection"
 import { selectUserByEmail } from "../data/selectUserByEmail"
 import { generateToken } from "../services/Authenticator"
 
@@ -19,7 +18,7 @@ export const createUserLogin = async (req: Request, res: Response): Promise<void
 
         const token = generateToken({id: user.id})
 
-        res.status(200).send({message: "Login efetuado com sucesso"})
+        res.status(200).send({message: "Login efetuado com sucesso", token})
 
     } catch (error: any) {
         res.status(400).send(error.message || error.sqlMessage)  

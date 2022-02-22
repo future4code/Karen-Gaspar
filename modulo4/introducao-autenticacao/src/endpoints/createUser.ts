@@ -32,7 +32,7 @@ export const createUser = async (req: Request, res: Response): Promise<void> => 
 
         const token = generateToken({id})
 
-        res.status(200).send({"token" : "Token criado com sucesso"})
+        res.status(200).send({"token": token})
     } catch (error: any) {
         res.status(400).send(error.message || error.sqlMessage)
     }

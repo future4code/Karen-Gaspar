@@ -22,5 +22,5 @@ a) o "as string" converte o dado vindo do env em string, se não usarmos dará u
 
 ### Exercício 7
 
-a)
-b)
+a) As any tipa a variável para que essa receba qualquer valor.
+
