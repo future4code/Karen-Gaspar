@@ -20,7 +20,7 @@ export const createUserLogin = async (req: Request, res: Response): Promise<void
             throw new Error("Preencha um e-mail válido");
         }
 
-        const token = generateToken({id: user.id})
+        const token = generateToken({id: user.id, role: user.role})
 
         res.status(200).send({message: "Login efetuado com sucesso"})
 
