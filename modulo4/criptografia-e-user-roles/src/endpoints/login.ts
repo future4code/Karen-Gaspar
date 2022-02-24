@@ -22,6 +22,8 @@ export const createUserLogin = async (req: Request, res: Response): Promise<void
 
         const token = generateToken({id: user.id, role: user.role})
 
+        console.log(token)
+
         res.status(200).send({message: "Login efetuado com sucesso"})
 
     } catch (error: any) {
