@@ -5,7 +5,7 @@ export class UserDatabase extends BaseDatabase{
     public async createUser(user: User){
         try {
             await BaseDatabase
-            .connection('cookenu_user')
+            .connection('cookenu_users')
             .insert({
                 id: user.getId(),
                 name: user.getName(),
@@ -20,13 +20,12 @@ export class UserDatabase extends BaseDatabase{
     public async findUserByEmail(email: string): Promise<User> {
         try {
             const user = await BaseDatabase
-            .connection('cookenu_user')
+            .connection('cookenu_users')
             .select('*')
             .where({email})
-            return User.toUserModel(user[0])
+            return user[0] && User.toUserModel(user[0])
         } catch (error:any) {
             throw new Error(error.sqlMessage || error.message)
-            
         }
     }
 }

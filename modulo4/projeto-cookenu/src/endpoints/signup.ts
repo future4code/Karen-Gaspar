@@ -13,8 +13,12 @@ export async function signup(req: Request, res: Response){
             res.status(422).send("Preencha todos os campos")
         }
 
+        if (password.length < 6){
+            res.status(422).send("Senha deve conter o mínimo de 6 caracteres")
+        }
+
         const userDatabase = new UserDatabase()
-        const user: any = userDatabase.findUserByEmail(email)
+        const user: any = await userDatabase.findUserByEmail(email)
 
         if (user){
             res.status(409).send("Email já cadastrado!")
