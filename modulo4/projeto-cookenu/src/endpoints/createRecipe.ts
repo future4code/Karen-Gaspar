@@ -26,6 +26,7 @@ export async function createRecipe(req: Request, res: Response){
 
         const idGenerator = new IdGenerator()
         const id = idGenerator.generate()
+        console.log(id)
 
         const authenticator = new Authenticator()
         const tokenData = authenticator.getTokenData(token)
