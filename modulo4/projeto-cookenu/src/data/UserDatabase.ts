@@ -29,11 +29,23 @@ export class UserDatabase extends BaseDatabase {
         }
     }
 
-    public async getUserById(id: string): Promise<User> {
+    public async getUserProfile(id: string): Promise<User> {
         try {
             const result = await BaseDatabase
                 .connection('cookenu_users')
                 .select('id', 'email')
+                .where({ id })
+            return result[0]
+        } catch (error: any) {
+            throw new Error(error.sqlMessage || error.message)
+        }
+    }
+
+    public async getUserById(id: string): Promise<User> {
+        try {
+            const result = await BaseDatabase
+                .connection('cookenu_users')
+                .select('id', 'name', 'email')
                 .where({ id })
             return result[0]
         } catch (error: any) {
