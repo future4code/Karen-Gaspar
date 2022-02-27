@@ -1,0 +1,25 @@
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+    "email": "tadeu@email.com",
+    "password": "12346",
+    "role": "ADMIN"
+}
+
+### 
+
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+    "email": "tadeu@email.com",
+    "password": "12346",
+    "role": "ADMIN"
+}
+
+### 
+
+GET http://localhost:3003/user/profile
+
+Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBlZmIyYzQ0LTE1ZjctNDUzMi1hZDQyLWJmMGRlN2I0ZGE4OCIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY0NTY2MTAyNiwiZXhwIjoxNjc3MjE4NjI2fQ._3_nrsFy3rFRvO1h746nRNQmcRHJz7tz_S0d01mQQok"
