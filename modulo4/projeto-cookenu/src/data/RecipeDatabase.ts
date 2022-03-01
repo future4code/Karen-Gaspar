@@ -30,7 +30,7 @@ export class RecipeDatabase extends BaseDatabase {
         }
     }
 
-    public async getRecipeById(id: string): Promise<Recipe> {
+    public async findRecipeById(id: string): Promise<Recipe> {
         try {
             const result = await BaseDatabase
                 .connection('cookenu_recipes')

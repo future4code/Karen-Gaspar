@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
-import { RecipeDatabase } from "../data/RecipeDataBase";
+import { RecipeDatabase } from "../data/RecipeDatabase";
 import { Authenticator } from "../services/Authenticator";
 
 export async function getRecipeById(req: Request, res: Response){
     try {
         const token = req.headers.authorization as string
-        const id = req.params.id as string
+        const {id} = req.params
 
         if(!token){
             res.status(422).send("Token inválido ou não passado nos headers")
@@ -19,10 +19,14 @@ export async function getRecipeById(req: Request, res: Response){
         const tokenData = authenticator.getTokenData(token)
 
         const recipeDatabase = new RecipeDatabase()
-        const recipe = await recipeDatabase.getRecipeById(id)
+        const recipe = await recipeDatabase.findRecipeById(id)
+
+        if(!recipe){
+            res.status(404).send("Receita n'ao encontrada")
+        }
  
         res.status(200).send({recipe})
     } catch (error: any) {
-        res.status(400).send(error.message)
+        res.status(400).send(error.message || error.sqlMessage)
     }
 }

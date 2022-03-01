@@ -41,7 +41,7 @@ export class UserDatabase extends BaseDatabase {
         }
     }
 
-    public async getUserById(id: string): Promise<User> {
+    public async findUserById(id: string): Promise<User> {
         try {
             const result = await BaseDatabase
                 .connection('cookenu_users')

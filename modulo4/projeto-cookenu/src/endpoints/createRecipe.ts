@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { RecipeDatabase } from "../data/RecipeDataBase";
+import { RecipeDatabase } from "../data/RecipeDatabase";
 import { Recipe } from "../entities/Recipe";
 import { Authenticator } from "../services/Authenticator";
 import { IdGenerator } from "../services/IdGenerator";
@@ -39,6 +39,6 @@ export async function createRecipe(req: Request, res: Response){
 
         res.status(201).send({message: "Receita criada com sucesso"})
     } catch (error: any) {
-        res.status(400).send(error.message)
+        res.status(400).send(error.message || error.sqlMessage)
     }
 }

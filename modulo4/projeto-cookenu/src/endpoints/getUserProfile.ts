@@ -18,7 +18,7 @@ export async function getUserProfile(req: Request, res: Response){
 
         res.status(200).send(userProfile)
     } catch (error: any) {
-        res.status(400).send(error.message)
+        res.status(400).send(error.message || error.sqlMessage)
         
     }
 }

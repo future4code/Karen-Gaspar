@@ -5,7 +5,7 @@ import { Authenticator } from "../services/Authenticator";
 export async function getUserById(req: Request, res: Response){
     try {
         const token = req.headers.authorization as string
-        const id = req.params.id as string
+        const {id} = req.params
 
         if(!token){
             res.status(422).send("Token inválido ou não passado nos headers")
@@ -19,11 +19,11 @@ export async function getUserById(req: Request, res: Response){
         const tokenData = authenticator.getTokenData(token)
 
         const userDatabase = new UserDatabase()
-        const userById = await userDatabase.getUserById(id)
+        const userById = await userDatabase.findUserById(id)
 
         res.status(200).send(userById)
     } catch (error: any) {
-        res.status(400).send(error.message)
+        res.status(400).send(error.message || error.sqlMessage)
         
     }
 }

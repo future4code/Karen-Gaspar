@@ -30,6 +30,6 @@ export async function login(req: Request, res: Response){
 
         res.status(201).send({message: "Usuário logado com sucesso", access_token: token})
     } catch (error: any) {
-        res.status(400).send(error.message)
+        res.status(400).send(error.message || error.sqlMessage)
     }
 }
