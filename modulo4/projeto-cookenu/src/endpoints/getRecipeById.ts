@@ -17,12 +17,11 @@ export async function getRecipeById(req: Request, res: Response){
 
         const authenticator = new Authenticator()
         const tokenData = authenticator.getTokenData(token)
-
         const recipeDatabase = new RecipeDatabase()
         const recipe = await recipeDatabase.findRecipeById(id)
 
         if(!recipe){
-            res.status(404).send("Receita n'ao encontrada")
+            res.status(404).send("Receita não encontrada")
         }
  
         res.status(200).send({recipe})

@@ -17,7 +17,6 @@ export async function getUserById(req: Request, res: Response){
         
         const authenticator = new Authenticator()
         const tokenData = authenticator.getTokenData(token)
-
         const userDatabase = new UserDatabase()
         const userById = await userDatabase.findUserById(id)
 
