@@ -18,6 +18,12 @@ class Migrations {
             user_id VARCHAR(255) NOT NULL,
             FOREIGN KEY (user_id) REFERENCES cookenu_users(id)
             );
+        CREATE TABLE cookenu_followers(
+            follower_id VARCHAR(255) NOT NULL,
+            user_to_follow_id VARCHAR(255) NOT NULL,
+            FOREIGN KEY (follower_id) REFERENCES cookenu_users(id),
+            FOREIGN KEY (user_to_follow_id) REFERENCES cookenu_users(id)
+        );
         `)
         console.log("Tabelas criadas")
         BaseDatabase.connection.destroy()    
