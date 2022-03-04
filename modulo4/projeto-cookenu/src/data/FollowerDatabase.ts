@@ -14,4 +14,18 @@ export class FollowerDatabase extends BaseDatabase {
         }
     }
 
+    public async unfollowUser(followerId: string, userToUnfollowId: string){
+        try {
+            await BaseDatabase
+            .connection('cookenu_followers')
+            .delete()
+            .where({
+                follower_id: followerId,
+                user_to_follow_id: userToUnfollowId
+            })
+        } catch (error: any) {
+            throw new Error(error.sqlMessage || error.message)
+        }
+    }
+
 }

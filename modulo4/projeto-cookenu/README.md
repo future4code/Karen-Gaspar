@@ -1,6 +1,6 @@
 ## COOKENU
 
-Esse projeto consiste em criar uma API de uma rede social para compartilhar receitas, onde é possível cadastrar usuários e receitas no banco de dados.
+Esse projeto consiste em criar uma API de uma rede social culinária para compartilhar receitas, onde é possível cadastrar usuários e receitas no banco de dados.
 
 ### O que funciona
 
@@ -10,6 +10,8 @@ Esse projeto consiste em criar uma API de uma rede social para compartilhar rece
 - Busca de oustro usuário por id.
 - Criação de receitas.
 - Busca de receitas por id.
+- Seguir um usuário.
+- Deixar de seguir um usuário.
 
 ### O que não funciona
 
@@ -24,7 +26,7 @@ Esse projeto consiste em criar uma API de uma rede social para compartilhar rece
 - Typescript
 - MySql
 - Jsonwebtoken
-- Uuid
+- UUID
 - Bcrypt
 - Postman
 
