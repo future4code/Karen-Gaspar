@@ -12,6 +12,7 @@ Esse projeto consiste em criar uma API de uma rede social culinária para compar
 - Busca de receitas por id.
 - Seguir um usuário.
 - Deixar de seguir um usuário.
+- Buscar feed de receitas do usuário seguido.
 
 ### O que não funciona
 
@@ -29,6 +30,7 @@ Esse projeto consiste em criar uma API de uma rede social culinária para compar
 - UUID
 - Bcrypt
 - Postman
+- Moment
 
 ### Link da documentação do Postman
 
