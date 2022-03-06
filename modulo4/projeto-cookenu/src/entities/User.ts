@@ -1,16 +1,10 @@
-export enum UserRole {
-    NORMAL= "NORMAL",
-    ADMIN = "ADMIN"
-}
-
 
 export class User {
     constructor(
         private id: string,
         private name: string,
         private email: string,
-        private password: string,
-        private role: UserRole
+        private password: string
     ){}
 
     public getId(){
@@ -25,11 +19,8 @@ export class User {
     public getPassword(){
         return this.password
     }
-    public getRole(){
-        return this.role
-    }
 
     static toUserModel(data: any): User{
-        return new User(data.id, data.name, data.email, data.password, data.role)
+        return new User(data.id, data.name, data.email, data.password)
     }
 }

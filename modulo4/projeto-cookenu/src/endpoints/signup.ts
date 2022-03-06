@@ -7,9 +7,9 @@ import { IdGenerator } from "../services/IdGenerator";
 
 export async function signup(req: Request, res: Response){
     try {
-        const {name, email, password, role} = req.body
+        const {name, email, password} = req.body
 
-        if(!name || !email || !password || !role){
+        if(!name || !email || !password){
             res.status(422).send("Preencha todos os campos")
         }
 
@@ -29,11 +29,11 @@ export async function signup(req: Request, res: Response){
         const hashManager = new HashManager()
         const hashPassword = await hashManager.hash(password)
         
-        const newUser = new User(id, name, email, hashPassword, role)
+        const newUser = new User(id, name, email, hashPassword)
         await userDatabase.createUser(newUser)
 
         const authenticator = new Authenticator()
-        const token = authenticator.generateToken({id, role})
+        const token = authenticator.generateToken({id})
 
         res.status(201).send({message: "Usuário criado com sucesso", access_token: token})
     } catch (error: any) {

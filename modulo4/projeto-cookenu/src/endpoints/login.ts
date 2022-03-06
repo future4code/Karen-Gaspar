@@ -26,7 +26,7 @@ export async function login(req: Request, res: Response){
         }
 
         const authenticator = new Authenticator()
-        const token = authenticator.generateToken({id: user.getId(), role: user.getRole()})
+        const token = authenticator.generateToken({id: user.getId()})
 
         res.status(201).send({message: "Usuário logado com sucesso", access_token: token})
     } catch (error: any) {
