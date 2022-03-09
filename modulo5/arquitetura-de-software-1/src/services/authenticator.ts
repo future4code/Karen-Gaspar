@@ -2,7 +2,7 @@ import * as jwt from "jsonwebtoken"
 import { USER_ROLE } from "../model/User"
 
 
-export interface AuthenticationData{
+export interface AuthenticationData {
     id: string,
     role: USER_ROLE
 }
@@ -15,7 +15,7 @@ export class Authenticator {
         return token
     }
 
-    public getTokenData(token: string): AuthenticationData{
+    public getTokenData(token: string): AuthenticationData {
         const data = jwt.verify(token, process.env.JWT_KEY as string)
         return data as AuthenticationData
     }
