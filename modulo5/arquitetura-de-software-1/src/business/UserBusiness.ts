@@ -11,7 +11,7 @@ export class UserBusiness {
 
     signup = async (name: string, email: string, password: string, role: USER_ROLE) => {
         
-        if(!name || !email || !password || role){
+        if(!name || !email || !password || !role){
             throw new Error ("Preencha todos os campos")
         }
 

@@ -1,0 +1,21 @@
+POST http://localhost:3003/signup     
+Content-Type: application/json
+
+{
+    "name": "Velma Dinkley",
+	"email": "velma@doo.com",
+	"password": "ginger",
+	"role": "ADMIN"
+}
+
+###
+
+POST http://localhost:3003/login
+Content-Type: application/json
+
+{
+    "email": "velma@doo.com",
+    "password": "ginger"
+}
+
+###
