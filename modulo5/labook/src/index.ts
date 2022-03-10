@@ -35,13 +35,6 @@ type authenticationData = {
    id: string
 }
 
-type user = {
-   id: string,
-   name: string,
-   email: string,
-   password: string
-}
-
 enum POST_TYPES {
    NORMAL = "normal",
    EVENT = "event"
@@ -54,47 +47,6 @@ type post = {
    type: POST_TYPES,
    createdAt: Date,
    authorId: string
-}
-
-/**************************** SERVICES ******************************/
-
-const generateId = (): string => v4()
-
-function generateToken(
-   payload: authenticationData
-): string {
-   return jwt.sign(
-      payload,
-      process.env.JWT_KEY as string,
-      {
-         expiresIn: process.env.JWT_EXPIRES_IN
-      }
-   )
-}
-
-function getTokenData(
-   token: string
-): authenticationData {
-   const result: any = jwt.verify(
-      token,
-      process.env.JWT_KEY as string
-   )
-
-   return { id: result.id, }
-}
-
-const hash = async (
-   plainText: string
-): Promise<string> => {
-   const rounds = Number(process.env.BCRYPT_COST);
-   const salt = await bcrypt.genSalt(rounds);
-   return bcrypt.hash(plainText, salt)
-}
-
-const compare = async (
-   plainText: string, cypherText: string
-): Promise<boolean> => {
-   return bcrypt.compare(plainText, cypherText)
 }
 
 /**************************** ENDPOINTS ******************************/
@@ -126,7 +78,7 @@ app.post('/users/signup', async (req: Request, res: Response) => {
 
       res.status(201).send({ message, token })
 
-   } catch (error) {
+   } catch (error: any) {
       res.statusCode = 400
       let message = error.sqlMessage || error.message
 
@@ -177,7 +129,7 @@ app.post('/users/login', async (req: Request, res: Response) => {
 
       res.status(200).send({ message, token })
 
-   } catch (error) {
+   } catch (error: any) {
       let message = error.sqlMessage || error.message
       res.statusCode = 400
 
@@ -208,7 +160,7 @@ app.post('/posts/create', async (req: Request, res: Response) => {
 
       res.status(201).send({ message })
 
-   } catch (error) {
+   } catch (error: any) {
       let message = error.sqlMessage || error.message
       res.statusCode = 400
 
@@ -243,7 +195,7 @@ app.get('/posts/:id', async (req: Request, res: Response) => {
 
       res.status(200).send({ message, post })
 
-   } catch (error) {
+   } catch (error: any) {
       let message = error.sqlMessage || error.message
       res.statusCode = 400
 
