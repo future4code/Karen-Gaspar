@@ -1,39 +1,8 @@
 /**************************** IMPORTS ******************************/
 
-import express, { Express, Request, Response } from "express"
-import cors from "cors"
-import knex from "knex"
-import dotenv from "dotenv"
-import * as jwt from "jsonwebtoken"
-import * as bcrypt from "bcryptjs"
-import { v4 } from "uuid"
-import Knex from "knex"
-
-/**************************** CONFIG ******************************/
-
-dotenv.config()
-
-export const connection: Knex = knex({
-   client: "mysql",
-   connection: {
-      host: process.env.DB_HOST,
-      user: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
-      database: process.env.DB_SCHEMA,
-      port: 3306,
-      multipleStatements: true
-   }
-})
-
-const app: Express = express()
-app.use(express.json())
-app.use(cors())
+import { Request, Response } from "express"
 
 /**************************** TYPES ******************************/
-
-type authenticationData = {
-   id: string
-}
 
 enum POST_TYPES {
    NORMAL = "normal",
@@ -201,10 +170,4 @@ app.get('/posts/:id', async (req: Request, res: Response) => {
 
       res.send({ message })
    }
-})
-
-/**************************** SERVER INIT ******************************/
-
-app.listen(3003, () => {
-   console.log("Server running on port 3003")
 })
