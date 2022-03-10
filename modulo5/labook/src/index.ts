@@ -2,22 +2,6 @@
 
 import { Request, Response } from "express"
 
-/**************************** TYPES ******************************/
-
-enum POST_TYPES {
-   NORMAL = "normal",
-   EVENT = "event"
-}
-
-type post = {
-   id: string,
-   photo: string,
-   description: string,
-   type: POST_TYPES,
-   createdAt: Date,
-   authorId: string
-}
-
 /**************************** ENDPOINTS ******************************/
 
 app.post('/users/signup', async (req: Request, res: Response) => {
