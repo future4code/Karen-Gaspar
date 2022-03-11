@@ -19,7 +19,7 @@ export class UserDatabase extends BaseDatabase {
     public async selectUserByEmail(email: string): Promise<User> {
         try {
             const user = await BaseDatabase
-                .connection('labook_usres')
+                .connection('labook_users')
                 .select('*')
                 .where({ email })
             return User.toUserModel(user[0])
