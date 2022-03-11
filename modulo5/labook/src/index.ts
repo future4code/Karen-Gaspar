@@ -2,6 +2,7 @@
 
 import { Request, Response } from "express"
 
+
 /**************************** ENDPOINTS ******************************/
 
 app.post('/users/signup', async (req: Request, res: Response) => {
