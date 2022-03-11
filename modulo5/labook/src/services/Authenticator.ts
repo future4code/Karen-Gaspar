@@ -5,26 +5,16 @@ export interface AuthenticationData {
 }
 
 export class Authenticator {
-    public generateToken(
-        payload: AuthenticationData
-    ): string {
-        return jwt.sign(
-            payload,
-            process.env.JWT_KEY as string,
-            {
-                expiresIn: process.env.JWT_EXPIRES_IN
-            }
-        )
+
+    public generateToken(input: AuthenticationData): string {
+        const token = jwt.sign(input, process.env.JWT_KEY as string, {
+            expiresIn: process.env.TWT_EXPIRES_IN
+        });
+        return token
     }
 
-    public getTokenData(
-        token: string
-    ): AuthenticationData {
-        const result: any = jwt.verify(
-            token,
-            process.env.JWT_KEY as string
-        )
-
-        return { id: result.id, }
+    public getTokenData(token: string): AuthenticationData {
+        const data = jwt.verify(token, process.env.JWT_KEY as string)
+        return data as AuthenticationData
     }
 }

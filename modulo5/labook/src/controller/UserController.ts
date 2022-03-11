@@ -13,7 +13,7 @@ export default class UserController {
 
             res.status(201).send({ token: token })
         } catch (error: any) {
-            res.status(400).send(error.message)
+            res.status(400).send(error.message || error.sqlMessage)
         }
     }
 }
