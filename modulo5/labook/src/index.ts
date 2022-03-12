@@ -3,9 +3,9 @@ import  UserController from './controller/UserController'
 
 const userController = new UserController()
 
-/**************************** ENDPOINTS ******************************/
-
 app.post('/users/signup', userController.signup)
+
+
 
 // app.post('/users/login', async (req: Request, res: Response) => {
 //    try {
