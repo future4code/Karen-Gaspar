@@ -10,18 +10,17 @@ export default class UserBusiness {
     
     signup = async (name: string, email: string, password: string) => {
 
-        if (!name || !email || !password) {
+        if(!name || !email || !password) {
             throw new Error("Preencha todos os campos")
-        }
-
-        const user = await userDatabase.selectUserByEmail(email)
-
-        if (user) {
-            throw new Error("Email já cadastrado")
         }
 
         const idGenerator = new IdGenerator()
         const id = idGenerator.generateId()
+
+        const user = await userDatabase.selectUserByEmail(email)
+        if (user) {
+            throw new Error("Email já cadastrado")
+        }
 
         const hashManager = new HashManager()
         const hashPassword = await hashManager.hash(password)
