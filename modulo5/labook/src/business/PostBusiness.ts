@@ -28,13 +28,26 @@ export class PostBusiness {
         const newDate = new Date().toLocaleDateString("pt-BR")
         const created_at = moment(newDate, 'DD/MM/YYYY').format('YYYY/MM/DD')
 
-
         const authenticator = new Authenticator()
         const tokenData = authenticator.getTokenData(token)
 
         const newPost = new Post(id, photo, description, type, created_at, tokenData.id)
         await postDatabase.insertPost(newPost)
 
+    }
 
+    getPostById = async (id: string) => {
+
+        if (!id) {
+            throw new Error("Id inválido ou não passado nos params")
+        }
+
+        const result = await postDatabase.selectPostById(id)
+
+        if (!result) {
+            throw new Error("Id inválido ou Post não encontrado")
+        }
+
+        return result
     }
 }

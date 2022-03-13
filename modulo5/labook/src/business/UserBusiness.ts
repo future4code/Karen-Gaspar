@@ -16,12 +16,19 @@ export class UserBusiness {
 
         const idGenerator = new IdGenerator()
         const id = idGenerator.generateId()
-        
+
+        const user = await userDatabase.selectUserByEmail(email)
+
+        if (user) {
+            throw new Error("Email já cadastrado")
+        }
+
         const hashManager = new HashManager()
         const hashPassword = await hashManager.hash(password)
 
         const newUser = new User(id, name, email, hashPassword)
         await userDatabase.insertUser(newUser)
+        console.log(newUser)
 
         const authenticator = new Authenticator()
         const token = authenticator.generateToken({ id })
