@@ -3,14 +3,14 @@ export enum POST_TYPES {
     EVENT = "event"
 }
 
-export default class Post {
+export class Post {
     constructor(
         private id: string,
         private photo: string,
         private description: string,
         private type: POST_TYPES,
-        private createdAt: string,
-        private authorId: string
+        private created_at: string,
+        private author_id: string
     ) { }
 
     public getId() {
@@ -26,13 +26,13 @@ export default class Post {
         return this.type
     }
     public getCreatedAt() {
-        return this.createdAt
+        return this.created_at
     }
     public getAuthorId() {
-        return this.authorId
+        return this.author_id
     }
 
     static toUserModel(data: any): Post {
-        return new Post(data.id, data.photo, data.description, data.type, data.createdAt, data.authorId)
+        return new Post(data.id, data.photo, data.description, data.type, data.created_at, data.author_id)
     }
 }

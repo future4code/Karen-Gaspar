@@ -1,24 +1,24 @@
 export class User {
-    constructor (
+    constructor(
         private id: string,
         private name: string,
         private email: string,
         private password: string,
-    ){}
-    public getId(){
+    ) { }
+    public getId() {
         return this.id
     }
-    public getName(){
+    public getName() {
         return this.name
     }
-    public getEmail(){
+    public getEmail() {
         return this.email
     }
-    public getPassword(){
+    public getPassword() {
         return this.password
     }
 
-    static toUserModel(data: any): User{
+    static toUserModel(data: any): User {
         return new User(data.id, data.name, data.email, data.password)
     }
 }

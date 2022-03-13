@@ -2,11 +2,28 @@ POST http://localhost:3003/users/signup
 Content-Type: application/json
 
 {
-	"name": "Karen Gaspar",
+	"name": "Rodrigo",
+	"email": "ro@email.com",
+	"password": "minhaSenha123"
+}
+
+###
+
+POST http://localhost:3003/users/login
+Content-Type: application/json
+
+{
 	"email": "ka@gaspar.com",
 	"password": "minhaSenha123"
 }
 
 ###
 
+POST http://localhot:3003/posts/create
+Content-Type: application/json
 
+{
+	"photo": "",
+	"description": "",
+	"type": ""
+}
