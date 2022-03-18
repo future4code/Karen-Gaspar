@@ -1,0 +1,36 @@
+POST http://localhost:3003/users/signup
+Content-Type: application/json
+
+{
+	"name": "Thiago",
+	"email": "thi@email.com",
+	"password": "minhaSenha123"
+}
+
+###
+
+POST http://localhost:3003/users/login
+Content-Type: application/json
+
+{
+	"email": "ka@gaspar.com",
+	"password": "minhaSenha123"
+}
+
+###
+
+POST http://localhost:3003/posts/create
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZlY2IxZmI2LWMyNzQtNGFjMy05MTIyLTUyZDdlMWEzMTFmNyIsImlhdCI6MTY0NzIwNDU2MywiZXhwIjoxNjc4NzQwNTYzfQ.ucR6_u3yTxzh7hILgtNQzqKFaqJmFPniltK3e1CTkfY
+
+{
+	"photo": "https://images.unsplash.com/photo-1619367570543-67777289da88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80",
+	"description": "Time off",
+	"type": "normal"
+}
+
+###
+
+GET http://localhost:3003/posts/dd70deaa-8c6c-4016-8860-ac2e25228f2
+Content-Type: application/json
+
