@@ -1,12 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Router from './routes/Router'
+import { BrowserRouter } from 'react-router-dom'
+import HomePage from './pages/HomePage';
 
 function App() {
   return (
     <div>
-      TMDB
+      <HomePage/>
     </div>
-  );
+    // <BrowserRouter>
+    //   <Router />
+    // </BrowserRouter>
+  )
 }
 
 export default App;
