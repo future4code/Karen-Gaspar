@@ -1,10 +1,11 @@
 import React from 'react'
+import { MainContainer } from './styled';
 
 function HomePage() {
   return (
-    <div>
+    <MainContainer>
       HomePage
-    </div>
+    </MainContainer>
   );
 }
 

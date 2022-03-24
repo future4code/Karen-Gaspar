@@ -1,8 +1,8 @@
 import React from 'react'
 import {Route, Routes} from 'react-router-dom'
-import HomePage from '../pages/HomePage'
-import MovieDetails from '../pages/MovieDetails'
-import ErrorPage from '../pages/ErrorPage'
+import HomePage from '../pages/HomePage/HomePage'
+import MovieDetails from '../pages/MovieDetails/MovieDetails'
+import ErrorPage from '../pages/ErrorPage/ErrorPage'
 
 export default function Router(){
     <Routes>
