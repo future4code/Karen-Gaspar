@@ -1,11 +1,16 @@
-import React from 'react'
-import { MainContainer } from './styled';
+import React, { useContext, useEffect, useState } from 'react'
+import Header from '../../components/Header/Header'
+import MovieCard from '../../components/MovieCard/MovieCard'
+import MovieCategories from '../../components/Categories/MovieCategories'
 
 function HomePage() {
+
   return (
-    <MainContainer>
-      HomePage
-    </MainContainer>
+    <div>
+      <Header/>
+      <MovieCategories/>
+      <MovieCard/>
+    </div>
   );
 }
 
