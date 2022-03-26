@@ -1,10 +1,11 @@
 import React from 'react'
 import { HeaderContainer } from './styled';
+import logo from '../../assests/tmdb_icon.png'
 
 function Header() {
   return (
     <HeaderContainer>
-      TMDB
+      <img src={logo}/>
     </HeaderContainer>
   );
 }

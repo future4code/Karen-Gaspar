@@ -2,25 +2,25 @@ import axios from 'axios'
 import {BASE_URL} from '../constants/base_url'
 import {API_KEY} from '../constants/api_key'
 
-export const getMovieDetails = (id, setMovie, getCategories, setCategories, setIsLoading)=>{
+export const getMovieDetails = (id, setMovie, setIsLoading)=>{
     setIsLoading(true)
-    axios.get(`${BASE_URL}${id}`)
+    axios.get(`${BASE_URL}${id}?${API_KEY}&language=pt-BR`)
     .then((res)=> {
-        setMovie(res.data.movie)
-        setCategories(getCategories(res.data.movie))
+        setMovie(res.data)
         setIsLoading(false)
     })
     .catch((err)=>{
-        setIsLoading(false)
+        console.log(err.message)
     })
 }
 
 export const getMovie = (setMovie) => {
-    axios.get(`${BASE_URL}popular`)
+    axios.get(`${BASE_URL}popular?${API_KEY}&language=pt-BR`)
     .then((res)=>{
-        setMovie(res.data.movie)
+        setMovie(res.data.results)
     })
-    .catch((error)=> {     
+    .catch((err)=> {    
+        console.log(err.message) 
     })
 }
  

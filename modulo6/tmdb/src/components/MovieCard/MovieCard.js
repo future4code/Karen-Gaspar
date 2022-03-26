@@ -1,10 +1,38 @@
 import React from 'react'
+import { CardMainContainer, ImageContainer, MovieCardContainer, MovieTitleContainer } from './styled';
 
 function MovieCard() {
   return (
-    <div>
+    <CardMainContainer>
+      <MovieCardContainer>
       MovieCard
-    </div>
+     <ImageContainer/>
+      </MovieCardContainer>
+      <MovieCardContainer>
+      MovieCard
+      </MovieCardContainer>
+      <MovieCardContainer>
+      MovieCard
+      </MovieCardContainer>
+      <MovieCardContainer>
+      MovieCard
+      </MovieCardContainer>
+      <MovieCardContainer>
+      MovieCard
+      </MovieCardContainer>
+      <MovieCardContainer>
+      MovieCard
+      </MovieCardContainer>
+      <MovieCardContainer>
+      MovieCard
+      </MovieCardContainer>
+      <MovieCardContainer>
+      MovieCard
+      </MovieCardContainer>
+      <MovieCardContainer>
+      MovieCard
+      </MovieCardContainer>
+    </CardMainContainer>
   );
 }
 
