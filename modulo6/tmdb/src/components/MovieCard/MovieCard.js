@@ -1,38 +1,22 @@
 import React from 'react'
-import { CardMainContainer, ImageContainer, MovieCardContainer, MovieTitleContainer } from './styled';
+import { ImageContainer, MovieCardContainer, MovieTitleContainer } from './styled';
 
-function MovieCard() {
+function MovieCard(props) {
+
+  const { poster_path, title, release_date } = props
+
   return (
-    <CardMainContainer>
-      <MovieCardContainer>
-      MovieCard
-     <ImageContainer/>
-      </MovieCardContainer>
-      <MovieCardContainer>
-      MovieCard
-      </MovieCardContainer>
-      <MovieCardContainer>
-      MovieCard
-      </MovieCardContainer>
-      <MovieCardContainer>
-      MovieCard
-      </MovieCardContainer>
-      <MovieCardContainer>
-      MovieCard
-      </MovieCardContainer>
-      <MovieCardContainer>
-      MovieCard
-      </MovieCardContainer>
-      <MovieCardContainer>
-      MovieCard
-      </MovieCardContainer>
-      <MovieCardContainer>
-      MovieCard
-      </MovieCardContainer>
-      <MovieCardContainer>
-      MovieCard
-      </MovieCardContainer>
-    </CardMainContainer>
+    <MovieCardContainer>
+      <ImageContainer src={`https://image.tmdb.org/t/p/w500${poster_path}`} />
+      <MovieTitleContainer>
+        <div>
+          {title}
+        </div>
+        <div>
+          {release_date}
+        </div>
+      </MovieTitleContainer>
+    </MovieCardContainer>
   );
 }
 

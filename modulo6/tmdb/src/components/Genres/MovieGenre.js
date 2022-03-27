@@ -1,9 +1,9 @@
 import React from 'react'
-import { Button, ButtonsContainer, CategoriesContainer, DescriptionContainer } from './styled';
+import { Button, ButtonsContainer, GenreContainer, DescriptionContainer } from './styled';
 
-function MovieCategories() {
+function MovieGenre() {
     return (
-        <CategoriesContainer>
+        <GenreContainer>
             <DescriptionContainer>
                 <h3>Milhões de filmes, séries e pessoas para descobrir. Explore já.</h3>
             </DescriptionContainer>
@@ -29,8 +29,8 @@ function MovieCategories() {
                 <Button>Guerra</Button>
                 <Button>Faroeste</Button>
             </ButtonsContainer>
-        </CategoriesContainer>
+        </GenreContainer>
     );
 }
 
-export default MovieCategories;
+export default MovieGenre;
