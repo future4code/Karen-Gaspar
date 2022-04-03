@@ -14,12 +14,12 @@ Esse projeto consiste em criar uma listagem dos filmes mais populares do dia uti
 ## O que funciona:
 
 - Função de renderizar os filmes.
+- Função de ver alguns detalhes do filme clicado.
 
 
 ## O que não funciona:
 
 - Filtrar os filmes por gênero
-- Função de ver os detalhes do filme clicado.
 - Não está responsivo
 - Não há paginação
 
