@@ -3,11 +3,11 @@ import { ImageContainer, MovieCardContainer, MovieTitleContainer } from './style
 
 function MovieCard(props) {
 
-  const { poster_path, title, release_date } = props
+  const { poster_path, title, release_date, onClickCard } = props
   
   return (
     <MovieCardContainer>
-      <ImageContainer src={`https://image.tmdb.org/t/p/w500${poster_path}`} />
+      <ImageContainer src={`https://image.tmdb.org/t/p/w500${poster_path}`} onClick={onClickCard}/>
       <MovieTitleContainer>
         <div>
           {title.toUpperCase()}

@@ -2,21 +2,28 @@ import React, { useEffect, useState } from 'react'
 import Header from '../../components/Header/Header'
 import MovieCard from '../../components/MovieCard/MovieCard'
 import { ButtonsContainer, CardContainer, DescriptionContainer, GenreContainer, MainContainer } from './styled'
-import { getMovie, getMovieGenres } from '../../services/getMovies'
+import { getMovies, getMovieGenres } from '../../services/getMovies'
 import MovieGenre from '../../components/Genres/MovieGenre'
+import { goToMovieDetails } from '../../routes/coordinator'
+import { useNavigate } from 'react-router-dom'
 
 function HomePage() {
 
-  const [movie, setMovie] = useState([])
+  const [movies, setMovies] = useState([])
   const [genre, setGenre] = useState([])
+  const history = useNavigate()
 
   useEffect(() => {
-    getMovie(setMovie)
+    getMovies(setMovies)
   }, [])
 
   useEffect(() => {
     getMovieGenres(setGenre)
   }, [])
+
+  const onClickCard = (id) => {
+    goToMovieDetails(history, id)
+  }
 
   const genreList = genre && genre
     .map((genre) => {
@@ -27,13 +34,14 @@ function HomePage() {
       />
     })
 
-  const movieList = movie && movie
+  const movieList = movies && movies
     .map((movie) => {
       return <MovieCard
         key={movie.id}
         poster_path={movie.poster_path}
         title={movie.title}
         release_date={movie.release_date}
+        onClickCard={() => onClickCard(movie.id)}
       />
     })
 
